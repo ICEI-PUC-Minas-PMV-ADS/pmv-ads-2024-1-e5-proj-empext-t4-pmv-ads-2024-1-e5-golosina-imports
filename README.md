@@ -1,4 +1,4 @@
-# Golosina Imports
+# Golosinas Imports
 
 `Análise e Desenvolvimento de Sistemas`
 
