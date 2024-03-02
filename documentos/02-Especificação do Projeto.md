@@ -8,11 +8,12 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Arquitetura e Tecnologias
 
-o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a serem utilizadas. Sugere-se a criação de um diagrama de componentes da solução.
+Descreva brevemente a arquitetura definida para o projeto e as tecnologias a serem utilizadas. Sugere-se a criação de um diagrama de componentes da solução.
 
 ## Project Model Canvas
+![PMC-A](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/cba1d15a-0c08-449c-abd6-78510390a5f3)
 
-Colocar a imagem do modelo construído apresentando a proposta de solução.
+O PMC também está disponível neste <a href="https://next.canvanizer.com/canvas/rFO5QtCGUN2x7"> link </a>
 
 > **Links Úteis**:
 > Disponíveis em material de apoio do projeto
