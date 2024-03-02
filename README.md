@@ -1,27 +1,23 @@
-# TÍTULO DO PROJETO
+# Golosina Imports
 
-`CURSO`
+`Análise e Desenvolvimento de Sistemas`
 
-`DISCIPLINA`
+`Projeto: Desenvolvimento de um Sistema Sociotécnico Inovador `
 
-`SEMESTRE`
+`Eixo 5 - 2024/1`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O objetivo deste projeto é criar um site responsivo sob medida para um Microempreendedor Individual (MEI) que se concentra na venda de alfajores, aproveitando o crescimento significativo do mercado de doces nos últimos anos. O site terá funcionalidades como sistema de pedidos via redirecionamento para o Whatsapp, área de feedback dos clientes e um blog para compartilhar conteúdo relacionado ao mundo culinário dos doces. 
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Jaynne Polyana Nunes
+* Kelly Cesário de Oliveira
 
 ## Orientador
 
-* Nome completo do professor 1
+* João Carlos Oliveira Caetano
 
 ## Instruções de utilização
-
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
 
 # Documentação
 
