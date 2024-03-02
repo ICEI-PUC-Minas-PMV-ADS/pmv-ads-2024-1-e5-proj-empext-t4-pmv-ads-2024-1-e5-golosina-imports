@@ -13,10 +13,7 @@ Descreva brevemente a arquitetura definida para o projeto e as tecnologias a ser
 ## Project Model Canvas
 ![PMC-A](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/cba1d15a-0c08-449c-abd6-78510390a5f3)
 
-O PMC também está disponível neste <a href="https://next.canvanizer.com/canvas/rFO5QtCGUN2x7"> link </a>
-
-> **Links Úteis**:
-> Disponíveis em material de apoio do projeto
+> O PMC também está disponível neste <a href="https://next.canvanizer.com/canvas/rFO5QtCGUN2x7"> link </a>
 
 ## Requisitos
 
