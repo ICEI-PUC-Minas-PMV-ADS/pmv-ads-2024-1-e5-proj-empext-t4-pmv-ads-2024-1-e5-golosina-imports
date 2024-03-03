@@ -7,8 +7,34 @@ Definição do problema e ideia de solução a partir da perspectiva do usuário
 Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
 
 ## Arquitetura e Tecnologias
+A arquitetura da aplicação será dividida entre um módulo de frontend e um módulo de backend. Optamos por não adicionar uma aplicação mobile por não julgar necessário ao contexto do cliente. 
+O backend da aplicação também se comunicará com um CMS (content management system), que será responsável por armazenar e fornecer dados dos produtos ao backend da aplicação, que por sua vez irá gerenciar os dados recebidos e fornecê-los ao frontend. Além disso, o backend também será responsável pela autenticação de administradores do site, que podem adicionar e remover produtos.
+Para o frontend, optamos por utilizar **React, Typescript e Next.js**. No backend, utilizaremos **Typescript, Express** e **MongoDB** como base de dados.
 
-Descreva brevemente a arquitetura definida para o projeto e as tecnologias a serem utilizadas. Sugere-se a criação de um diagrama de componentes da solução.
+```mermaid
+graph TD
+  subgraph Frontend
+    A[Usuário]
+    B[Interface do Usuário]
+    A -->|Visualiza| B
+  end
+
+  subgraph "Contentful"
+    C[Posts]
+    D[Produtos]
+    E[Contentful]
+    B -->|Recebe conteúdo| C
+    B -->|Recebe conteúdo| D
+    C -->|Fornece conteúdo| E
+    D -->|Fornece conteúdo| E
+  end
+
+  subgraph "Base de Dados"
+    F[Dados de Autenticação]
+  end
+
+  B -->|Autenticação| F
+```
 
 ## Project Model Canvas
 ![PMC-A](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/cba1d15a-0c08-449c-abd6-78510390a5f3)
