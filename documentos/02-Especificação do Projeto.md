@@ -43,36 +43,35 @@ graph TD
 
 ## Requisitos
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
-
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+| ID    | Descrição do Requisito                                              | Prioridade |
+|-------|---------------------------------------------------------------------|------------|
+| RF-001| O site deve exibir os produtos vendidos pela empresa;                | ALTA       |
+| RF-002| O site deve exibir informações sobre os produtos, como nome, fabricante e preço; | ALTA |
+| RF-003| O site deve permitir a busca de produtos pelo nome ou faixa de preço; | ALTA       |
+| RF-004| O site deve conter uma seção com informações sobre a empresa;        | ALTA       |
+| RF-005| O site deve conter uma seção de contato, onde os usuários possam realizar os pedidos diretamente com o vendedor; | ALTA |
+| RF-006| O site deve apresentar uma seção de feedbacks e permitir o envio de feedbacks dos clientes; | ALTA |
+| RF-007| O site deve incluir uma seção de blog com artigos postados regularmente sobre tópicos relacionados à culinária; | ALTA |
+| RF-008| Para comentar nos artigos do blog, os usuários devem se registrar e fazer login em suas contas; | ALTA |
+| RF-009| Os usuários registrados devem ter a capacidade de editar as informações de sua conta, incluindo nome, endereço de entrega e informações de contato; | ALTA |
+| RF-010| Os usuários registrados também devem ter a opção de excluir suas contas, se desejarem; | ALTA |
+| RF-011| O site deve incluir uma seção dedicada de Perguntas Frequentes (FAQ) onde os usuários possam encontrar respostas para dúvidas comuns relacionadas a produtos, pedidos, políticas de envio, entre outros; | MÉDIA |
+| RF-012| O site deve incluir botões de compartilhamento para permitir que os usuários compartilhem produtos específicos ou artigos do blog em suas redes sociais; | MÉDIA |
+| RF-013| O site deve oferecer a opção para os usuários se inscreverem em notificações sobre novos produtos. | BAIXA      |
+
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+| ID    | Descrição do Requisito                                                         | Prioridade |
+|-------|-------------------------------------------------------------------------------------|------------|
+| RF-014| A aplicação deve ser acessível, de acordo com as métricas da extensão Lighthouse;    | ALTA       |
+| RF-015| A aplicação deve atender as métricas de SEO da extensão Lighthouse, para atingir o público-alvo; | ALTA |
+| RF-016| A aplicação deve contar com um sistema PWA, para atender aos clientes que preferem uma experiência similar a de aplicativos; | ALTA |
+| RF-017| A linguagem em que a aplicação será desenvolvida deve ser Typescript;               | ALTA       |
+| RF-018| A aplicação deve ser otimizada para ter um desempenho rápido e responsivo;         | ALTA       |
+| RF-019| O site deve apresentar as informações de forma clara e concisa.                   | ALTA       |
 
 ## Restrições
 
@@ -81,13 +80,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+|02| Somente administradores podem realizar login na aplicação        |
 
 ## Diagrama de Casos de Uso
 
