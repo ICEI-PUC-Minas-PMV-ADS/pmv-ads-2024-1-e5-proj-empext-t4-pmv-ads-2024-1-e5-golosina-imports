@@ -63,12 +63,12 @@ graph TD
 
 | ID    | Descrição do Requisito                                                         | Prioridade |
 |-------|-------------------------------------------------------------------------------------|------------|
-| RF-014| A aplicação deve ser acessível, de acordo com as métricas da extensão Lighthouse;    | ALTA       |
-| RF-015| A aplicação deve atender as métricas de SEO da extensão Lighthouse, para atingir o público-alvo; | ALTA |
-| RF-016| A aplicação deve contar com um sistema PWA, para atender aos clientes que preferem uma experiência similar a de aplicativos; | ALTA |
-| RF-017| A linguagem em que a aplicação será desenvolvida deve ser Typescript;               | ALTA       |
-| RF-018| A aplicação deve ser otimizada para ter um desempenho rápido e responsivo;         | ALTA       |
-| RF-019| O site deve apresentar as informações de forma clara e concisa.                   | ALTA       |
+| RNF-01| A aplicação deve ser acessível, de acordo com as métricas da extensão Lighthouse;    | ALTA       |
+| RNF-02| A aplicação deve atender as métricas de SEO da extensão Lighthouse, para atingir o público-alvo; | ALTA |
+| RNF-03| A aplicação deve contar com um sistema PWA, para atender aos clientes que preferem uma experiência similar a de aplicativos; | ALTA |
+| RNF-04| A linguagem em que a aplicação será desenvolvida deve ser Typescript;               | ALTA       |
+| RNF-05| A aplicação deve ser otimizada para ter um desempenho rápido e responsivo;         | ALTA       |
+| RNF-06| O site deve apresentar as informações de forma clara e concisa.                   | ALTA       |
 
 ## Restrições
 
