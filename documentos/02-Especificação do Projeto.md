@@ -10,6 +10,7 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 A arquitetura da aplicação será dividida entre um módulo de frontend e um módulo de backend. Optamos por não adicionar uma aplicação mobile por não julgar necessário ao contexto do cliente. 
 O backend da aplicação também se comunicará com um CMS (content management system), que será responsável por armazenar e fornecer dados dos produtos ao backend da aplicação, que por sua vez irá gerenciar os dados recebidos e fornecê-los ao frontend. Além disso, o backend também será responsável pela autenticação de administradores do site, que podem adicionar e remover produtos.
 Para o frontend, optamos por utilizar **React, Typescript e Next.js**. No backend, utilizaremos **Typescript, Express** e **MongoDB** como base de dados.
+O frontend da aplicação será hospedado na **Vercel** e o backend, no **Fly.io**. O banco de dados será em nuvem, através do **MongoDB Atlas**.
 
 ```mermaid
 graph TD
