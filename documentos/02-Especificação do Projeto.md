@@ -86,7 +86,11 @@ Temos dois casos de uso principais para o site, com dois atores distintos: usuá
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/103083123/d6dcb0a9-28cc-4cb7-a033-9c4d09dd9f4c)
 
 ### Administrador
+Caso de uso 1: plataforma (site)
 ![admin](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/3fd03cdf-f0d2-40b7-bb5a-91c95b9de6fc)
+
+Caso de uso 2: alterações de posts e produtos através do CMS
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/103083123/ca7bf483-36d8-4473-a8c7-6987d9c16fdc)
 
 
 ## Modelo ER (Projeto Conceitual)
