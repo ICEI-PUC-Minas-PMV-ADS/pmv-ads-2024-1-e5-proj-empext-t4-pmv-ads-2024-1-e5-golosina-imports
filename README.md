@@ -31,8 +31,8 @@ O objetivo deste projeto é criar um site responsivo sob medida para um Microemp
 
 # Código
 
-<li><a href="src/README.md"> Código Fonte</a></li>
+<li><a href="codigo-fonte/README.md"> Código Fonte</a></li>
 
 # Apresentação
 
-<li><a href="presentation/README.md"> Apresentação da solução</a></li>
+<li><a href="apresentacao/README.md"> Apresentação da solução</a></li>
