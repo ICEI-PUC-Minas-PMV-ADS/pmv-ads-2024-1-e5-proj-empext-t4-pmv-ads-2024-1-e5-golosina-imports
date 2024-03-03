@@ -41,6 +41,17 @@
 
 ### Protótipo de Telas
 
+#### Página Inicial, FAQ e Contato
+![1](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/fb53373d-c32c-46d9-98bb-c4e23dc1ea4d)
+
+#### Listagem de Produtos, Página de Produto, Listagem de Artigos e Página de Artigo
+![2](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/f4d2ff3f-76dd-4041-bfde-beb2c5d9d6d5)
+
+#### Login, Cadastro e Alterar Dados do Perfil
+![3](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/b143b4f8-282c-4029-a135-ed924bc5bb59)
+
+### Componentes
+
 ### Páginas
 
 ### Diagrama de Fluxo
