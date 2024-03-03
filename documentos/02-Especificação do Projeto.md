@@ -2,10 +2,6 @@
 
 <span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
-
 ## Arquitetura e Tecnologias
 A arquitetura da aplicação será dividida entre um módulo de frontend e um módulo de backend. Optamos por não adicionar uma aplicação mobile por não julgar necessário ao contexto do cliente. 
 O backend da aplicação também se comunicará com um CMS (content management system), que será responsável por armazenar e fornecer dados dos produtos ao backend da aplicação, que por sua vez irá gerenciar os dados recebidos e fornecê-los ao frontend. Além disso, o backend também será responsável pela autenticação de administradores do site, que podem adicionar e remover produtos.
@@ -90,6 +86,7 @@ Temos dois casos de uso principais para o site, com dois atores distintos: usuá
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/103083123/d6dcb0a9-28cc-4cb7-a033-9c4d09dd9f4c)
 
 ### Administrador
+![admin](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/3fd03cdf-f0d2-40b7-bb5a-91c95b9de6fc)
 
 
 ## Modelo ER (Projeto Conceitual)
