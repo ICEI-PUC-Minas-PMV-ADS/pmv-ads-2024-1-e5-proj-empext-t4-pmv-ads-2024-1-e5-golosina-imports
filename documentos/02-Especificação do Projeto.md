@@ -101,3 +101,5 @@ Caso de uso 2: alterações de posts e produtos através do CMS
 ## Projeto da Base de Dados
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/103083123/40d3eead-3be9-4483-bc95-c8a24ac1b595)
+
+Estas tabelas serão atualizadas após a conclusão da integração com o Contentful.
