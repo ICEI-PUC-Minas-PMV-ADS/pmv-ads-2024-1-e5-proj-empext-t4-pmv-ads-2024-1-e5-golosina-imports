@@ -9,16 +9,16 @@ Nosso cliente é a empresa Golosinas Imports, administrada por um MEI, que tem o
 ## Objetivos
 
 ### Objetivo Geral
-Desenvolver uma plataforma online abrangente para o cliente, por meio de um site responsivo que exibe informações sobre os pedidos vendidos, além de possibilitar a adição de postagens informativas no formato de um blog, com o objetivo de aumentar a visibilidade da marca, impulsionar as vendas e fortalecer o relacionamento com os clientes.
+Desenvolver uma plataforma online abrangente para o cliente, por meio de um site responsivo que exibe informações sobre os produtos vendidos, além de possibilitar a adição de postagens informativas no formato de um blog, com o objetivo de aumentar a visibilidade da marca, impulsionar as vendas e fortalecer o relacionamento com os clientes.
 
 ### Objetivos Específicos
 
 - Criar um site responsivo para o cliente, destacando seus produtos de alfajor de forma atrativa e informativa.
 - Implementar um sistema de pedidos que permita aos clientes fazerem pedidos de forma fácil e conveniente, como um redirecionamento para as redes sociais da marca.
 - Integrar um sistema de feedback para coletar opiniões dos clientes e melhorar continuamente os produtos e serviços oferecidos.
-- Estabelecer um blog no site para compartilhar conteúdo relevante sobre o mundo culinário dos doces, visando engajar e educar os clientes.
+- Estabelecer um blog no site para compartilhar conteúdo relevante sobre o mundo culinário dos doces, visando engajar e informar os clientes.
 - Fortalecer o relacionamento entre a empresa e os seus clientes
-- Facilitar a divulgação da marca Golosinas Imports
+- Facilitar e fortalecer a divulgação da marca Golosinas Imports
 - Atrair um público maior
 - Aumentar as vendas
 
