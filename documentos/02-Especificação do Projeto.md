@@ -55,7 +55,7 @@ graph TD
 | RF-006| O site deve apresentar uma seção de feedbacks e permitir o envio de feedbacks dos clientes; | ALTA |
 | RF-007| O site deve incluir uma seção de blog com artigos postados regularmente sobre tópicos relacionados à culinária; | ALTA |
 | RF-008| Para comentar nos artigos do blog, os usuários devem se registrar e fazer login em suas contas; | ALTA |
-| RF-009| Os usuários registrados devem ter a capacidade de editar as informações de sua conta, incluindo nome, endereço de entrega e informações de contato; | ALTA |
+| RF-009| Os usuários registrados devem ter a capacidade de editar as informações de sua conta, incluindo nome e informações de contato; | ALTA |
 | RF-010| Os usuários registrados também devem ter a opção de excluir suas contas, se desejarem; | ALTA |
 | RF-011| O site deve incluir uma seção dedicada de Perguntas Frequentes (FAQ) onde os usuários possam encontrar respostas para dúvidas comuns relacionadas a produtos, pedidos, políticas de envio, entre outros; | MÉDIA |
 | RF-012| O site deve incluir botões de compartilhamento para permitir que os usuários compartilhem produtos específicos ou artigos do blog em suas redes sociais; | MÉDIA |
