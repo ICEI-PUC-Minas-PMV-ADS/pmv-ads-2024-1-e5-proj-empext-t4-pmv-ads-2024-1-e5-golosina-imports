@@ -106,3 +106,10 @@ Caso de uso 2: alterações de posts e produtos através do CMS
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/103083123/40d3eead-3be9-4483-bc95-c8a24ac1b595)
 
 Estas tabelas serão atualizadas após a conclusão da integração com o Contentful.
+
+## Gerenciamento
+
+![2](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/064320e3-18a0-4a0d-92f9-5bbe3f672da2)
+
+![1](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/530b7abb-7bfa-49cd-9f87-de397f31ce46)
+
