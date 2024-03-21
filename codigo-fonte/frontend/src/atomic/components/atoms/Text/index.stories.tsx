@@ -1,23 +1,21 @@
-import { Heading } from "./index";
+import { Text } from "./index";
 
 export default {
-  title: "Atoms/Heading",
-  component: Heading,
+  title: "Atoms/Text",
+  component: Text,
   tags: ["autodocs"],
   parameters: {
     layout: "padded",
   },
   args: {
-    level: "1",
     align: "center",
-    color: "wenge",
-    children: "Title example",
+    color: "dark-gray",
+    children: "Text example",
+    weight: "600",
+    lineHeight: "",
+    letterSpacing: "",
   },
   argTypes: {
-    level: {
-      control: { type: "select" },
-      options: ["1", "2", "3", "4", "5", "6"],
-    },
     align: {
       control: { type: "select" },
       options: ["right", "center", "left"],
@@ -35,6 +33,14 @@ export default {
         "seashell",
         "desert-sand",
       ],
+    },
+    lineHeight: {
+      control: { type: "inline-radio" },
+      options: ["3rem", "4.4rem"],
+    },
+    letterSpacing: {
+      control: { type: "inline-radio" },
+      options: ["0.05rem", "0.015rem"],
     },
   },
 };
