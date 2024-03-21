@@ -71,3 +71,30 @@
     font-weight: 700;
   }
 }
+
+@mixin buttonLevels() {
+  &--primary {
+    background-color: $rose-taupe;
+    color: $white;
+    border: none;
+  }
+
+  &--secondary {
+    background-color: $dark-gray;
+    color: $white;
+    border: none;
+  }
+
+  &--tertiary {
+    background-color: $white;
+    color: $rose-taupe;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0.4rem 1.2rem;
+  }
+
+  &--quaternary {
+    background-color: $white;
+    color: $rose-taupe;
+    border: 0.1rem solid $rose-taupe;
+  }
+}
