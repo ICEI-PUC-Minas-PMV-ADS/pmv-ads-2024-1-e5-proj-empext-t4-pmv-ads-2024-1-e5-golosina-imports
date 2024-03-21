@@ -1,6 +1,10 @@
+import { Header } from "@/atomic/components/organisms/Header";
+import { Footer } from "@/atomic/components/organisms/Footer";
+import styles from "./layout.module.scss";
+
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import '@/styles/main.scss'
+import "@/styles/main.scss";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,7 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={[poppins.className, styles.layout].join(" ")}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

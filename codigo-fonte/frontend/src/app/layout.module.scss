@@ -1,0 +1,11 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 2rem;
+  gap: 4rem;
+
+  @include screen-size("desktop") {
+    padding: 4rem;
+    gap: 8rem;
+  }
+}
