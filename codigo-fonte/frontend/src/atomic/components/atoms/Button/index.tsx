@@ -11,13 +11,10 @@ interface ButtonProps {
     e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>
   ) => void;
   target?: string;
-  type?: string;
-  size?: string;
   aria?: string;
   role?: string;
-  children?: React.ReactNode;
   tabIndex?: number;
-  disabled?: boolean;
+  weight?: string;
 }
 
 export const Button = ({
@@ -28,18 +25,27 @@ export const Button = ({
   level,
   onClick,
   target,
-  size,
   aria,
   role,
   tabIndex,
-  disabled,
+  weight,
 }: ButtonProps) => {
+  const buttonStyle = [
+    styles.button,
+    styles[`button--${level}`],
+    className,
+  ].join(" ");
+
+  const linkStyle = [styles.link, styles[`link--${weight}`], className].join(
+    " "
+  );
+
   return (
     <>
       {isButton ? (
         <button
           onClick={onClick}
-          className={className}
+          className={buttonStyle}
           aria-label={aria}
           role={role}
           tabIndex={tabIndex}
@@ -50,7 +56,7 @@ export const Button = ({
         <Link
           href={href || ""}
           target={target}
-          className={className}
+          className={linkStyle}
           role={role}
           onClick={onClick}
         >
