@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    @include screen-size("desktop") {
+      gap: 4rem;
+    }
+  }
+}
