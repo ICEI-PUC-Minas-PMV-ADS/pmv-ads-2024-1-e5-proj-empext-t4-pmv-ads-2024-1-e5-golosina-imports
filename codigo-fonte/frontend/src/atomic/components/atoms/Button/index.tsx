@@ -36,9 +36,13 @@ export const Button = ({
     className,
   ].join(" ");
 
-  const linkStyle = [styles.link, styles[`link--${weight}`], className].join(
-    " "
-  );
+  const linkStyle = [
+    styles.link,
+    styles[`link--${weight}`],
+    !isButton && level ? styles[`link--${level}`] : "",
+    !isButton && !level && styles[`link--hover`],
+    className,
+  ].join(" ");
 
   return (
     <>

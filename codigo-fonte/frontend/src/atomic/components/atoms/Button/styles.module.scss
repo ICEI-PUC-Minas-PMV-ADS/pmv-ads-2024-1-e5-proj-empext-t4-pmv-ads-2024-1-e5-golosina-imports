@@ -4,7 +4,7 @@
   justify-content: center;
   font-size: 1.4rem;
   font-weight: 600;
-  padding: 2rem;
+  padding: 2rem 6rem;
   line-height: 1.8rem;
   border-radius: 0.2rem;
   cursor: pointer;
@@ -20,44 +20,24 @@
     font-size: 1.8rem;
   }
 
-  &--primary {
-    background-color: $rose-taupe;
-    color: $white;
-    border: none;
-  }
-
-  &--secondary {
-    background-color: $dark-gray;
-    color: $white;
-    border: none;
-  }
-
-  &--tertiary {
-    background-color: $white;
-    color: $rose-taupe;
-    border: none;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 0.4rem 1.2rem;
-  }
-
-  &--quaternary {
-    background-color: $white;
-    color: $rose-taupe;
-    border: 0.1rem solid $rose-taupe;
-  }
+  @include buttonLevels();
 }
 
 .link {
+  @extend .button;
   color: $dark-gray;
   text-decoration: none;
-  font-size: 1.4rem;
 
-  &:hover {
-    text-decoration: underline $rose-taupe 0.4rem;
-  }
+  &--hover {
+    &:hover {
+      text-decoration: underline 0.4rem;
 
-  @include screen-size("desktop") {
-    font-size: 1.8rem;
+      background-color: transparent;
+      color: $rose-taupe;
+      border: none;
+    }
   }
 
   @include weight;
+  @include buttonLevels();
 }
