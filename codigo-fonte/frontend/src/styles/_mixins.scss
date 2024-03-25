@@ -97,4 +97,10 @@
     color: $rose-taupe;
     border: 0.1rem solid $rose-taupe;
   }
+
+  &--quinary {
+    background-color: transparent;
+    color: $white;
+    border: 0.1rem solid $white;
+  }
 }
