@@ -20,7 +20,9 @@
     "baseUrl": "./src/",
     "paths": {
       "@/*": ["./*"],
-      "@/atomic/components/*": ["atomic/components/*"],
+      "@/atoms/*": ["atomic/components/atoms/*"],
+      "@/molecules/*": ["atomic/components/molecules/*"],
+      "@/organisms/*": ["atomic/components/organisms/*"],
       "@/styles/*": ["styles/*"],
       "@/data/*": ["data/*"],
       "@/utils/*": ["utils/*"]
