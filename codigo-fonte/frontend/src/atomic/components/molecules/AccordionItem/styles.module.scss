@@ -1,0 +1,20 @@
+.accordionItem {
+  padding: 2rem;
+  border-radius: 0.6rem;
+  border: 0.1rem solid $desert-sand;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $dark-gray;
+    font-size: 1.8rem;
+    line-height: 4.4rem;
+    letter-spacing: 0.05rem;
+    font-weight: 600;
+
+    @include screen-size("desktop") {
+      font-size: 2rem;
+    }
+  }
+}

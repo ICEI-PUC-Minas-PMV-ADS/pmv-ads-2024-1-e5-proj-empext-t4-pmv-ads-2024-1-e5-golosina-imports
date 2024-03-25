@@ -1,5 +1,5 @@
-import { ListItem } from "@/atomic/components/atoms/ListItem";
-import { Text } from "@/atomic/components/atoms/Text";
+import { ListItem } from "@/atoms/ListItem";
+import { Text } from "@/atoms/Text";
 import styles from "./styles.module.scss";
 import navigation from "@/data/navigation.json";
 

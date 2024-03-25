@@ -78,6 +78,15 @@ export const Quaternary: Story = {
     isButton: true,
   },
 };
+export const Quinary: Story = {
+  args: {
+    level: "quinary",
+    isButton: true,
+  },
+  parameters: {
+    backgrounds: { default: "dark-mode" },
+  },
+};
 export const Link: Story = {
   args: {
     isButton: false,
