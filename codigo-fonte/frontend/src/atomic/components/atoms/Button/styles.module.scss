@@ -21,6 +21,7 @@
   }
 
   @include buttonLevels();
+  @include buttonSizes();
 }
 
 .link {
@@ -40,4 +41,5 @@
 
   @include weight;
   @include buttonLevels();
+  @include buttonSizes();
 }

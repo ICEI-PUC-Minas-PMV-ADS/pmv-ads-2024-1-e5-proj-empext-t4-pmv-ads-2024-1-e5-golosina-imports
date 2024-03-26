@@ -15,6 +15,7 @@ interface ButtonProps {
   role?: string;
   tabIndex?: number;
   weight?: string;
+  size?: string
 }
 
 export const Button = ({
@@ -29,16 +30,19 @@ export const Button = ({
   role,
   tabIndex,
   weight,
+  size
 }: ButtonProps) => {
   const buttonStyle = [
     styles.button,
     styles[`button--${level}`],
+    styles[`button--${size}`],
     className,
   ].join(" ");
 
   const linkStyle = [
     styles.link,
     styles[`link--${weight}`],
+    styles[`link--${size}`],
     !isButton && level ? styles[`link--${level}`] : "",
     !isButton && !level && styles[`link--hover`],
     className,

@@ -1,0 +1,48 @@
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  border-radius: 0.6rem;
+  background-color: $white;
+  overflow-wrap: break-word;
+
+  @include screen-size("desktop") {
+    max-width: 44rem;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__image {
+    object-fit: cover;
+    border-radius: 50%;
+    gap: 2rem;
+    background-color: $light-blue;
+  }
+
+  &__user {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__rate {
+    font-size: 1.2rem;
+    color: $light-blue;
+
+    @include screen-size("desktop") {
+      font-size: 1.6rem;
+    }
+  }
+}

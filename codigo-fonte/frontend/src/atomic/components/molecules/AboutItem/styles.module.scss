@@ -1,0 +1,11 @@
+.aboutItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+}
