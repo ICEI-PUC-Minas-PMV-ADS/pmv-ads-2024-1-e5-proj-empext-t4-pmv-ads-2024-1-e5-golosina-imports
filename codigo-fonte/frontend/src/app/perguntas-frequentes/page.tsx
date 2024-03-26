@@ -1,9 +1,10 @@
 import { BannerCTA } from "@/organisms/CTABanner";
 import { Accordion } from "@/organisms/Accordion";
+import styles from "./page.module.scss";
 
 export default function Faq() {
   return (
-    <main>
+    <main className={styles.faq}>
       <Accordion />
       <BannerCTA
         cta="Peça já a sua golosina importada"
