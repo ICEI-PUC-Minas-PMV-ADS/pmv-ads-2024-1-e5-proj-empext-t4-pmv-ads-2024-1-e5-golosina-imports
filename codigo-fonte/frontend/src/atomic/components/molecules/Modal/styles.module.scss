@@ -1,0 +1,34 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 25rem;
+  border: solid 0.1rem $wenge;
+  border-radius: 0.6rem;
+  padding: 2rem;
+
+  @include screen-size("tablet") {
+    width: 50rem;
+}
+
+  &__closeIcon {
+    align-self: flex-end;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+
+    @include screen-size("tablet") {
+      flex-direction: row;
+    }
+  }
+}

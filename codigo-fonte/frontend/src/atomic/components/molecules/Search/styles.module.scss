@@ -1,0 +1,20 @@
+.search {
+  display: flex;
+  align-items: center;
+  border: solid 0.1rem $wenge;
+  border-radius: 0.6rem;
+  padding: 2rem 1rem;
+  gap: 2rem;
+
+  &__input {
+    font-family: "Poppins";
+    color: $wenge;
+    font-size: 1.4rem;
+    width: 100%;
+    outline: none;
+
+    @include screen-size("desktop") {
+      font-size: 2rem;
+    }
+  }
+}

@@ -20,12 +20,16 @@ export const ProductCard = ({
       className={styles.card}
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      {/* <div className={styles.card__container}> */}
-        <p className={styles.card__title}>{title}</p>
-      {/* </div> */}
+      <p className={styles.card__title}>{title}</p>
       <div className={styles.card__cta}>
         <Text align="left" children={`R$ ${price}`} color="white" />
-        <Button href={slug} isButton={false} label="Comprar" level="tertiary" size="small" />
+        <Button
+          href={slug}
+          isButton={false}
+          label="Comprar"
+          level="tertiary"
+          size="small"
+        />
       </div>
     </article>
   );
