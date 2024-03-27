@@ -9,7 +9,7 @@ export default {
   },
   args: {
     cta: "Peça já a sua golosina importada",
-    backgroundImage: "/images/cta.png",
+    backgroundImage: "/images/cta3.jpg",
   },
   argTypes: {},
 };

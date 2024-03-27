@@ -5,7 +5,7 @@ export default function Article() {
     <main>
       <BannerCTA
         cta="Peça já a sua golosina importada"
-        backgroundImage="images/cta.png"
+        backgroundImage="images/cta3.jpg"
       />
     </main>
   );

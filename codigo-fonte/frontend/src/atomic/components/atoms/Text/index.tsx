@@ -5,7 +5,7 @@ interface TextProps {
   children?: string;
   color?: string;
   weight?: string;
-  lineHeight?: "3rem" | "4.4rem";
+  lineHeight?: "3rem" | "3.8rem" | "4.4rem";
   letterSpacing?: "0.05rem" | "0.015rem";
 }
 export const Text = ({

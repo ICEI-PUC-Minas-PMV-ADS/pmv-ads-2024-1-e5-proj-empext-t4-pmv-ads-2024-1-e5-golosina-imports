@@ -18,7 +18,12 @@
     align-items: center;
     justify-content: center;
     height: -webkit-fill-available;
-    padding: 4rem 0 0 0;
+    padding: 10rem 0 0 0;
+
+    @include screen-size("tablet") {
+      padding: 6rem 0 0 0;
+    }
+    
     @include screen-size("desktop") {
       font-size: 6.8rem;
     }

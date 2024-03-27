@@ -17,22 +17,22 @@ export const Testimonials = () => {
           name="aaaa"
           location="Brasil"
           rate={5}
-          feedback="Loremmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"
-          image=""
+          feedback="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+          image="/images/bg-alfajor.png"
         />
         <Testimonial
           name="aaaa"
           location="Brasil"
           rate={5}
-          feedback="Loremmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"
-          image=""
+          feedback="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+          image="/images/bg-alfajor.png"
         />
         <Testimonial
           name="aaaa"
           location="Brasil"
           rate={5}
-          feedback="Loremmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"
-          image=""
+          feedback="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+          image="/images/bg-alfajor.png"
         />
       </div>
     </section>

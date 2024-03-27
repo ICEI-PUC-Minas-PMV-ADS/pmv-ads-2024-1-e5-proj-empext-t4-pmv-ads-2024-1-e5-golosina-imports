@@ -1,7 +1,9 @@
+import { Testimonials } from "@/organisms/Testimonials";
+
 export default function Product() {
-    return (
-      <main>
-      </main>
-    );
-  }
-  
+  return (
+    <main>
+      <Testimonials />
+    </main>
+  );
+}
