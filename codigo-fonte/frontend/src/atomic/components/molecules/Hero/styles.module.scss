@@ -5,6 +5,14 @@
   gap: 2rem;
   padding: 6rem 0 0;
 
+  &__heading {
+    @include screen-size("desktop") {
+      padding-inline: 32rem;
+      max-width: 144rem;
+      margin: 0 auto;
+    }
+  }
+
   &__buttons {
     @extend .hero;
     padding: 0;

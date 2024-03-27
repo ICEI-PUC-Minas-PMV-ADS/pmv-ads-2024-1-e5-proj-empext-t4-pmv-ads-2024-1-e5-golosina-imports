@@ -20,7 +20,7 @@ export const ArticleCard = ({
   slug,
 }: ArticleCardProps) => {
   const { width } = useWindowSize();
-  const imageWidth = width < 1024 ? 335 : 669;
+  const imageWidth = width < 1024 ? 335 : 680;
   const imageHeight = width < 1024 ? 146 : 263;
   return (
     <Link href={slug}>
@@ -56,6 +56,7 @@ export const ArticleCard = ({
             width={imageWidth}
             height={imageHeight}
             className={styles.card__image}
+            priority={true}
           />
         </div>
       </article>

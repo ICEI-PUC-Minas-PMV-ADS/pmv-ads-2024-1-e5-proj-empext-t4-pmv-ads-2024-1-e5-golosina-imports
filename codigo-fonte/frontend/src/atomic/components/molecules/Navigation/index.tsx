@@ -1,3 +1,4 @@
+import { usePathname } from "next/navigation";
 import { useWindowSize } from "react-use";
 import { useState } from "react";
 import { List, X } from "@phosphor-icons/react/dist/ssr";
@@ -17,6 +18,8 @@ export const Navigation = () => {
   };
 
   const isMobile = width < 768;
+
+  const pathname = usePathname();
 
   return (
     <div className={styles.navigation}>
@@ -40,6 +43,7 @@ export const Navigation = () => {
                 href={item.href}
                 isLink={true}
                 align="center"
+                weight={pathname === item.href ? "600" : "400"}
               />
             ))}
           </ul>

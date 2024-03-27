@@ -1,9 +1,14 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { ListItem } from "@/atoms/ListItem";
 import { Text } from "@/atoms/Text";
 import styles from "./styles.module.scss";
 import navigation from "@/data/navigation.json";
 
 export const Footer = () => {
+  const pathname = usePathname();
+
   return (
     <footer className={styles.footer}>
       <Text
@@ -19,7 +24,7 @@ export const Footer = () => {
               href={item.href}
               isLink={true}
               align="center"
-              weight="400"
+              weight={pathname === item.href ? "600" : "400"}
             />
           ))}
         </ul>
