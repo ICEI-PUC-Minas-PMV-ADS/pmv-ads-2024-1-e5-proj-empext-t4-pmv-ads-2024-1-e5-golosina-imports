@@ -1,34 +1,18 @@
 [
     {
-        "title": "Lorem ipsum dolor sit amet",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "title": "Como faço para comprar?",
+        "text": "Para realizar a compra, escolha o produto do seu interesse e clique em \"comprar\". Você será redirecionado para o whatsapp de nossos vendedores."
     },
     {
-        "title": "Lorem ipsum dolor sit amet",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "title": "Os doces vêm realmente da Argentina?",
+        "text": "Todos nossos sabores são trazidos diretamente da Argentina, pelos nossos vendedores"
     },
     {
-        "title": "Lorem ipsum dolor sit amet",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "title": "Posso encomendar pedidos?",
+        "text": "Claro! Para realizar alguma encomenda ou pedido especial, clique em \"fale conosco\" e tenha um atendimento personalizado"
     },
     {
-        "title": "Lorem ipsum dolor sit amet",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-        "title": "Lorem ipsum dolor sit amet",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-        "title": "Lorem ipsum dolor sit amet",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-        "title": "Lorem ipsum dolor sit amet",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-        "title": "Lorem ipsum dolor sit amet",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "title": "São realizadas entregas?",
+        "text": "Entregas podem ser realizadas a depender da região. Entre em contato conosco para conhecer as opções"
     }
 ]
