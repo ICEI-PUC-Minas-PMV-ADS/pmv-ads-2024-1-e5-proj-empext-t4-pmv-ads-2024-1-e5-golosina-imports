@@ -6,6 +6,7 @@
   width: min-content;
   margin: 0 auto;
   max-width: 144rem;
+  padding-inline: 2rem;
 
   @include screen-size("tablet") {
     align-items: flex-end;
