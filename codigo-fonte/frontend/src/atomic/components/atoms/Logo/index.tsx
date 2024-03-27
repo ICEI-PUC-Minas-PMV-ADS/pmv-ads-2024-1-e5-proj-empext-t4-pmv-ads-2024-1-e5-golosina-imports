@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const Logo = () => {
   return (
-    <Link href="/">
+    <Link href="/" aria-label="página inicial">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="129"
