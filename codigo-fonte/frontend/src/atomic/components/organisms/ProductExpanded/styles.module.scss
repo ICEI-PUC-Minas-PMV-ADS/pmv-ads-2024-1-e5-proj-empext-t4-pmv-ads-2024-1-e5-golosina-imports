@@ -1,0 +1,58 @@
+.productExpanded {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  @include screen-size("desktop") {
+    max-width: 144rem;
+    padding-inline: 15.5rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include screen-size("desktop") {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      justify-items: end;
+      border-bottom: solid 0.1rem $desert-sand;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include screen-size("desktop") {
+      gap: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: solid 0.1rem $desert-sand;
+
+    @include screen-size("desktop") {
+      border-bottom: none;
+    }
+  }
+
+  &__share {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  &__banner {
+    @include screen-size("desktop") {
+      margin: 8rem 0;
+    }
+  }
+}

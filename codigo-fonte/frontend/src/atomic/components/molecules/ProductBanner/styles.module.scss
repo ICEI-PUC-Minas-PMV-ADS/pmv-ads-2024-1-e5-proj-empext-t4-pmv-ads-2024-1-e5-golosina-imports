@@ -1,0 +1,58 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include screen-size("tablet") {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: stretch;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+
+    @include screen-size("tablet") {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+  }
+
+  &__imageContainer {
+    @include screen-size("tablet") {
+      grid-area: 1 / 1 / 4 / 2;
+    }
+  }
+
+  &__image {
+    border-radius: 0.6rem;
+    object-fit: cover;
+
+    @include screen-size("tablet") {
+      height: -webkit-fill-available;
+    }
+  }
+
+  &__information {
+    padding: 6.5rem 3rem;
+    border-radius: 0.6rem;
+    border: solid 0.1rem $dark-gray;
+    height: -webkit-fill-available;
+
+    @include screen-size("tablet") {
+      grid-area: 2 / 2 / 3 / 3;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+
+    @include screen-size("tablet") {
+      grid-area: 3 / 2 / 4 / 3;
+    }
+  }
+}

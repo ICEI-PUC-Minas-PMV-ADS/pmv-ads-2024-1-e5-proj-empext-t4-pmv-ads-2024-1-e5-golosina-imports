@@ -6,7 +6,7 @@ import {
 import { Text } from "@/atoms/Text";
 import styles from "./styles.module.scss";
 
-type SocialMediaType = "whatsapp" | "instagram" | "telegram";
+export type SocialMediaType = "whatsapp" | "instagram" | "telegram";
 
 interface ShareProps {
   socialMedia: SocialMediaType;
