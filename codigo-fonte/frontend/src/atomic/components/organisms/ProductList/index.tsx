@@ -44,7 +44,7 @@ export const ProductList = () => {
       </div>
       {isHome && (
         <Button
-          href="/products"
+          href="/produtos"
           isButton={false}
           label="Conhecer todas golosinas"
           level="secondary"
