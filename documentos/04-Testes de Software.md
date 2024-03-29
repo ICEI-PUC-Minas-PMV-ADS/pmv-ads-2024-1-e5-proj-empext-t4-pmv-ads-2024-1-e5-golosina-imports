@@ -1,4 +1,4 @@
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/103083123/5db1728a-f07b-4b02-9abc-814d54029f83)![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/103083123/5e8d6a6e-4328-4090-9fae-bfeb2c3f4ddf)# Planos de Testes de Software
+# Planos de Testes de Software
 
 ## Qualidade de Software
 
