@@ -42,4 +42,5 @@ Para reproduzir os testes de acessibilidade do Storybook para todos os component
 
 Realizamos também testes utilizando o Lighthouse, cujos resultados estão abaixo:
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/103083123/cb440036-dd82-4055-bef1-d00154257c77)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/103083123/2f8e7282-97e6-4520-8baf-885e4b7bbb46)
 
