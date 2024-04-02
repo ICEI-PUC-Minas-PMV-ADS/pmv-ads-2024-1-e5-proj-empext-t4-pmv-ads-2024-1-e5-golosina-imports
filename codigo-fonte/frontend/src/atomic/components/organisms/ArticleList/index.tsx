@@ -39,9 +39,9 @@ export const ArticleList = () => {
       {isHome && (
         <div className={styles.articleList__button}>
           <Button
-            href="/produtos"
+            href="/blog"
             isButton={false}
-            label="Conhecer todas golosinas"
+            label="Conhecer mais artigos"
             level="secondary"
           />
         </div>

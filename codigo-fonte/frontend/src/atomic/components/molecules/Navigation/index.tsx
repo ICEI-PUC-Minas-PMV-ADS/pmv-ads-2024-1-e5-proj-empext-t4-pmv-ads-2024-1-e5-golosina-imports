@@ -4,7 +4,7 @@ import { useState } from "react";
 import { List, X } from "@phosphor-icons/react/dist/ssr";
 import { ListItem } from "@/atoms/ListItem";
 import { Button } from "@/atoms/Button";
-import { Logo } from "@/atoms/Logo"
+import { Logo } from "@/atoms/Logo";
 import styles from "./styles.module.scss";
 import navigation from "@/data/navigation.json";
 
@@ -27,9 +27,9 @@ export const Navigation = () => {
         <Logo />
         {isMobile ? (
           isOpen ? (
-            <X size={32} onClick={toggleMenu} color="#9D5C63"/>
+            <X size={32} onClick={toggleMenu} color="#9D5C63" />
           ) : (
-            <List size={32} onClick={toggleMenu} color="#9D5C63"/>
+            <List size={32} onClick={toggleMenu} color="#9D5C63" />
           )
         ) : null}
       </div>
@@ -47,7 +47,12 @@ export const Navigation = () => {
               />
             ))}
           </ul>
-          <Button level="primary" label="Comprar" isButton={false} href="/produtos" />
+          <Button
+            level="primary"
+            label="Entrar"
+            isButton={false}
+            href="/login"
+          />
         </nav>
       )}
     </div>

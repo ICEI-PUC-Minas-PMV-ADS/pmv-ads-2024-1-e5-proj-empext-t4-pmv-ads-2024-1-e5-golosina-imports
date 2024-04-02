@@ -1,0 +1,49 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-inline: 2rem;
+  max-width: 144rem;
+  margin: 0 auto;
+
+  @include screen-size("desktop") {
+    font-size: 4rem;
+  }
+
+  &__fieldset {
+    display: flex;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1rem;
+    border: 0.1rem solid $dark-gray;
+    border-radius: 0.6rem;
+  }
+
+  &__label {
+    color: $rose-taupe;
+    font-size: 1.8rem;
+    line-height: 4.4rem;
+    letter-spacing: 0.05rem;
+    font-weight: 600;
+
+    @include screen-size("desktop") {
+      font-size: 2rem;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    outline: none;
+    font-size: 1.4rem;
+
+    &::placeholder {
+      color: $dark-gray;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

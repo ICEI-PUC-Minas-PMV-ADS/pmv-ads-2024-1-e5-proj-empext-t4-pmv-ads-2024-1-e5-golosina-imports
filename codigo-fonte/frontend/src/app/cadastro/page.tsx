@@ -1,7 +1,9 @@
+import { RegisterBanner } from "@/organisms/RegisterBanner";
+
 export default function Register() {
-    return (
-      <main>
-      </main>
-    );
-  }
-  
+  return (
+    <main>
+      <RegisterBanner />
+    </main>
+  );
+}

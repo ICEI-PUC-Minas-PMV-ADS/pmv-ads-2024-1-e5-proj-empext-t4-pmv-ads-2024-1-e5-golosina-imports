@@ -14,5 +14,9 @@
     {
         "children": "FAQ",
         "href": "/perguntas-frequentes"
+    },
+    {
+        "children": "Perfil",
+        "href": "/perfil"
     }
 ]
