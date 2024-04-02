@@ -4,6 +4,7 @@ import { NotePencil } from "@phosphor-icons/react/dist/ssr";
 import { useForm } from "react-hook-form";
 import { Button } from "@/atoms/Button";
 import styles from "./styles.module.scss";
+
 export const ProfileForm = () => {
   const {
     register,
