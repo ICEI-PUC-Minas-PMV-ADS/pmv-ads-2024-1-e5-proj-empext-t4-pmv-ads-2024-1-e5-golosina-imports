@@ -23,7 +23,7 @@ export const ArticleCard = ({
   const imageWidth = width < 1024 ? 335 : 680;
   const imageHeight = width < 1024 ? 146 : 263;
   return (
-    <Link href={slug}>
+    <Link href={`blog/${slug}/`}>
       <article className={styles.card}>
         <div className={styles.card__content}>
           <Text

@@ -12,7 +12,7 @@ const dummyCardData = {
   title: "Title",
   price: "7,90",
   backgroundImage: "/images/bg-alfajor.png",
-  slug: "placeholder",
+  slug: "this-is-a-product",
 };
 
 export const ProductList = () => {

@@ -11,7 +11,7 @@ const dummyCardData = {
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   image: "/images/alfajor.jpg",
-  slug: "placeholder",
+  slug: "this-is-an-article",
 };
 
 export const ArticleList = () => {

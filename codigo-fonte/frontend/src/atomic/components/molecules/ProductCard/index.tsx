@@ -24,7 +24,7 @@ export const ProductCard = ({
       <div className={styles.card__cta}>
         <Text align="left" children={`R$ ${price}`} color="white" />
         <Button
-          href={slug}
+          href={`/produtos/${slug}`}
           isButton={false}
           label="Comprar"
           level="tertiary"
