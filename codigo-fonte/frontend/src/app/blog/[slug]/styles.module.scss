@@ -1,0 +1,17 @@
+.article {
+  &__comments {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    max-width: 144rem;
+    margin: 0 auto;
+    padding-inline: 2rem;
+    margin-top: 4rem;
+
+    @include screen-size("desktop") {
+      gap: 8rem;
+      padding-inline: 15.5rem;
+      margin-top: 8rem;
+    }
+  }
+}

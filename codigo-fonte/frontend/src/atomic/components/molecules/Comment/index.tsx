@@ -1,30 +1,33 @@
-import { Button } from "@/atoms/Button";
-import { PencilSimple } from "@phosphor-icons/react/dist/ssr";
+import Image from "next/image";
+import { Text } from "@/atoms/Text";
 import styles from "./styles.module.scss";
+import userImages from '@/data/userImages.json'
 
 interface CommentProps {
-  text: string;
-  placeholder: string;
+  name: string;
+  comment: string;
 }
 
-export const Comment = ({ text, placeholder }: CommentProps) => {
+export const Comment = ({ name, comment }: CommentProps) => {
+  const images = userImages.userImages;
+  const randomImage =
+  images[Math.floor(Math.random() * images.length)];
+  
   return (
-    <div className={styles.comment}>
-      <label htmlFor="comment" className={styles.comment__label}>
-        Deixe aqui seu comentário
-      </label>
-      <div className={styles.comment__container}>
-        <PencilSimple size={32} color="#9D5C63" />
-        <textarea
-          placeholder={placeholder}
-          className={styles.comment__textarea}
-          id="comment"
-/>
+    <div className={styles.comment} tabIndex={0}>
+      <div className={styles.comment__user}>
+        <Image
+          src={randomImage}
+          alt=""
+          width={65}
+          height={65}
+          className={styles.comment__image}
+        />
+        <Text align="center" children={name} color="dark-gray" weight="600" />
       </div>
-      <div className={styles.comment__buttons}>
-        <Button label="Enviar comentário" level="secondary" />
-        <Button label="Cancelar" level="quaternary" />
-      </div>
+      <p className={styles.comment__text} tabIndex={0}>
+        {comment}
+      </p>
     </div>
   );
 };

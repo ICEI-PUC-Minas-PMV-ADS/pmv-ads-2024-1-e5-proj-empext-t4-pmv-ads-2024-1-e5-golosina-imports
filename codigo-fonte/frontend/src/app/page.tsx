@@ -13,7 +13,7 @@ export default function Home() {
       <div className={styles.homepage__cta}>
         <BannerCTA
           cta="Peça já a sua golosina importada"
-          backgroundImage="images/cta3.jpg"
+          backgroundImage="/images/cta3.jpg"
         />
       </div>
     </main>
