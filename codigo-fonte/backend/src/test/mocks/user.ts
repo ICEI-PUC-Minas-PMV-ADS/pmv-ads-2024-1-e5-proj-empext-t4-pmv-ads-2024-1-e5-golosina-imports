@@ -17,23 +17,5 @@ export const userDbReturn = {
     name: 'joao',
     email: 'joao@123test.com',
     password: 'teste',
-    habits: [
-        {
-            title: 'titulo 123 teste',
-            description: 'descricao3456',
-            category: 'Sem categoria',
-            createdAt: dateObject,
-            daysChecked: [],
-            id: "65209c6c744239b050f6a850"
-        },
-        {
-            title: 'titulo 123 teste',
-            description: 'descricao3456',
-            category: 'Sem categoria',
-            createdAt: dateObject,
-            daysChecked: [],
-            id: "65209d0e508281dc5340d025"
-        },
-    ],
     __v: 10
 }
