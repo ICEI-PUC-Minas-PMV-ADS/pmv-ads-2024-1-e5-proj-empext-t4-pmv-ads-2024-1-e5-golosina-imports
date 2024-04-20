@@ -25,7 +25,8 @@
       "@/organisms/*": ["atomic/components/organisms/*"],
       "@/styles/*": ["styles/*"],
       "@/data/*": ["data/*"],
-      "@/utils/*": ["utils/*"]
+      "@/utils/*": ["utils/*"],
+      "@/api/*":["api/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

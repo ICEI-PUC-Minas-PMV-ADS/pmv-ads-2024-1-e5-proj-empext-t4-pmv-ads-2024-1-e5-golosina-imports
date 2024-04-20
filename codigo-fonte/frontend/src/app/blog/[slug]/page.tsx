@@ -1,17 +1,31 @@
 import { Comment } from "@/atomic/components/molecules/Comment";
 import { NewComment } from "@/atomic/components/molecules/NewComment";
-import { ArticleExpanded } from "@/organisms/ArticleExpanded";
+import {
+  ArticleExpanded,
+  ArticleExpandedProps,
+} from "@/organisms/ArticleExpanded";
+import { getAllEntries } from "@/api/api";
 import styles from "./styles.module.scss";
 
-export default function Article({ params }: { params: { slug: string } }) {
+export default async function Article({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const articles = await getAllEntries("blogPost");
+
   return (
     <main className={styles.article}>
-      <ArticleExpanded
-        articleTitle="O sabor do Alfajor Argentino"
-        author="Golosinas Imports"
-        date="02 de abril de 2024"
-        image="/images/alfajor.jpg"
-      />
+      {articles.map((article: ArticleExpandedProps) => (
+        <ArticleExpanded
+          title={article.title}
+          author={article.author}
+          dateOfPublication={article.dateOfPublication}
+          image={article.image ? article.image.url : ""}
+          content={article.content}
+        />
+      ))}
+
       <section className={styles.article__comments}>
         <Comment
           name="Daisy Jones"

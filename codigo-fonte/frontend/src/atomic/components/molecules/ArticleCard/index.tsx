@@ -4,11 +4,11 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 import Link from "next/link";
 
-interface ArticleCardProps {
+export interface ArticleCardProps {
   title: string;
   subtitle: string;
   description: string;
-  image: string;
+  image: any;
   slug: string;
 }
 

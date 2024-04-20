@@ -1,5 +1,5 @@
-import { fileURLToPath } from 'url';
-import path from 'path';
+import { fileURLToPath } from "url";
+import path from "path";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -9,7 +9,14 @@ const nextConfig = {
     prependData: `@import "./src/styles/index.scss";`,
   },
   images: {
-    domains: ["images.ctfassets.net"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.ctfassets.net",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   },
 };
 

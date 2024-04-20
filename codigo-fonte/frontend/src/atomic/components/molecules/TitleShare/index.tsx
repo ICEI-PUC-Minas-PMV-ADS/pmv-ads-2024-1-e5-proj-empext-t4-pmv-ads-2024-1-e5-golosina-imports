@@ -44,7 +44,6 @@ export const TitleShare = ({
           {socialMediaOptions.map((option, index) => (
             <Share socialMedia={option.platform} key={index} />
           ))}
-          ;
         </div>
       </div>
     </div>

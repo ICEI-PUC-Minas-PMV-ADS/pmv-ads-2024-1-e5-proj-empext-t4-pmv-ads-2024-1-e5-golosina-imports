@@ -1,25 +1,19 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { ProductCard } from "@/molecules/ProductCard";
+import { ProductCard, ProductCardProps } from "@/molecules/ProductCard";
 import { Heading } from "@/atoms/Heading";
 import { Text } from "@/atoms/Text";
 import { Search } from "@/molecules/Search";
 import styles from "./styles.module.scss";
 import { Button } from "@/atoms/Button";
 
-const dummyCardData = {
-  title: "Title",
-  price: "7,90",
-  backgroundImage: "/images/bg-alfajor.png",
-  slug: "this-is-a-product",
-};
-
-export const ProductList = () => {
-  const dummyCards = Array.from({ length: 2 }, (_, index) => ({
-    ...dummyCardData,
-    key: index,
-  }));
+export const ProductList = ({
+  image,
+  productName,
+  price,
+  slug,
+}: ProductCardProps) => {
   const pathname = usePathname();
   const isHome = pathname === "/";
 
@@ -37,9 +31,12 @@ export const ProductList = () => {
           <Search />
         </div>
         <div className={styles.productList__cards}>
-          {dummyCards.map((card) => (
-            <ProductCard {...card} key={card.key} />
-          ))}
+          <ProductCard
+            productName={productName}
+            price={price}
+            slug={slug}
+            image={image}
+          />
         </div>
       </div>
       {isHome && (
