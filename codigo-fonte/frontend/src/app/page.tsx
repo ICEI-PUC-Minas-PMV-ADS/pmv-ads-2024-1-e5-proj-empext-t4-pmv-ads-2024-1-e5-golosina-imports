@@ -12,26 +12,34 @@ export default async function Home() {
   const articles = await getAllEntries("blogPost");
   return (
     <main className={styles.homepage}>
-      {products.map((product: ProductCardProps) => (
-        <ProductList
-          productName={product.productName}
-          price={product.price}
-          slug={product.slug}
-          image={product.image ? product.image.url : ""}
-          key={product.productName}
-        />
-      ))}
+      {
+        products
+          ?
+          products.map((product: ProductCardProps) => (
+            <ProductList
+              productName={product.productName}
+              price={product.price}
+              slug={product.slug}
+              image={product.image ? product.image.url : ""}
+              key={product.productName}
+            />
+          )
+          )
+          : null
+      }
       <Testimonials />
-      {articles.map((article: ArticleCardProps) => (
-        <ArticleList
-          title={article.title}
-          subtitle={article.subtitle}
-          description={article.description}
-          image={article.image ? article.image.url : ""}
-          slug={article.slug}
-          key={article.title}
-        />
-      ))}
+      {
+        articles ? articles.map((article: ArticleCardProps) => (
+          <ArticleList
+            title={article.title}
+            subtitle={article.subtitle}
+            description={article.description}
+            image={article.image ? article.image.url : ""}
+            slug={article.slug}
+            key={article.title}
+          />
+        )) : null
+      }
       <div className={styles.homepage__cta}>
         <BannerCTA
           cta="Peça já a sua golosina importada"
