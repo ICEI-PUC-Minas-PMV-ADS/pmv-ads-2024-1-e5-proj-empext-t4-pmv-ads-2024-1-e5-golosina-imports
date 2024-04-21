@@ -5,7 +5,7 @@ import { ProductCard, ProductCardProps } from "@/molecules/ProductCard";
 import { BannerCTA } from "@/organisms/CTABanner";
 import { Testimonials } from "@/organisms/Testimonials";
 import { HeadingSearch } from "@/organisms/HeadingSearch";
-import { getAllEntries } from "@/api/api";
+import { getAllEntries } from "@/api/contentful";
 import styles from "./homepage.module.scss";
 
 export default async function Home() {

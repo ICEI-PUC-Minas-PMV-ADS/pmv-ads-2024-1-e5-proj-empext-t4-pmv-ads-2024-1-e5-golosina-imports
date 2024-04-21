@@ -1,7 +1,7 @@
 import { HeadingSearch } from "@/organisms/HeadingSearch";
 import { ProductCard, ProductCardProps } from "@/molecules/ProductCard";
 import { Testimonials } from "@/organisms/Testimonials";
-import { getAllEntries } from "@/api/api";
+import { getAllEntries } from "@/api/contentful";
 import styles from "./styles.module.scss";
 
 export default async function Products() {

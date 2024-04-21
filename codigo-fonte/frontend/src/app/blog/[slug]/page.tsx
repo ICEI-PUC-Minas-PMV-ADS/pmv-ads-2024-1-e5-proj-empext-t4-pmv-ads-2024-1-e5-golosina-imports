@@ -1,7 +1,7 @@
 import { Comment } from "@/atomic/components/molecules/Comment";
 import { NewComment } from "@/atomic/components/molecules/NewComment";
 import { ArticleExpanded } from "@/organisms/ArticleExpanded";
-import { getEntry } from "@/api/api";
+import { getEntry } from "@/api/contentful";
 import styles from "./styles.module.scss";
 
 export default async function Article({

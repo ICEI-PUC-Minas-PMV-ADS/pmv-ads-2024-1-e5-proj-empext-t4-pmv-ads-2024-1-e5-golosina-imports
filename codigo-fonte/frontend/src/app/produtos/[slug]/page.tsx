@@ -1,6 +1,6 @@
 import { ProductExpanded } from "@/organisms/ProductExpanded";
 import { Testimonials } from "@/organisms/Testimonials";
-import { getEntry } from "@/api/api";
+import { getEntry } from "@/api/contentful";
 import styles from "./styles.module.scss";
 
 export default async function Product({

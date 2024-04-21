@@ -1,6 +1,6 @@
 import { BannerCTA } from "@/organisms/CTABanner";
 import { ArticleCard, ArticleCardProps } from "@/molecules/ArticleCard";
-import { getAllEntries } from "@/api/api";
+import { getAllEntries } from "@/api/contentful";
 import styles from "./styles.module.scss";
 import { Heading } from "@/atoms/Heading";
 
