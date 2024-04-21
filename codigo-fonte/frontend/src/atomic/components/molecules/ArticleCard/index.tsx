@@ -8,7 +8,7 @@ export interface ArticleCardProps {
   title: string;
   subtitle: string;
   description: string;
-  image: any;
+  image?: any;
   slug: string;
 }
 

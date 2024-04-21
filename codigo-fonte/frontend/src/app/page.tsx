@@ -6,43 +6,47 @@ import { Testimonials } from "@/organisms/Testimonials";
 import { ArticleList } from "@/organisms/ArticleList";
 import { getAllEntries } from "@/api/api";
 import { ArticleCardProps } from "@/molecules/ArticleCard";
+import { Suspense } from "react";
+import { MoonLoader } from "react-spinners";
 
 export default async function Home() {
   const products = await getAllEntries("product");
   const articles = await getAllEntries("blogPost");
   return (
-    <main className={styles.homepage}>
-      {
-        products?.map((product: ProductCardProps) => (
+    <Suspense fallback={<MoonLoader/>} >
+      <main className={styles.homepage}>
+        {
+          products?.map((product: ProductCardProps) => (
             <ProductList
               productName={product.productName}
               price={product.price}
               slug={product.slug}
-              image={product.image ? product.image.url : ""}
+              image={product.image?.url || ""}
               key={product.productName}
             />
           )
           )
-      }
-      <Testimonials />
-      {
-        articles?.map((article: ArticleCardProps) => (
-          <ArticleList
-            title={article.title}
-            subtitle={article.subtitle}
-            description={article.description}
-            image={article.image ? article.image.url : ""}
-            slug={article.slug}
-            key={article.title}
+        }
+        <Testimonials />
+        {
+          articles?.map((article: ArticleCardProps) => (
+            <ArticleList
+              title={article.title}
+              subtitle={article.subtitle}
+              description={article.description}
+              image={article.image?.url || ""}
+              slug={article.slug}
+              key={article.title}
+            />
+          ))
+        }
+        <div className={styles.homepage__cta}>
+          <BannerCTA
+            cta="Peça já a sua golosina importada"
+            backgroundImage="/images/cta3.jpg"
           />
-        ))
-      }
-      <div className={styles.homepage__cta}>
-        <BannerCTA
-          cta="Peça já a sua golosina importada"
-          backgroundImage="/images/cta3.jpg"
-        />
-      </div>
-    </main>
+        </div>
+      </main>
+    </Suspense>
   );
 }

@@ -12,12 +12,6 @@ const PRODUCT_GRAPHQL_FIELDS = `
   }
   alternativeText
   slug
-  characteristics {
-    internalName
-    firstCharacteristic
-    secondCharacteristic
-    thirdCharacteristic
-  }
 `;
 
 const CHARACTERISTICS_GRAPHQL_FIELDS = `
