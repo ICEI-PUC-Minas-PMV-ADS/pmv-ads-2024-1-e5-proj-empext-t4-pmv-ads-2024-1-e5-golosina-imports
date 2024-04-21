@@ -1,33 +1,22 @@
 const PRODUCT_GRAPHQL_FIELDS = `
-  sys {
-    id
+sys {
+  id
+}
+internalName
+productName
+productType
+price
+description
+alternativeText
+slug
+image {
+  url
+}
+characteristicsCollection {
+  items {
+    information
   }
-  internalName
-  productName
-  productType
-  price
-  description
-  image {
-    url
-  }
-  alternativeText
-  slug
-  characteristics {
-    internalName
-    firstCharacteristic
-    secondCharacteristic
-    thirdCharacteristic
-  }
-`;
-
-const CHARACTERISTICS_GRAPHQL_FIELDS = `
-  sys {
-    id
-  }
-  internalName
-  firstCharacteristic
-  secondCharacteristic
-  thirdCharacteristic
+}
 `;
 
 const BLOG_POST_GRAPHQL_FIELDS = `
@@ -57,9 +46,6 @@ async function getGraphQLFields(contentType, preview = false) {
     case "product":
       graphqlFields = PRODUCT_GRAPHQL_FIELDS;
       break;
-    case "characteristics":
-      graphqlFields = CHARACTERISTICS_GRAPHQL_FIELDS;
-      break;
     case "blogPost":
       graphqlFields = BLOG_POST_GRAPHQL_FIELDS;
       break;
@@ -70,11 +56,9 @@ async function getGraphQLFields(contentType, preview = false) {
 }
 
 async function fetchGraphQL(query, preview = false) {
-  console.log("Executando consulta GraphQL:", query);
   const accessToken = preview
     ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
     : process.env.CONTENTFUL_ACCESS_TOKEN;
-  console.log("Token de acesso:", accessToken);
   const headers = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${accessToken}`,
@@ -90,20 +74,19 @@ async function fetchGraphQL(query, preview = false) {
       method: "POST",
       headers: headers,
       body: JSON.stringify({ query }),
+      next: {
+        revalidate: 3600,
+      },
     }
   ).then((response) => {
-    console.log("Resposta da consulta GraphQL:", response);
     return response.json();
   });
 }
-
 
 function extractEntries(fetchResponse, contentType) {
   switch (contentType) {
     case "product":
       return fetchResponse?.data?.productCollection?.items;
-    case "characteristics":
-      return fetchResponse?.data?.characteristicsCollection?.items;
     case "blogPost":
       return fetchResponse?.data?.blogPostCollection?.items;
     default:
@@ -117,9 +100,7 @@ export async function getAllEntries(
   isDraftMode = false
 ) {
   try {
-    console.log(`Buscando entradas do tipo '${contentType}'...`);
     const graphqlFields = await getGraphQLFields(contentType, isDraftMode);
-    console.log("Campos GraphQL:", graphqlFields);
     const query = `query {
       ${contentType}Collection(
         where: { slug_exists: true },
@@ -131,9 +112,7 @@ export async function getAllEntries(
         }
       }
     }`;
-    console.log("Query GraphQL:", query);
     const entries = await fetchGraphQL(query, isDraftMode);
-    console.log(`Entradas do tipo '${contentType}' encontradas:`, entries);
     return extractEntries(entries, contentType);
   } catch (error) {
     console.error("Erro ao buscar entradas:", error);
@@ -158,7 +137,20 @@ export async function getEntry(contentType, slug, isDraftMode = false) {
       }`,
       isDraftMode
     );
-    return extractEntries(entry, contentType)[0];
+
+    const characteristicsData =
+      entry.data?.[
+        `${contentType}Collection`
+      ]?.items?.[0]?.characteristicsCollection?.items.map((item) => {
+        return {
+          information: item.information,
+        };
+      }) || [];
+
+    return {
+      ...extractEntries(entry, contentType)[0],
+      characteristics: characteristicsData,
+    };
   } catch (error) {
     console.error("Erro ao buscar entrada:", error);
     return null;
