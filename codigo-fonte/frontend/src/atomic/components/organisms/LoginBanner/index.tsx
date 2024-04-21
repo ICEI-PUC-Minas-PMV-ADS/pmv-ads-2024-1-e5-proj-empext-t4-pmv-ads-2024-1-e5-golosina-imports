@@ -7,6 +7,16 @@ import Image from "next/image";
 import { Button } from "@/atoms/Button";
 import { Text } from "@/atoms/Text";
 import styles from "./styles.module.scss";
+import { LoginUserPayload } from "@/api/backend/types";
+import { loginUser } from "@/api/backend/controllers/user";
+
+const formLoginUser = async (payload: LoginUserPayload) => {
+  try {
+    await loginUser(payload)
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 export const LoginBanner = () => {
   const { width } = useWindowSize();
@@ -18,10 +28,22 @@ export const LoginBanner = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
-  const onSubmit = (data: any) => {
-    console.log(data);
+  } = useForm({
+    defaultValues: {
+      email: '',
+      password: ''
+    }
+  });
+
+  const onSubmit = async (formData: LoginUserPayload) => {
+    try {
+      const data = await loginUser(formData)
+      console.log(data)
+    } catch (e) {
+      console.log(e)
+    }
   };
+
   return (
     <section className={styles.loginBanner}>
       <form
@@ -67,8 +89,8 @@ export const LoginBanner = () => {
           <span>A senha deve ter no mínimo 6 caracteres</span>
         )}
         <div className={styles.loginBanner__buttons}>
-          <Button label="Entrar" level="primary" />
-          <Button label="Esqueci a senha" level="quaternary" />
+          <Button label="Entrar" level="primary" isButton={true} onClick={handleSubmit(onSubmit)} />
+          <Button label="Esqueci a senha" level="quaternary" isButton={false} />
         </div>
         <Text
           align="center"
