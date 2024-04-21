@@ -1,5 +1,5 @@
 .faq {
-  @include layout();
+  @include layout(8rem);
   margin: 0 auto;
   max-width: 144rem;
 

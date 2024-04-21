@@ -1,3 +1,31 @@
 .products {
-  @include layout();
+  @include layout(4rem);
+
+  &__productList {
+    @include productList(112.5rem);
+  }
+
+  &__cards {
+    @include productListCards();
+  }
+
+  &__moreCards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    padding-inline: 2rem;
+
+    @include screen-size("tablet") {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 auto;
+    }
+
+    @include screen-size("desktop") {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0 auto;
+    }
+  }
 }

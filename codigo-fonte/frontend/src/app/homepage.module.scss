@@ -3,6 +3,31 @@
   flex-direction: column;
   gap: 4rem;
 
+  &__productList {
+    @include productList(144rem);
+  }
+
+  &__cards {
+    @include productListCards();
+  }
+
+  &__articleList {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 2rem;
+    margin: 0 auto;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+
+  &__button {
+    @include screen-size("desktop") {
+      display: block;
+      width: 50%;
+      align-self: end;
+    }
+  }
+
   &__cta {
     padding-inline: 2rem;
   }

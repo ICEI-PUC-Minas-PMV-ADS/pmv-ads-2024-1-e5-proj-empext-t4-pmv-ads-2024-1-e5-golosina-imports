@@ -3,6 +3,16 @@
   flex-direction: column;
   gap: 4rem;
 
+  @include screen-size("desktop") {
+    gap: 8rem;
+  }
+
+  &__articleList {
+    @extend .blog;
+    max-width: 144rem;
+    margin: 0 auto;
+  }
+
   &__cta {
     padding-inline: 2rem;
   }

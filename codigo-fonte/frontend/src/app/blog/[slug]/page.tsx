@@ -1,10 +1,7 @@
 import { Comment } from "@/atomic/components/molecules/Comment";
 import { NewComment } from "@/atomic/components/molecules/NewComment";
-import {
-  ArticleExpanded,
-  ArticleExpandedProps,
-} from "@/organisms/ArticleExpanded";
-import { getAllEntries } from "@/api/api";
+import { ArticleExpanded } from "@/organisms/ArticleExpanded";
+import { getEntry } from "@/api/api";
 import styles from "./styles.module.scss";
 
 export default async function Article({
@@ -12,19 +9,16 @@ export default async function Article({
 }: {
   params: { slug: string };
 }) {
-  const articles = await getAllEntries("blogPost");
-
+  const article = await getEntry("blogPost", params.slug);
   return (
     <main className={styles.article}>
-      {articles.map((article: ArticleExpandedProps) => (
-        <ArticleExpanded
-          title={article.title}
-          author={article.author}
-          dateOfPublication={article.dateOfPublication}
-          image={article.image ? article.image.url : ""}
-          content={article.content}
-        />
-      ))}
+      <ArticleExpanded
+        title={article.title}
+        author={article.author}
+        dateOfPublication={article.dateOfPublication}
+        image={article.image ? article.image.url : ""}
+        content={article.content}
+      />
 
       <section className={styles.article__comments}>
         <Comment

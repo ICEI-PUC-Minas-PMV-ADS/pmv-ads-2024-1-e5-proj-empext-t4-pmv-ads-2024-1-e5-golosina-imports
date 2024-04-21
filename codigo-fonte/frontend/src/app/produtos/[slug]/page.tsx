@@ -1,25 +1,24 @@
-import { ProductExpanded } from "@/atomic/components/organisms/ProductExpanded";
+import { ProductExpanded } from "@/organisms/ProductExpanded";
 import { Testimonials } from "@/organisms/Testimonials";
+import { getEntry } from "@/api/api";
 import styles from "./styles.module.scss";
 
-const dummyCharacteristics = [
-  { information: "Lorem ipsum dolor sit amet" },
-  { information: "Consectetur adipiscing elit" },
-  { information: "Sed do eiusmod tempor incididunt" },
-];
-
-export default function Product({ params }: { params: { slug: string } }) {
+export default async function Product({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const product = await getEntry("product", params.slug);
   return (
     <main className={styles.product}>
       <ProductExpanded
-        product="Alfajor Argentino"
-        productType="Doce"
-        price={2.5}
-        description="Delicioso alfajor argentino com recheio de doce de leite."
-        image="/images/alfajor.jpg"
-        characteristics={dummyCharacteristics}
+        productName={product.productName}
+        productType={product.productType}
+        price={product.price}
+        description={product.description}
+        image={product.image ? product.image.url : ""}
+        characteristics={product.characteristics}
       />
-
       <Testimonials />
     </main>
   );

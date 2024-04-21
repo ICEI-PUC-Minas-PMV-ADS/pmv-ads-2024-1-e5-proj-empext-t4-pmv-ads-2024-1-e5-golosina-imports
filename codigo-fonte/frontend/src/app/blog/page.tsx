@@ -1,17 +1,23 @@
 import { BannerCTA } from "@/organisms/CTABanner";
-import { ArticleList } from "@/organisms/ArticleList";
+import { ArticleCard, ArticleCardProps } from "@/molecules/ArticleCard";
 import { getAllEntries } from "@/api/api";
 import styles from "./styles.module.scss";
-import { ArticleCardProps } from "@/molecules/ArticleCard";
+import { Heading } from "@/atoms/Heading";
 
 export default async function Blog() {
   const articles = await getAllEntries("blogPost");
 
   return (
     <main className={styles.blog}>
-      <div className={styles.blog__cta}>
+      <section className={styles.blog__articleList}>
+        <Heading
+          align="left"
+          children="Nossos artigos"
+          color="wenge"
+          level="3"
+        />
         {articles.map((article: ArticleCardProps) => (
-          <ArticleList
+          <ArticleCard
             title={article.title}
             subtitle={article.subtitle}
             description={article.description}
@@ -20,6 +26,8 @@ export default async function Blog() {
             key={article.title}
           />
         ))}
+      </section>
+      <div className={styles.blog__cta}>
         <BannerCTA
           cta="Peça já a sua golosina importada"
           backgroundImage="/images/cta3.jpg"
