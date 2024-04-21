@@ -108,7 +108,7 @@ Caso de uso 2: alterações de posts e produtos através do CMS
 ## Modelagem de Dados no Contentful
 Aqui encontra-se a modelagem de dados dos três content_types presentes no Contentful: Product (produto), Characteristics (características) e Blog Post (artigo). Em cada content_type há um campo de 'internalName', uma prática recomendada pela plataforma para facilitar a localização de itens publicados.
 
-![modelagem-contentful](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/f6e0f97d-3397-494d-ad93-3d8cfb6eb72c)
+![modelagem-contentful](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/6650b2f5-5de4-4933-adc4-66ee4521895e)
 
 
 ## Gerenciamento
