@@ -111,12 +111,40 @@
   }
 }
 
-@mixin layout() {
+@mixin layout($gap) {
   display: flex;
   flex-direction: column;
   gap: 4rem;
 
   @include screen-size("desktop") {
-    gap: 8rem;
+    gap: $gap;
+  }
+}
+
+@mixin productList($maxWidth) {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 4rem;
+  padding-inline: 2rem;
+
+  @include screen-size("desktop") {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+    max-width: $maxWidth;
+  }
+}
+
+@mixin productListCards() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+
+  @include screen-size("tablet") {
+    flex-direction: row;
   }
 }
