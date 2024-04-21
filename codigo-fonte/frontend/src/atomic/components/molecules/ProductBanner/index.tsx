@@ -8,46 +8,47 @@ import styles from "./styles.module.scss";
 
 export type Characteristics = {
   information: string;
-}
+};
 
 interface ProductBannerProps {
-  product: string;
+  productName?: string;
   description: string;
   characteristics: Array<Characteristics>;
   image: string;
 }
 
 export const ProductBanner = ({
-  product,
+  productName,
   description,
   characteristics,
   image,
 }: ProductBannerProps) => {
   const [currentInfoIndex, setCurrentInfoIndex] = useState(0);
+  const { width } = useWindowSize();
+
   const handleNextInfo = () => {
     setCurrentInfoIndex((prevIndex) =>
       prevIndex === characteristics.length - 1 ? 0 : prevIndex + 1
     );
   };
 
-  const { width } = useWindowSize();
-
   const handlePrevInfo = () => {
     setCurrentInfoIndex((prevIndex) =>
       prevIndex === 0 ? characteristics.length - 1 : prevIndex - 1
     );
   };
+
   return (
     <article className={styles.product}>
       <div className={styles.product__heading}>
-        <Text align="left" children={product} color="wenge" weight="600" />
+        <Text align="left" children={productName} color="wenge" weight="600" />
         <Text align="left" children={description} color="dark-gray" />
         <Button label="Comprar" level="quaternary" size="small" />
       </div>
       <div className={styles.product__imageContainer}>
         <Image
           src={image}
-          alt={product}
+          alt=''
           width={width < 1200 ? 335 : 500}
           height={width < 1200 ? 335 : 500}
           className={styles.product__image}
@@ -56,7 +57,7 @@ export const ProductBanner = ({
       <div className={styles.product__information}>
         <Text
           align="center"
-          children={characteristics[currentInfoIndex].information}
+          children={characteristics[currentInfoIndex]?.information}
           color="dark-gray"
         />
       </div>

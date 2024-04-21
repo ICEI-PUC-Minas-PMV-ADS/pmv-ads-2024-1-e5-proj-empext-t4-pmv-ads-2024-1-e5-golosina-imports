@@ -51,6 +51,7 @@
     display: flex;
     justify-content: flex-end;
     gap: 2rem;
+    cursor: pointer;
 
     @include screen-size("tablet") {
       grid-area: 3 / 2 / 4 / 3;

@@ -7,12 +7,11 @@
   gap: 2rem;
 
   &__input {
-    font-family: "Poppins";
-    color: $wenge;
+    font-family: '__Poppins_7df6af';
     font-size: 1.4rem;
     width: 100%;
     outline: none;
-
+    
     @include screen-size("desktop") {
       font-size: 2rem;
     }

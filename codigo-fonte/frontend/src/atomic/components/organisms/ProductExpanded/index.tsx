@@ -1,19 +1,19 @@
 "use client";
 import { ProductBanner, Characteristics } from "@/molecules/ProductBanner";
 import styles from "./styles.module.scss";
-import { TitleShare } from "../../molecules/TitleShare";
+import { TitleShare } from "@/molecules/TitleShare";
 
-interface ProductExpandedProps {
-  product: string;
+export interface ProductExpandedProps {
+  productName: string;
   productType: string;
   price: any;
   description: string;
-  image: string;
+  image: any;
   characteristics: Array<Characteristics>;
 }
 
 export const ProductExpanded = ({
-  product,
+  productName,
   productType,
   price,
   description,
@@ -23,14 +23,14 @@ export const ProductExpanded = ({
   return (
     <section className={styles.productExpanded}>
       <TitleShare
-        item={product}
+        item={productName}
         secondItem={productType}
         thirdItem={`R$ ${price}`}
       />
 
       <div className={styles.productExpanded__banner}>
         <ProductBanner
-          product={`Conheça mais sobre o ${product}`}
+          productName={`Conheça mais sobre o ${productName}`}
           description={description}
           characteristics={characteristics}
           image={image}

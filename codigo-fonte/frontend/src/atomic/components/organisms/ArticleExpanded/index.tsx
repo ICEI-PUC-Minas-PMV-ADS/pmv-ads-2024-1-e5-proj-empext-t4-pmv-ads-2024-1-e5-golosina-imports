@@ -3,15 +3,13 @@ import { useWindowSize } from "react-use";
 import { TitleShare } from "../../molecules/TitleShare";
 import styles from "./styles.module.scss";
 import Image from "next/image";
-import { Document } from "@contentful/rich-text-types";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 export interface ArticleExpandedProps {
   title: string;
   author: string;
   dateOfPublication: string;
   image: any;
-  content: Document;
+  content: any;
 }
 
 export const ArticleExpanded = ({
@@ -43,9 +41,7 @@ export const ArticleExpanded = ({
       </div>
 
       <div className={styles.articleExpanded__richtextContainer}>
-        <p className={styles.articleExpanded__richtext}>
-          {documentToReactComponents(content)}
-        </p>
+        <p className={styles.articleExpanded__richtext}>{content}</p>
       </div>
     </section>
   );

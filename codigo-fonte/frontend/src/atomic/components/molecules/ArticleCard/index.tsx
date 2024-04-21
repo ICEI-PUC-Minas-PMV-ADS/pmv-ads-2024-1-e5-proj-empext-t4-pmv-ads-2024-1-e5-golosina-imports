@@ -1,3 +1,4 @@
+'use client'
 import { useWindowSize } from "react-use";
 import { Text } from "@/atoms/Text";
 import Image from "next/image";

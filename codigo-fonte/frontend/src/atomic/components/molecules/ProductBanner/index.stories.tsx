@@ -17,7 +17,7 @@ const dummyCharacteristics = [
 
 export const Default = (args: any) => (
   <ProductBanner
-    product="Product Name"
+    productName="Product Name"
     description="Product description goes here"
     characteristics={dummyCharacteristics}
     image="/images/alfajor.jpg"

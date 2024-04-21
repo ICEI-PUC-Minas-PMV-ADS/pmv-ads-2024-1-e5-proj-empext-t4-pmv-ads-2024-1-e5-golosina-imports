@@ -23,10 +23,6 @@
     @include screen-size("tablet") {
       padding: 6rem 0 0 0;
     }
-    
-    @include screen-size("desktop") {
-      font-size: 6.8rem;
-    }
   }
 
   &__cta {
