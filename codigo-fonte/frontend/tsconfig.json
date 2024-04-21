@@ -26,6 +26,9 @@
       "@/styles/*": ["styles/*"],
       "@/data/*": ["data/*"],
       "@/utils/*": ["utils/*"],
+      "@/backend/userController": ["api/backend/controllers/user.ts"],
+      "@/backend/types": ["api/backend/types.ts"],
+      "@/backend": ["api/backend/index.ts"],
       "@/api/*": ["api/*"]
     }
   },
