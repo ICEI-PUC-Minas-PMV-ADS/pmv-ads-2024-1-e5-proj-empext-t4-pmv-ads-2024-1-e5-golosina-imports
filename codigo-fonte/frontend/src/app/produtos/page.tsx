@@ -1,6 +1,5 @@
 import { HeadingSearch } from "@/organisms/HeadingSearch";
 import { ProductCard, ProductCardProps } from "@/molecules/ProductCard";
-
 import { Testimonials } from "@/organisms/Testimonials";
 import { getAllEntries } from "@/api/api";
 import styles from "./styles.module.scss";
@@ -10,7 +9,6 @@ export default async function Products() {
 
   const firstTwoProducts = products.slice(0, 2);
   const moreProducts = products.slice(2);
-
 
   return (
     <main className={styles.products}>
