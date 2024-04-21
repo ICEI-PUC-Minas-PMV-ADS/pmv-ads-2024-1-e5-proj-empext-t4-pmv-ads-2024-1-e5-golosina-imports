@@ -9,7 +9,7 @@ export default async function Products() {
 
   return (
     <main className={styles.products}>
-      {products.map((product: ProductCardProps) => (
+      {products?.map((product: ProductCardProps) => (
         <ProductList
           productName={product.productName}
           price={product.price}

@@ -13,9 +13,7 @@ export default async function Home() {
   return (
     <main className={styles.homepage}>
       {
-        products
-          ?
-          products.map((product: ProductCardProps) => (
+        products?.map((product: ProductCardProps) => (
             <ProductList
               productName={product.productName}
               price={product.price}
@@ -25,11 +23,10 @@ export default async function Home() {
             />
           )
           )
-          : null
       }
       <Testimonials />
       {
-        articles ? articles.map((article: ArticleCardProps) => (
+        articles?.map((article: ArticleCardProps) => (
           <ArticleList
             title={article.title}
             subtitle={article.subtitle}
@@ -38,7 +35,7 @@ export default async function Home() {
             slug={article.slug}
             key={article.title}
           />
-        )) : null
+        ))
       }
       <div className={styles.homepage__cta}>
         <BannerCTA
