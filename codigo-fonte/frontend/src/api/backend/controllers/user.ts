@@ -1,12 +1,15 @@
 import { instance } from "../config"
-import { CreateUserResponse, LoginUserPayload, RegisterUserPayload } from "../types"
+import { CreateUserResponse, LoginUserPayload, RegisterUserPayload, User } from "../types"
+
+export interface AuthUserResponse {
+    user: User,
+    token: string
+}
 
 export async function loginUser(payload: LoginUserPayload) {
     try {
-        const {
-            data: { token },
-        } = await instance.post<{ token: string }>('/login', payload)
-        return token
+        const { data: user } = await instance.post<AuthUserResponse>('/login', payload)
+        return user
     } catch (error) {
         throw error
     }

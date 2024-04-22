@@ -14,14 +14,13 @@ export interface LoginUserPayload {
   password: string
 }
 
+export interface User {
+  id: string
+  name: string
+  email: string   
+}
+
 export interface CreateUserResponse {
-  user: {
-    name: string
-    email: string
-    password: string
-    habits: []
-    _id: string
-    __v: number
-  }
-  token: string
+    user: User,
+    token: string
 }
