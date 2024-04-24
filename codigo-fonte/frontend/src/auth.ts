@@ -9,7 +9,7 @@ export const { auth, signIn, signOut } = NextAuth({
         Credentials({
             // formData
             credentials: {
-                username: { label: "username" },
+                username: { label: "email" },
                 password: { label: "password", type: "password" },
             },
             authorize: async (credentials, req) => {

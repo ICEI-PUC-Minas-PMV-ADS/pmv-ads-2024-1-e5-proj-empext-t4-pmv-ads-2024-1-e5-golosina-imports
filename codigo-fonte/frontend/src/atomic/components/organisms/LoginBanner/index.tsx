@@ -8,17 +8,7 @@ import { Button } from "@/atoms/Button";
 import { Text } from "@/atoms/Text";
 import styles from "./styles.module.scss";
 import { LoginUserPayload } from "@/api/backend/types";
-import { loginUser } from "@/api/backend/controllers/user";
-import { signIn } from "@/auth";
 import { authenticate } from "@/actions";
-
-const formLoginUser = async (payload: LoginUserPayload) => {
-  try {
-    await loginUser(payload)
-  } catch (error) {
-    console.log(error)
-  }
-}
 
 export const LoginBanner = () => {
   const { width } = useWindowSize();
