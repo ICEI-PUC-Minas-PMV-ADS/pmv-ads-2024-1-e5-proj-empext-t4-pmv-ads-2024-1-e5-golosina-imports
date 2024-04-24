@@ -39,9 +39,6 @@ export const LoginBanner = () => {
 
   const onSubmit = async (formData: LoginUserPayload) => {
     try {
-      // const data = await loginUser(formData)
-      // console.log(data)
-      console.log("batatinhaaaaaa");
       authenticate(formData)
     } catch (e) {
       console.log(e)

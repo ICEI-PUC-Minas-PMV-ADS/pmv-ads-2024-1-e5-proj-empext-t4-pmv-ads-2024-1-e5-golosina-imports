@@ -25,4 +25,10 @@ export const { auth, signIn, signOut } = NextAuth({
             },
         }),
     ],
+    // TODO
+    // // Set the jwt configuration.
+    // session: {
+    //     strategy: "jwt",
+    //     maxAge: 30 * 24 * 60 * 60, // 30 days
+    // },
 });
