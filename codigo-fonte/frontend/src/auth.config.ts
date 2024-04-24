@@ -9,7 +9,6 @@ export const authConfig = {
   callbacks: {
     /**
      * Guard the protected pages and redirect the user to login page if not authenticated.
-     * @returns {User}
      */
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
