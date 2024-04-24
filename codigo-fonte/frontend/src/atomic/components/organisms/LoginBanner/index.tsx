@@ -9,6 +9,8 @@ import { Text } from "@/atoms/Text";
 import styles from "./styles.module.scss";
 import { LoginUserPayload } from "@/api/backend/types";
 import { loginUser } from "@/api/backend/controllers/user";
+import { signIn } from "@/auth";
+import { authenticate } from "@/actions";
 
 const formLoginUser = async (payload: LoginUserPayload) => {
   try {
@@ -37,8 +39,10 @@ export const LoginBanner = () => {
 
   const onSubmit = async (formData: LoginUserPayload) => {
     try {
-      const data = await loginUser(formData)
-      console.log(data)
+      // const data = await loginUser(formData)
+      // console.log(data)
+      console.log("batatinhaaaaaa");
+      authenticate(formData)
     } catch (e) {
       console.log(e)
     }
