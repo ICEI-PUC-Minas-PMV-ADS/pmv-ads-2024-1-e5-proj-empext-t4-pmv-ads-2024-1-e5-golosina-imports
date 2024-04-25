@@ -1,11 +1,16 @@
+'use client';
+
 import { HeadingSearch } from "@/organisms/HeadingSearch";
 import { ProductCard, ProductCardProps } from "@/molecules/ProductCard";
 import { Testimonials } from "@/organisms/Testimonials";
 import { getAllEntries } from "@/api/contentful";
 import styles from "./styles.module.scss";
+import { getSession } from "next-auth/react";
 
 export default async function Products() {
   const products = await getAllEntries("product");
+  // let sla = await getSession();
+  // console.log("session", sla)
 
   const firstTwoProducts = products.slice(0, 2);
   const moreProducts = products.slice(2);

@@ -15,7 +15,7 @@ export const { auth, signIn, signOut } = NextAuth({
             authorize: async (credentials, req) => {
                 console.log(req)
                 try {
-                    let user = await loginUser(credentials as LoginUserPayload)
+                    let { user }  = await loginUser(credentials as LoginUserPayload)
                     console.log(user)
                     return user as User // both types have the same fields
                 } catch (err) {
@@ -25,10 +25,12 @@ export const { auth, signIn, signOut } = NextAuth({
             },
         }),
     ],
-    // TODO
-    // // Set the jwt configuration.
-    // session: {
-    //     strategy: "jwt",
-    //     maxAge: 30 * 24 * 60 * 60, // 30 days
-    // },
+    /**
+     * This property contains the session strategy, which means how our app will 
+     * verify if an user has a valid session. Here we'll be using a JWT returned from the API.
+     */
+    session: {
+        strategy: "jwt",
+        maxAge: 30 * 24 * 60 * 60, // 30 days
+    },
 });
