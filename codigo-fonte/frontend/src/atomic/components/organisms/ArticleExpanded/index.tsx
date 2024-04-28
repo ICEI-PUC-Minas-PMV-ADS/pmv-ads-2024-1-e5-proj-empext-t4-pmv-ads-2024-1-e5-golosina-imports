@@ -10,6 +10,7 @@ export interface ArticleExpandedProps {
   dateOfPublication: string;
   image: any;
   content: any;
+  slug: string
 }
 
 export const ArticleExpanded = ({
@@ -18,6 +19,7 @@ export const ArticleExpanded = ({
   dateOfPublication,
   image,
   content,
+  slug
 }: ArticleExpandedProps) => {
   const { width } = useWindowSize();
 
@@ -37,6 +39,7 @@ export const ArticleExpanded = ({
           item={title}
           secondItem={author}
           thirdItem={dateOfPublication}
+          slug={slug}
         />
       </div>
 

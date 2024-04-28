@@ -1,6 +1,12 @@
 .productExpanded {
   max-width: 144rem;
   margin: 0 auto;
+  padding-inline: 2rem;
+  margin-bottom: 4rem;
+
+  @include screen-size("desktop") {
+    margin-bottom: 0;
+  }
   &__banner {
     @include screen-size("desktop") {
       margin: 8rem 0;

@@ -10,6 +10,7 @@ export interface ProductExpandedProps {
   description: string;
   image: any;
   characteristics: Array<Characteristics>;
+  slug: string
 }
 
 export const ProductExpanded = ({
@@ -19,6 +20,7 @@ export const ProductExpanded = ({
   description,
   image,
   characteristics,
+  slug
 }: ProductExpandedProps) => {
   return (
     <section className={styles.productExpanded}>
@@ -26,6 +28,7 @@ export const ProductExpanded = ({
         item={productName}
         secondItem={productType}
         thirdItem={`R$ ${price}`}
+        slug={slug}
       />
 
       <div className={styles.productExpanded__banner}>

@@ -18,6 +18,7 @@ export default async function Article({
         dateOfPublication={article.dateOfPublication}
         image={article.image ? article.image.url : ""}
         content={article.content?.json?.content[0]?.content[0]?.value}
+        slug={article.slug}
       />
 
       <section className={styles.article__comments}>

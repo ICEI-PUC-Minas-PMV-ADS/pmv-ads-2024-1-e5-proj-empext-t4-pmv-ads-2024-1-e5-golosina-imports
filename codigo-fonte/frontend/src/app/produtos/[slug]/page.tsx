@@ -18,6 +18,7 @@ export default async function Product({
         description={product.description}
         image={product.image ? product.image.url : ""}
         characteristics={product.characteristics}
+        slug={product.slug}
       />
       <Testimonials />
     </main>

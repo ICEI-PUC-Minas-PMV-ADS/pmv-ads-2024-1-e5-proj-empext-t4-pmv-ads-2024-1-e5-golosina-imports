@@ -3,9 +3,6 @@
   margin: 0 auto;
   padding-inline: 2rem;
 
-  @include screen-size("desktop") {
-  }
-
   &__heading {
     display: flex;
     flex-direction: column;
