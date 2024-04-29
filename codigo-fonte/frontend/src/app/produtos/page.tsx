@@ -1,5 +1,3 @@
-'use client';
-
 import { HeadingSearch } from "@/organisms/HeadingSearch";
 import { ProductCard, ProductCardProps } from "@/molecules/ProductCard";
 import { Testimonials } from "@/organisms/Testimonials";
@@ -7,13 +5,27 @@ import { getAllEntries } from "@/api/contentful";
 import styles from "./styles.module.scss";
 import { getSession } from "next-auth/react";
 
-export default async function Products() {
+export default async function Products({
+  searchParams,
+}: {
+  searchParams?: {
+    query?: string;
+    page?: string;
+  };
+}) {
   const products = await getAllEntries("product");
+
+  const query = searchParams?.query || "";
+
   // let sla = await getSession();
   // console.log("session", sla)
+  
+  const filteredProducts = products.filter((product: ProductCardProps) =>
+    product.productName.toLowerCase().includes(query.toLowerCase())
+  );
 
-  const firstTwoProducts = products.slice(0, 2);
-  const moreProducts = products.slice(2);
+  const firstTwoProducts = filteredProducts.slice(0, 2);
+  const moreProducts = filteredProducts.slice(2);
 
   return (
     <main className={styles.products}>
