@@ -4,10 +4,12 @@ import { Heading } from "@/atoms/Heading";
 import { Text } from "@/atoms/Text";
 import { Search } from "@/molecules/Search";
 import styles from "./styles.module.scss";
+import { Filter } from "@/molecules/Filter";
 
 export const HeadingSearch = () => {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const isBlog = pathname === "/produtos";
 
   return (
     <div className={styles.headingSearch}>
@@ -22,6 +24,7 @@ export const HeadingSearch = () => {
           />
         )}
         <Search />
+        {isBlog && <Filter />}
       </div>
     </div>
   );

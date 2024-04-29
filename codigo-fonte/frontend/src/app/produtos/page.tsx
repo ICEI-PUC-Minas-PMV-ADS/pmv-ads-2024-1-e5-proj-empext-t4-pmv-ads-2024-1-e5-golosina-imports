@@ -20,9 +20,12 @@ export default async function Products({
   // let sla = await getSession();
   // console.log("session", sla)
   
-  const filteredProducts = products.filter((product: ProductCardProps) =>
-    product.productName.toLowerCase().includes(query.toLowerCase())
-  );
+  const filteredProducts = products.filter((product: ProductCardProps) => {
+    const productNameMatches = product.productName.toLowerCase().includes(query.toLowerCase());
+    const priceMatches = parseFloat(query) && parseFloat(product.price) <= parseFloat(query);
+    return productNameMatches || priceMatches;
+  });
+  
 
   const firstTwoProducts = filteredProducts.slice(0, 2);
   const moreProducts = filteredProducts.slice(2);

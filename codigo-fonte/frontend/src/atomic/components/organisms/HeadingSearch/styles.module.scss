@@ -1,12 +1,12 @@
 .headingSearch {
-
   @include screen-size("tablet") {
     max-width: 72rem;
     margin: 0 auto;
   }
+  
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3rem;
   }
 }
