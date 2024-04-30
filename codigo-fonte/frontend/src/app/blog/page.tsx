@@ -3,9 +3,11 @@ import { ArticleCard, ArticleCardProps } from "@/molecules/ArticleCard";
 import { getAllEntries } from "@/api/contentful";
 import styles from "./styles.module.scss";
 import { Heading } from "@/atoms/Heading";
+import { Pagination } from "@/atomic/components/molecules/Pagination";
 
 export default async function Blog() {
   const articles = await getAllEntries("blogPost");
+  const totalPages = Math.ceil(articles.length / 6);
 
   return (
     <main className={styles.blog}>
@@ -26,6 +28,7 @@ export default async function Blog() {
             key={article.title}
           />
         ))}
+        <Pagination totalPages={totalPages} currentPage={1} />
       </section>
       <div className={styles.blog__cta}>
         <BannerCTA
