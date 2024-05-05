@@ -3,7 +3,6 @@ import { ProductCard, ProductCardProps } from "@/molecules/ProductCard";
 import { Testimonials } from "@/organisms/Testimonials";
 import { getAllEntries } from "@/api/contentful";
 import styles from "./styles.module.scss";
-import { getSession } from "next-auth/react";
 
 export default async function Products({
   searchParams,
@@ -16,9 +15,6 @@ export default async function Products({
   const products = await getAllEntries("product");
 
   const query = searchParams?.query || "";
-
-  // let sla = await getSession();
-  // console.log("session", sla)
   
   const filteredProducts = products.filter((product: ProductCardProps) => {
     const productNameMatches = product.productName.toLowerCase().includes(query.toLowerCase());

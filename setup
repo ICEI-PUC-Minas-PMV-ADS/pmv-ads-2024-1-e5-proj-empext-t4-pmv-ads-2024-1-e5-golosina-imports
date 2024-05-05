@@ -1,6 +1,9 @@
 #!/bin/bash
 git pull origin HEAD
 
+# in codigo-fonte/frontend: 
+# export (cat .env.local |xargs -L 1)
+
 # Because somehow the envs are not being loaded in my computer and I don't know why.
 source .env
 if [ $? -eq 0 ]; then

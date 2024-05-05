@@ -7,8 +7,12 @@ import { Button } from "@/atoms/Button";
 import { Logo } from "@/atoms/Logo";
 import styles from "./styles.module.scss";
 import navigation from "@/data/navigation.json";
+import { User } from "next-auth";
+interface NavigationProps {
+  user: User | undefined
+}
 
-export const Navigation = () => {
+export const Navigation = ({ user }: NavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const { width } = useWindowSize();
@@ -47,12 +51,26 @@ export const Navigation = () => {
               />
             ))}
           </ul>
-          <Button
-            level="primary"
-            label="Entrar"
-            isButton={false}
-            href="/login"
-          />
+          {
+            user ?
+              <div style={{ marginTop: -30 }}>
+                <p style={{ fontSize: 18, maxWidth: 200, marginBottom: 10 }}>Bem-vindo de volta, {user.name}</p>
+                <Button
+                  level="secondary"
+                  label="Sair"
+                  isButton={false}
+                  href="/login"
+                />
+              </div>
+              :
+              <Button
+                level="primary"
+                label="Entrar"
+                isButton={false}
+                href="/login"
+              />
+          }
+
         </nav>
       )}
     </div>

@@ -13,7 +13,6 @@ export const { auth, signIn, signOut } = NextAuth({
                 password: { label: "password", type: "password" },
             },
             authorize: async (credentials, req) => {
-                console.log(req)
                 try {
                     let { user }  = await loginUser(credentials as LoginUserPayload)
                     console.log(user)
