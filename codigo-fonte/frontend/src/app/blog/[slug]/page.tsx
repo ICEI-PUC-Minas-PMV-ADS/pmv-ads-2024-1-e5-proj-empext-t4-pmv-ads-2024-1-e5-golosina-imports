@@ -4,6 +4,7 @@ import { ArticleExpanded } from "@/organisms/ArticleExpanded";
 import { getEntry } from "@/api/contentful";
 import styles from "./styles.module.scss";
 
+
 export default async function Article({
   params,
 }: {
@@ -17,8 +18,9 @@ export default async function Article({
         author={article.author}
         dateOfPublication={article.dateOfPublication}
         image={article.image ? article.image.url : ""}
-        content={article.content?.json?.content[0]?.content[0]?.value}
+        content={article.content}
         slug={article.slug}
+        alternativeText={article.alternativeText}
       />
 
       <section className={styles.article__comments}>

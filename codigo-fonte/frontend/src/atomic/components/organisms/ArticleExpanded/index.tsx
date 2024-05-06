@@ -1,8 +1,10 @@
 "use client";
+
 import { useWindowSize } from "react-use";
-import { TitleShare } from "../../molecules/TitleShare";
-import styles from "./styles.module.scss";
 import Image from "next/image";
+import { RichText } from "@/atoms/RichText";
+import { TitleShare } from "@/molecules/TitleShare";
+import styles from "./styles.module.scss";
 
 export interface ArticleExpandedProps {
   title: string;
@@ -10,7 +12,8 @@ export interface ArticleExpandedProps {
   dateOfPublication: string;
   image: any;
   content: any;
-  slug: string
+  slug: string;
+  alternativeText: string;
 }
 
 export const ArticleExpanded = ({
@@ -19,7 +22,8 @@ export const ArticleExpanded = ({
   dateOfPublication,
   image,
   content,
-  slug
+  slug,
+  alternativeText
 }: ArticleExpandedProps) => {
   const { width } = useWindowSize();
 
@@ -30,7 +34,7 @@ export const ArticleExpanded = ({
       <div className={styles.articleExpanded__heading}>
         <Image
           src={image}
-          alt=""
+          alt={alternativeText}
           className={styles.articleExpanded__image}
           width={sizeX}
           height={sizeY}
@@ -44,7 +48,9 @@ export const ArticleExpanded = ({
       </div>
 
       <div className={styles.articleExpanded__richtextContainer}>
-        <p className={styles.articleExpanded__richtext}>{content}</p>
+        <div className={styles.articleExpanded__richtext}>
+          <RichText content={content} />
+        </div>
       </div>
     </section>
   );

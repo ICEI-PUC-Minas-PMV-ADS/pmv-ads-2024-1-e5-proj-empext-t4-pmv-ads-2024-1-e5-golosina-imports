@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useWindowSize } from "react-use";
 import { Text } from "@/atoms/Text";
 import Image from "next/image";
@@ -11,6 +11,7 @@ export interface ArticleCardProps {
   description: string;
   image?: any;
   slug: string;
+  alternativeText: string;
 }
 
 export const ArticleCard = ({
@@ -19,6 +20,7 @@ export const ArticleCard = ({
   description,
   image,
   slug,
+  alternativeText,
 }: ArticleCardProps) => {
   const { width } = useWindowSize();
   const imageWidth = width < 1024 ? 335 : 680;
@@ -53,7 +55,7 @@ export const ArticleCard = ({
         <div className={styles.card__image}>
           <Image
             src={image}
-            alt={title}
+            alt={alternativeText}
             width={imageWidth}
             height={imageHeight}
             className={styles.card__image}

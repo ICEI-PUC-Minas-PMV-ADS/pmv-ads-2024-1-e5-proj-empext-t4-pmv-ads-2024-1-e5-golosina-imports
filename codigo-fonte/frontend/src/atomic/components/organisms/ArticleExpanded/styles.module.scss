@@ -31,15 +31,4 @@
       padding-inline: 15.5rem;
     }
   }
-
-  &__richtext {
-    color: $dark-gray;
-    font-size: 1.8rem;
-    line-height: 4.4rem;
-    letter-spacing: 0.05rem;
-
-    @include screen-size("desktop") {
-      font-size: 2rem;
-    }
-  }
 }

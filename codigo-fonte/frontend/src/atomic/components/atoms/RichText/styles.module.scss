@@ -1,0 +1,52 @@
+.richtext {
+  color: $dark-gray;
+  font-size: 1.8rem;
+  line-height: 4.4rem;
+  letter-spacing: 0.05rem;
+
+  blockquote {
+    background: url("/svgs/blockquote.svg") no-repeat top;
+    background-size: 10rem;
+    padding: 12rem 4rem 4rem;
+    margin: 4rem 0;
+    color: $dark-gray;
+    background-color: $light-gray;
+    font-size: 2rem;
+  }
+
+  ul > li {
+    list-style: circle;
+  }
+
+  ul,
+  ol {
+    margin: 4rem;
+    ::marker {
+      color: $rose-taupe;
+    }
+  }
+
+  li,
+  p {
+    margin-bottom: 2rem;
+  }
+
+  ol > li {
+    list-style: decimal-leading-zero;
+    padding-inline: 2rem;
+  }
+
+  a {
+   color: $rose-taupe;
+   font-weight: 600;
+  }
+
+  @include screen-size("desktop") {
+    font-size: 2rem;
+
+    blockquote {
+      font-size: 2.4rem;
+      line-height: 6rem;
+    }
+  }
+}

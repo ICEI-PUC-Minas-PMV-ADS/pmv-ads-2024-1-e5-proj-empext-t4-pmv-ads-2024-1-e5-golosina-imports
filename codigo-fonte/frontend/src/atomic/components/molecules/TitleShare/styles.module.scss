@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  margin-bottom: 4rem;
 
   @include screen-size("desktop") {
     max-width: 144rem;

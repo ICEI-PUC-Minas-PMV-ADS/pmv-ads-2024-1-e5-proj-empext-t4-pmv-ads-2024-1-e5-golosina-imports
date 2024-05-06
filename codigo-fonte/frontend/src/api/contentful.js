@@ -34,6 +34,25 @@ const BLOG_POST_GRAPHQL_FIELDS = `
   alternativeText
   content {
     json
+    links {
+      entries {
+        block {
+          sys {
+            id
+          }
+        }
+        hyperlink {
+          sys {
+            id
+          }
+        }
+        inline {
+          sys {
+            id
+          }
+        }
+      }
+    }
   }
   author
   category
