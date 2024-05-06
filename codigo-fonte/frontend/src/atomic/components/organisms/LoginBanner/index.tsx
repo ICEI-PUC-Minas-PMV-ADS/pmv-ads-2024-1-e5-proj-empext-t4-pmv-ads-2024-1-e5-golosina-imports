@@ -9,6 +9,7 @@ import { Text } from "@/atoms/Text";
 import styles from "./styles.module.scss";
 import { LoginUserPayload } from "@/api/backend/types";
 import { authenticate } from "@/actions";
+import { redirect } from "next/navigation";
 
 export const LoginBanner = () => {
   const { width } = useWindowSize();
@@ -29,7 +30,7 @@ export const LoginBanner = () => {
 
   const onSubmit = async (formData: LoginUserPayload) => {
     try {
-      authenticate(formData)
+      await authenticate(formData)
     } catch (e) {
       console.log(e)
     }

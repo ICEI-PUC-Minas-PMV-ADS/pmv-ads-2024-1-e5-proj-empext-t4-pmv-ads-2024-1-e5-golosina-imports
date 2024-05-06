@@ -8,11 +8,13 @@ import { Logo } from "@/atoms/Logo";
 import styles from "./styles.module.scss";
 import navigation from "@/data/navigation.json";
 import { User } from "next-auth";
+import { signOut } from "@/auth";
+import { logout } from "@/actions";
 interface NavigationProps {
   user: User | undefined
 }
 
-export const Navigation = ({ user }: NavigationProps) => {
+export const Navigation = async ({ user }: NavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const { width } = useWindowSize();
@@ -58,8 +60,10 @@ export const Navigation = ({ user }: NavigationProps) => {
                 <Button
                   level="secondary"
                   label="Sair"
-                  isButton={false}
-                  href="/login"
+                  isButton={true}
+                  onClick={async () => {
+                    await logout()
+                  }}
                 />
               </div>
               :

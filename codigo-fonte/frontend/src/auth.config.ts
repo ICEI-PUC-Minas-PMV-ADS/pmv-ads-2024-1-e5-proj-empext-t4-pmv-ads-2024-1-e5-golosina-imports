@@ -1,4 +1,5 @@
 import type { NextAuthConfig } from 'next-auth';
+import { redirect } from 'next/navigation';
 const { AUTH_SECRET } = process.env;
 
 export const authConfig = {
@@ -29,7 +30,6 @@ export const authConfig = {
         token.name = user.name;
         token.sub = user.id
       }
-      console.log("token", token)
       return token
     },
     /**

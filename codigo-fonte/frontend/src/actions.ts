@@ -1,8 +1,8 @@
 'use server';
-import { signIn } from '@/auth';
+import { signIn, signOut } from '@/auth';
 import { AuthError } from 'next-auth';
 import { LoginUserPayload } from './api/backend/types';
- 
+
 // Action to authenticate the user. Needs to be an action because server stuff 
 export async function authenticate(
   payload: LoginUserPayload,
@@ -19,5 +19,13 @@ export async function authenticate(
       }
     }
     throw error;
+  }
+}
+
+export async function logout() {
+  try {
+    await signOut({ redirectTo: "/produtos" });
+  } catch (error) {
+    console.log(error)
   }
 }
