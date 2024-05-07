@@ -18,17 +18,19 @@ export default async function Blog() {
           color="wenge"
           level="3"
         />
-        {articles.map((article: ArticleCardProps) => (
-          <ArticleCard
-            title={article.title}
-            subtitle={article.subtitle}
-            description={article.description}
-            image={article.image ? article.image.url : ""}
-            slug={article.slug}
-            key={article.title}
-            alternativeText={article.alternativeText}
-          />
-        ))}
+        <div className={styles.blog__articles}>
+          {articles.map((article: ArticleCardProps) => (
+            <ArticleCard
+              title={article.title}
+              subtitle={article.subtitle}
+              description={article.description}
+              image={article.image ? article.image.url : ""}
+              slug={article.slug}
+              key={article.title}
+              alternativeText={article.alternativeText}
+            />
+          ))}
+        </div>
         <Pagination
           totalPages={totalPages}
           currentPage={1}

@@ -56,17 +56,19 @@ export default async function Home({
           color="wenge"
           level="3"
         />
-        {articles.map((article: ArticleCardProps) => (
-          <ArticleCard
-            title={article.title}
-            subtitle={article.subtitle}
-            description={article.description}
-            image={article.image ? article.image.url : ""}
-            slug={article.slug}
-            key={article.title}
-            alternativeText={article.alternativeText}
-          />
-        ))}
+        <div className={styles.homepage__articles}>
+          {articles.map((article: ArticleCardProps) => (
+            <ArticleCard
+              title={article.title}
+              subtitle={article.subtitle}
+              description={article.description}
+              image={article.image ? article.image.url : ""}
+              slug={article.slug}
+              key={article.title}
+              alternativeText={article.alternativeText}
+            />
+          ))}
+        </div>
         <div className={styles.homepage__button}>
           <Button
             href="/blog"
