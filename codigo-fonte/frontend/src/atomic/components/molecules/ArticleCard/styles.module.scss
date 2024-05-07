@@ -22,5 +22,12 @@
   &__image {
     border-radius: 0.6rem;
     object-fit: cover;
+    width: 33.5rem;
+    height: 14.6rem;
+    @include screen-size("desktop") {
+      width: 68rem;
+      height: 26.3rem;
+    }
+
   }
 }

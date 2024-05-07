@@ -1,3 +1,5 @@
+"use client";
+
 import { Text } from "@/atomic/components/atoms/Text";
 import { Heading } from "@/atomic/components/atoms/Heading";
 import { Button } from "@/atomic/components/atoms/Button";

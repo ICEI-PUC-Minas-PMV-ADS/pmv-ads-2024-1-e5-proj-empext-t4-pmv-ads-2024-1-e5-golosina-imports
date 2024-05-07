@@ -1,5 +1,4 @@
 "use client";
-import { useWindowSize } from "react-use";
 import { Text } from "@/atoms/Text";
 import Image from "next/image";
 import styles from "./styles.module.scss";
@@ -22,9 +21,6 @@ export const ArticleCard = ({
   slug,
   alternativeText,
 }: ArticleCardProps) => {
-  const { width } = useWindowSize();
-  const imageWidth = width < 1024 ? 335 : 680;
-  const imageHeight = width < 1024 ? 146 : 263;
   return (
     <Link href={`blog/${slug}/`}>
       <article className={styles.card}>
@@ -56,8 +52,8 @@ export const ArticleCard = ({
           <Image
             src={image}
             alt={alternativeText}
-            width={imageWidth}
-            height={imageHeight}
+            width={680}
+            height={263}
             className={styles.card__image}
             priority={true}
           />

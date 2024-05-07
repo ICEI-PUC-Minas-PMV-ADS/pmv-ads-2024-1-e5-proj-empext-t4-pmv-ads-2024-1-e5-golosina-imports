@@ -26,9 +26,14 @@ export default async function Blog() {
             image={article.image ? article.image.url : ""}
             slug={article.slug}
             key={article.title}
+            alternativeText={article.alternativeText}
           />
         ))}
-        <Pagination totalPages={totalPages} currentPage={1} />
+        <Pagination
+          totalPages={totalPages}
+          currentPage={1}
+          // onPageChange={}
+        />
       </section>
       <div className={styles.blog__cta}>
         <BannerCTA

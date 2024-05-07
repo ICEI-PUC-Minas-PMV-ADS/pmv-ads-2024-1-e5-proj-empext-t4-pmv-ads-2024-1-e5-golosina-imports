@@ -1,6 +1,8 @@
+'use client'
+
 import { usePathname } from "next/navigation";
 import { useWindowSize } from "react-use";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { List, X } from "@phosphor-icons/react/dist/ssr";
 import { ListItem } from "@/atoms/ListItem";
 import { Button } from "@/atoms/Button";
@@ -14,7 +16,7 @@ interface NavigationProps {
   user: User | undefined
 }
 
-export const Navigation = async ({ user }: NavigationProps) => {
+export const Navigation = ({ user }: NavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const { width } = useWindowSize();
@@ -26,6 +28,16 @@ export const Navigation = async ({ user }: NavigationProps) => {
   const isMobile = width < 768;
 
   const pathname = usePathname();
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div className={styles.navigation}>

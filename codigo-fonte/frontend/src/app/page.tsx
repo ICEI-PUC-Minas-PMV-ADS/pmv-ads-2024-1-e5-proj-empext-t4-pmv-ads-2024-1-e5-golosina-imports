@@ -19,7 +19,7 @@ export default async function Home({
 }) {
   const products = await getAllEntries("product", 2);
   const articles = await getAllEntries("blogPost", 3);
-  
+
   const query = searchParams?.query || "";
 
   const filteredProducts = products.filter((product: ProductCardProps) =>
@@ -64,6 +64,7 @@ export default async function Home({
             image={article.image ? article.image.url : ""}
             slug={article.slug}
             key={article.title}
+            alternativeText={article.alternativeText}
           />
         ))}
         <div className={styles.homepage__button}>
