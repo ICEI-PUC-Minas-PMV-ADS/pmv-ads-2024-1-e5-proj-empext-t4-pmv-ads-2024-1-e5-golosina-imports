@@ -1,3 +1,4 @@
+import type { Viewport } from 'next'
 import { Header } from "@/atomic/components/organisms/Header";
 import { Footer } from "@/atomic/components/organisms/Footer";
 import styles from "./layout.module.scss";
@@ -19,6 +20,10 @@ export const metadata: Metadata = {
   description:
     "Golosinas Imports é uma plataforma exclusiva dedicada à importação e distribuição de uma vasta gama de deliciosos alfajores argentinos para o mercado brasileiro. Nossa paixão está em trazer para os amantes de doces brasileiros a autenticidade e a qualidade incomparável dos alfajores argentinos",
 };
+
+export const viewport: Viewport = {
+  themeColor: '#9D5C63',
+}
 
 export default async function RootLayout({
   children,
