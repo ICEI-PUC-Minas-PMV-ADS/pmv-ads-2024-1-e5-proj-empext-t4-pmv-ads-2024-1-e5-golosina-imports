@@ -1,9 +1,16 @@
 "use client";
+import { useMemo } from 'react';
 import { Text } from "@/atoms/Text";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import Link from "next/link";
 
+const limitText = (text: string, maxLength: number) => {
+  if (text.length > maxLength) {
+    return text.slice(0, maxLength) + '...';
+  }
+  return text;
+};
 export interface ArticleCardProps {
   title: string;
   subtitle: string;
@@ -21,13 +28,18 @@ export const ArticleCard = ({
   slug,
   alternativeText,
 }: ArticleCardProps) => {
+
+  const limitedTitle = useMemo(() => limitText(title, 120), [title]);
+  const limitedSubtitle = useMemo(() => limitText(subtitle, 120), [subtitle]);
+  const limitedDescription = useMemo(() => limitText(description, 120), [description]);
+
   return (
     <Link href={`blog/${slug}/`}>
       <article className={styles.card}>
         <div className={styles.card__content}>
           <Text
             align="left"
-            children={title}
+            children={limitedTitle}
             color="dark-gray"
             weight="600"
             lineHeight="3rem"
@@ -35,14 +47,14 @@ export const ArticleCard = ({
           />
           <Text
             align="left"
-            children={subtitle}
+            children={limitedSubtitle}
             color="light-blue"
             lineHeight="3rem"
             letterSpacing="0.05rem"
           />
           <Text
             align="left"
-            children={description}
+            children={limitedDescription}
             color="dark-gray"
             lineHeight="3rem"
             letterSpacing="0.05rem"
