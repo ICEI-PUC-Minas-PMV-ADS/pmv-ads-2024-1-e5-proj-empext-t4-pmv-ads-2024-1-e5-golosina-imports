@@ -2,7 +2,7 @@
 import { ArrowRight, ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 import styles from './styles.module.scss'
 
-type PaginationProps = {
+interface PaginationProps {
   totalPages: number
   currentPage: number
   onPageChange: (page: number) => void
@@ -22,8 +22,8 @@ export const Pagination = ({
   const isPreviousDisabled = currentPage === 1
   const isNextDisabled = currentPage === totalPages
 
-  const previousIconFill = isPreviousDisabled ? '#584B53' : '#9D5C63'
-  const nextIconFill = isNextDisabled ? '#584B53' : '#9D5C63'
+  const previousIconFill = isPreviousDisabled ? '#FEF5EF' : '#9D5C63'
+  const nextIconFill = isNextDisabled ? '#FEF5EF' : '#9D5C63'
 
   return (
     <div className={styles.pagination}>

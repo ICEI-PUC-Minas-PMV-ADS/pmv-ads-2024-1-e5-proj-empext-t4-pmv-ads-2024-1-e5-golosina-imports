@@ -1,9 +1,8 @@
+import { Heading } from "@/atoms/Heading";
+import { ArticlesWrapper } from "@/organisms/ArticlesWrapper";
 import { BannerCTA } from "@/organisms/CTABanner";
-import { ArticleCard, ArticleCardProps } from "@/molecules/ArticleCard";
 import { getAllEntries } from "@/api/contentful";
 import styles from "./styles.module.scss";
-import { Heading } from "@/atoms/Heading";
-import { Pagination } from "@/atomic/components/molecules/Pagination";
 
 export default async function Blog() {
   const articles = await getAllEntries("blogPost");
@@ -18,24 +17,7 @@ export default async function Blog() {
           color="wenge"
           level="3"
         />
-        <div className={styles.blog__articles}>
-          {articles.map((article: ArticleCardProps) => (
-            <ArticleCard
-              title={article.title}
-              subtitle={article.subtitle}
-              description={article.description}
-              image={article.image ? article.image.url : ""}
-              slug={article.slug}
-              key={article.title}
-              alternativeText={article.alternativeText}
-            />
-          ))}
-        </div>
-        <Pagination
-          totalPages={totalPages}
-          currentPage={1}
-          // onPageChange={}
-        />
+        <ArticlesWrapper articles={articles} totalPages={totalPages} />
       </section>
       <div className={styles.blog__cta}>
         <BannerCTA
