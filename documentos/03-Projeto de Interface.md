@@ -50,9 +50,9 @@
 #### Login, Cadastro e Alterar Dados do Perfil
 ![3](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/b143b4f8-282c-4029-a135-ed924bc5bb59)
 
-### Componentes
+### Componentes e Páginas
 
-### Páginas
+![figma](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/77633ea3-d8c9-4801-9e67-ca97c58325f6)
 
-### Diagrama de Fluxo
+Para visualizar o projeto completo do Golosinas Imports, visite nosso <a href="https://www.figma.com/file/9iYvYj5UFH7RYWUFD7NRqu/Golosinas-Imports-(public)?type=design&node-id=292%3A2226&mode=design&t=F0BcgZcZzQHXeTb1-1">figma</a>.
 
