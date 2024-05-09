@@ -49,3 +49,25 @@ Realizamos também testes utilizando o Lighthouse, cujos resultados estão abaix
 - ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/103083123/502d7115-e515-4bc2-a55b-c3ff4d96574a)
 - ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/103083123/cd84ea6b-b40c-4b82-9601-d0ed4efd2123)
 
+
+## Evidências de Testes de Software (Etapa 3)
+Para a terceira etapa, que teve foco na integração entre o Contentful e o Frontend, optamos por realizar a avaliação (local) do desempenho, de acessibilidade, de práticas recomendadas, do SEO e de App Web Progressivos com a extensão _Lighthouse_ nas páginas que refletem essa integração. A página FAQ também foi contemplada. Um novo teste será realizado quando o site estiver hospedado na plataforma vercel.
+
+### Página inicial - Integração com o Contentful
+![home](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/78b3e59e-4238-4d2e-ad43-18a46728f2ed)
+
+### Produtos - Integração com o Contentful
+![produtos](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/266d2021-53d6-471a-ab49-b0c1cd06175c)
+
+### Página de Produto - Integração com o Contentful
+![produto](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/f53c8961-3c52-45ec-96e6-ec1e6cfc9bc3)
+
+### Blog - Integração com o Contentful
+![blog](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/ccbe809e-ae70-4d9e-a1dd-9ac23fe4e8a3)
+
+### Artigo do Blog - Integração com o Contentful
+![article](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/a1755865-d422-451b-a9a9-bb808066ca04)
+
+### FAQ - Sem integração com o Contentful
+![faq](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/08565b54-6cfe-4c9a-aac1-512922ac8391)
+
