@@ -18,6 +18,7 @@ export const { auth, signIn, signOut } = NextAuth({
                     let { user }  = await loginUser(credentials as LoginUserPayload)
                     return user as User // SAFETY: both types have the same fields
                 } catch (err) {
+                    alert(err)
                     console.error(err)
                     // TODO: handle properly https://github.com/nextauthjs/next-auth/discussions/9389
                     throw err
