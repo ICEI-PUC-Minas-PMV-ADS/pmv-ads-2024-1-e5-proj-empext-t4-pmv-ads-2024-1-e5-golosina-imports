@@ -2,6 +2,7 @@ import NextAuth, { User } from 'next-auth';
 import { authConfig } from './auth.config';
 import Credentials from 'next-auth/providers/credentials';
 import { LoginUserPayload, loginUser } from './api/backend/controllers/user';
+import { redirect } from 'next/navigation';
 
 export const { auth, signIn, signOut } = NextAuth({
     ...authConfig,
@@ -15,10 +16,11 @@ export const { auth, signIn, signOut } = NextAuth({
             authorize: async (credentials, req) => {
                 try {
                     let { user }  = await loginUser(credentials as LoginUserPayload)
-                    console.log(user)
-                    return user as User // both types have the same fields
+                    redirect('/produtos');
+                    return user as User // SAFETY: both types have the same fields
                 } catch (err) {
                     console.error(err)
+                    // TODO: handle properly https://github.com/nextauthjs/next-auth/discussions/9389
                     throw err
                 }
             },

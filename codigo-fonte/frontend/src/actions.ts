@@ -27,5 +27,6 @@ export async function logout() {
     await signOut({ redirectTo: "/produtos" });
   } catch (error) {
     console.log(error)
+    throw error
   }
 }
