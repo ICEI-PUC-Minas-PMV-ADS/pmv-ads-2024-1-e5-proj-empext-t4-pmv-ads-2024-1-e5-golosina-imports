@@ -16,7 +16,6 @@ export const { auth, signIn, signOut } = NextAuth({
             authorize: async (credentials, req) => {
                 try {
                     let { user }  = await loginUser(credentials as LoginUserPayload)
-                    redirect('/produtos');
                     return user as User // SAFETY: both types have the same fields
                 } catch (err) {
                     console.error(err)
