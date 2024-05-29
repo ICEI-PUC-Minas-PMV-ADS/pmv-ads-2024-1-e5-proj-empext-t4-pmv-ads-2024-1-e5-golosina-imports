@@ -10,9 +10,12 @@ import styles from "./styles.module.scss";
 import { LoginUserPayload } from "@/api/backend/types";
 import { authenticate } from "@/actions";
 import { redirect } from "next/navigation";
+import { useState } from "react";
+import { loginUser } from "@/api/backend/controllers/user";
 
 export const LoginBanner = () => {
   const { width } = useWindowSize();
+  const [authError, setAuthError] = useState<false | string>(false);
 
   const picture = width < 1200 ? "/images/banner.png" : "/images/banner-g.png";
   const sizeX = width < 1200 ? 267.15 : 490.59;
@@ -30,9 +33,16 @@ export const LoginBanner = () => {
 
   const onSubmit = async (formData: LoginUserPayload) => {
     try {
+      await loginUser(formData);
+      /**
+       * If the previously call to `loginUser` is not successful, the flow is passed to the
+       * catch block, therefore we only call the authenticate action if the response is 200,
+       * because next-auth is basically broken.
+       * https://github.com/nextauthjs/next-auth/issues/9900
+       */
       await authenticate(formData)
     } catch (e) {
-      console.log(e)
+      setAuthError("Email ou senha incorretos. Tente novamente.")
     }
   };
 
@@ -80,6 +90,10 @@ export const LoginBanner = () => {
         {errors.password && (
           <span>A senha deve ter no mínimo 6 caracteres</span>
         )}
+        {
+          authError && <p color="red">{authError}</p>
+        }
+
         <div className={styles.loginBanner__buttons}>
           <Button label="Entrar" level="primary" isButton={true} onClick={handleSubmit(onSubmit)} />
           <Button label="Esqueci a senha" level="quaternary" isButton={false} />

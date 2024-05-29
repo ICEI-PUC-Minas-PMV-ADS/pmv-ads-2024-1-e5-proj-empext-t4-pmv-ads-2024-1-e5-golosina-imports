@@ -2,7 +2,6 @@ import NextAuth, { User } from 'next-auth';
 import { authConfig } from './auth.config';
 import Credentials from 'next-auth/providers/credentials';
 import { LoginUserPayload, loginUser } from './api/backend/controllers/user';
-import { redirect } from 'next/navigation';
 
 export const { auth, signIn, signOut } = NextAuth({
     ...authConfig,
@@ -10,17 +9,15 @@ export const { auth, signIn, signOut } = NextAuth({
         Credentials({
             // formData
             credentials: {
-                username: { label: "email" },
-                password: { label: "password", type: "password" },
+                email: {},
+                password: {},
             },
-            authorize: async (credentials, req) => {
+            authorize: async (credentials) => {
                 try {
                     let { user }  = await loginUser(credentials as LoginUserPayload)
                     return user as User // SAFETY: both types have the same fields
                 } catch (err) {
-                    alert(err)
-                    console.error(err)
-                    // TODO: handle properly https://github.com/nextauthjs/next-auth/discussions/9389
+                    // Another error not related to the request happened
                     throw err
                 }
             },
