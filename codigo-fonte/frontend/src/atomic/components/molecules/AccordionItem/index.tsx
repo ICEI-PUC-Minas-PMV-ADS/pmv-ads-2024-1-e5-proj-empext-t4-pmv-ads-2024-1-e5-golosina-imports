@@ -16,8 +16,8 @@ export const AccordionItem = ({ title, text }: AccordionItemProps) => {
   };
 
   return (
-    <details onClick={toggleSummary} className={styles.accordionItem}>
-      <summary className={styles.accordionItem__title}>
+    <details className={styles.accordionItem}>
+      <summary className={styles.accordionItem__title} onClick={toggleSummary}>
         {title}
         {isOpen ? (
           <Minus size={24} color="#584B53" />
