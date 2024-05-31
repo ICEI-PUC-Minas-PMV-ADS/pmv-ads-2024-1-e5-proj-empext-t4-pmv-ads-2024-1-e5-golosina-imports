@@ -72,7 +72,7 @@ export const LoginBanner = () => {
             {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
           />
         </fieldset>
-        {errors.email && <span>Email inválido</span>}
+        {errors.email && <span className={styles.loginBanner__error}>Email inválido</span>}
 
         <label htmlFor="password" className={styles.loginBanner__label}>
           Senha
@@ -87,7 +87,7 @@ export const LoginBanner = () => {
           />
         </fieldset>
         {errors.password && (
-          <span>A senha deve ter no mínimo 6 caracteres</span>
+          <span className={styles.loginBanner__error}>A senha deve ter no mínimo 6 caracteres</span>
         )}
         {
           authError && <p color="red">{authError}</p>
