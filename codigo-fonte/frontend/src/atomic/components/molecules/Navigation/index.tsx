@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { usePathname } from "next/navigation";
 import { useWindowSize } from "react-use";
@@ -10,10 +10,12 @@ import { Logo } from "@/atoms/Logo";
 import styles from "./styles.module.scss";
 import navigation from "@/data/navigation.json";
 import { User } from "next-auth";
+import { Cookie } from "@phosphor-icons/react/dist/ssr";
 import { signOut } from "@/auth";
 import { logout } from "@/actions";
+import { Text } from "@/atoms/Text";
 interface NavigationProps {
-  user: User | undefined
+  user: User | undefined;
 }
 
 export const Navigation = ({ user }: NavigationProps) => {
@@ -25,7 +27,7 @@ export const Navigation = ({ user }: NavigationProps) => {
     setIsOpen(!isOpen);
   };
 
-  const isMobile = width < 768;
+  const isMobile = width < 744;
 
   const pathname = usePathname();
 
@@ -41,6 +43,23 @@ export const Navigation = ({ user }: NavigationProps) => {
 
   return (
     <div className={styles.navigation}>
+      {user && (
+        <div className={styles.navigation__presentationMobile}>
+          <Text
+            align="center"
+            children="Olá,&nbsp; "
+            color="wenge"
+            weight="600"
+          />
+          <Text
+            align="center"
+            children={`${user.name}`}
+            color="rose-taupe"
+            weight="600"
+          />
+          <Cookie size={32} color="#584B53" />
+        </div>
+      )}
       <div className={styles.navigation__controls}>
         <Logo />
         {isMobile ? (
@@ -53,6 +72,23 @@ export const Navigation = ({ user }: NavigationProps) => {
       </div>
       {(isOpen || !isMobile) && (
         <nav className={styles.navigation__nav}>
+          {user && (
+        <div className={styles.navigation__presentation}>
+          <Text
+            align="center"
+            children="Olá,&nbsp; "
+            color="wenge"
+            weight="600"
+          />
+          <Text
+            align="center"
+            children={`${user.name}`}
+            color="rose-taupe"
+            weight="600"
+          />
+          <Cookie size={32} color="#584B53" />
+        </div>
+      )}
           <ul className={styles.navigation__list}>
             {navigation.map((item, index) => (
               <ListItem
@@ -65,28 +101,25 @@ export const Navigation = ({ user }: NavigationProps) => {
               />
             ))}
           </ul>
-          {
-            user ?
-              <div style={{ marginTop: -30 }}>
-                <p style={{ fontSize: 18, maxWidth: 200, marginBottom: 10 }}>Bem-vindo de volta, {user.name}</p>
-                <Button
-                  level="secondary"
-                  label="Sair"
-                  isButton={true}
-                  onClick={async () => {
-                    await logout()
-                  }}
-                />
-              </div>
-              :
+          {user ? (
+            <div className={styles.navigation__buttons}>
               <Button
-                level="primary"
-                label="Entrar"
-                isButton={false}
-                href="/login"
+                level="secondary"
+                label="Sair"
+                isButton={true}
+                onClick={async () => {
+                  await logout();
+                }}
               />
-          }
-
+            </div>
+          ) : (
+            <Button
+              level="primary"
+              label="Entrar"
+              isButton={false}
+              href="/login"
+            />
+          )}
         </nav>
       )}
     </div>

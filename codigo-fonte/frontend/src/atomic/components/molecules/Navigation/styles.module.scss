@@ -25,6 +25,34 @@
     }
   }
 
+  &__presentationMobile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+
+    @include screen-size('tablet') {
+      display: none;
+    }
+  }
+
+  &__presentation {
+    display: none;
+
+    @include screen-size('desktop') {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
