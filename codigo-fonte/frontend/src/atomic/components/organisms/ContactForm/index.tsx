@@ -1,5 +1,7 @@
+import React from 'react';
 import { useForm, SubmitHandler } from "react-hook-form";
 import { contactFormSchema } from "@/utils/validationSchemas";
+import { useForm as useFormSpree, ValidationError } from '@formspree/react';
 import { yupResolver } from "@hookform/resolvers/yup";
 import {
   IdentificationCard,
@@ -37,7 +39,20 @@ export const ContactForm = ({ formData }: ContactFormProps) => {
     resolver: yupResolver(contactFormSchema) as any,
   });
 
-  const onSubmit: SubmitHandler<FormProps> = (data) => console.log(data);
+  const formspreeCode = process.env.NEXT_PUBLIC_FORMSPREE_CODE || '';
+
+  const [state, handleSubmitSpree] = useFormSpree(formspreeCode);
+
+  const onSubmit: SubmitHandler<FormProps> = (data) => {
+    const submissionData = {
+      name: data.name,
+      email: data.email,
+      message: data.message,
+      subject: data.subject,
+    };
+    handleSubmitSpree(submissionData); 
+    console.log(data);
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.contactForm}>
@@ -117,6 +132,7 @@ export const ContactForm = ({ formData }: ContactFormProps) => {
       <input
         type="submit"
         value="Enviar"
+        disabled={state.submitting}
         className={styles.contactForm__submit}
       />
     </form>
