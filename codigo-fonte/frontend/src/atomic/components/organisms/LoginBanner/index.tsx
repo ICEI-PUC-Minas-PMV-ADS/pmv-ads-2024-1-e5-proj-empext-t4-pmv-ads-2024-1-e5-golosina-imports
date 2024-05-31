@@ -9,7 +9,6 @@ import { Text } from "@/atoms/Text";
 import styles from "./styles.module.scss";
 import { LoginUserPayload } from "@/api/backend/types";
 import { authenticate } from "@/actions";
-import { redirect } from "next/navigation";
 import { useState } from "react";
 import { loginUser } from "@/api/backend/controllers/user";
 
