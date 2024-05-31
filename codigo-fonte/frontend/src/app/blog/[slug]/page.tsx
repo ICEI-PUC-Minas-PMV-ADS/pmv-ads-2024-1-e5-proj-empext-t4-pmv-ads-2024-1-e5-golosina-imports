@@ -11,6 +11,7 @@ export default async function Article({
   params: { slug: string };
 }) {
   const article = await getEntry("blogPost", params.slug);
+  console.log(article.sys.id);
   return (
     <main className={styles.article}>
       <ArticleExpanded
