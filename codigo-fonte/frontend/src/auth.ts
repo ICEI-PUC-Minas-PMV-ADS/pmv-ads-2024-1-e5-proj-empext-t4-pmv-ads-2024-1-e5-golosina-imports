@@ -7,7 +7,6 @@ export const { auth, signIn, signOut } = NextAuth({
     ...authConfig,
     providers: [
         Credentials({
-            // formData
             credentials: {
                 email: {},
                 password: {},
