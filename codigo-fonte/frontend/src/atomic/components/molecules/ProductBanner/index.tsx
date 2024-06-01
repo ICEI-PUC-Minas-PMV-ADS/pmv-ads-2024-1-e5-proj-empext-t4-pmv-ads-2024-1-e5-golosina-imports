@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useWindowSize } from "react-use";
+import { handleWhatsappClick } from "@/utils/whatsapp";
 import { ArrowLeft, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import { Text } from "@/atoms/Text";
@@ -11,7 +12,7 @@ export type Characteristics = {
 };
 
 interface ProductBannerProps {
-  productName?: string;
+  productName: string;
   description: string;
   characteristics: Array<Characteristics>;
   image: string;
@@ -43,12 +44,17 @@ export const ProductBanner = ({
       <div className={styles.product__heading}>
         <Text align="left" children={productName} color="wenge" weight="600" />
         <Text align="left" children={description} color="dark-gray" />
-        <Button label="Comprar" level="quaternary" size="small" />
+        <Button
+          onClick={() => handleWhatsappClick(productName)}
+          label="Comprar"
+          level="quaternary"
+          size="small"
+        />
       </div>
       <div className={styles.product__imageContainer}>
         <Image
           src={image}
-          alt=''
+          alt=""
           width={width < 1200 ? 335 : 500}
           height={width < 1200 ? 335 : 500}
           className={styles.product__image}

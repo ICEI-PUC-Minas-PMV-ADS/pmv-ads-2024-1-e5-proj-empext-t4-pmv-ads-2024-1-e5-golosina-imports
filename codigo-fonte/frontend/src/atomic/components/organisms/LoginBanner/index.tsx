@@ -90,7 +90,7 @@ export const LoginBanner = () => {
           <span className={styles.loginBanner__error}>A senha deve ter no mínimo 6 caracteres</span>
         )}
         {
-          authError && <p color="red">{authError}</p>
+          authError && <p className={styles.loginBanner__error}>{authError}</p>
         }
 
         <div className={styles.loginBanner__buttons}>

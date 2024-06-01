@@ -22,6 +22,7 @@ export const ProductExpanded = ({
   characteristics,
   slug
 }: ProductExpandedProps) => {
+
   return (
     <section className={styles.productExpanded}>
       <TitleShare

@@ -1,5 +1,8 @@
+'use client'
+
 import { Button } from "@/atoms/Button";
 import { Text } from "@/atoms/Text";
+import { handleWhatsappClick } from "@/utils/whatsapp";
 import styles from "./styles.module.scss";
 
 export interface ProductCardProps {
@@ -24,6 +27,7 @@ export const ProductCard = ({
       <div className={styles.card__cta}>
         <Text align="left" children={`R$ ${price}`} color="white" />
         <Button
+          onClick={() => handleWhatsappClick(productName)}
           href={`/produtos/${slug}`}
           isButton={false}
           label="Comprar"
