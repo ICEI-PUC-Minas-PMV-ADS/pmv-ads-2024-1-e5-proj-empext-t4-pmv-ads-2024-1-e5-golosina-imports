@@ -8,6 +8,7 @@ import { MONGODB_URI } from './config/envs';
 import { createUser } from './controllers/user';
 import { authMiddleware } from './middlewares/auth';
 import { errorMiddleware } from './middlewares/error';
+import { createComment } from './controllers/comment';
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use(express.json());
 app.post('/user', createUser);
 app.post('/login', loginUser);
 app.use(authMiddleware);
+app.post('/comments/:postId', createComment);
 app.use(errorMiddleware);
 
 
