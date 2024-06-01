@@ -2,21 +2,21 @@ import mongoose, { Document, Schema } from 'mongoose';
 
 interface Comment extends Document {
     id: string;
-    user_id: string;
-    post_id: string;
+    userId: string;
+    postId: string;
     content: string;
-    create_time: Date;
-    delete_time?: Date;
+    createTime: Date;
+    deleteTime?: Date;
 }
 
 const CommentSchema = new Schema<Comment>({
-    user_id: { type: String, required: true },
-    post_id: { type: String, required: true },
+    userId: { type: String, required: true },
+    postId: { type: String, required: true },
     content: { type: String, required: true },
-    create_time: { type: Date, required: true },
-    delete_time: { type: Date },
+    createTime: { type: Date, required: true },
+    deleteTime: { type: Date },
 });
 
-const UserModel = mongoose.model<Comment>('Comment', CommentSchema);
+const CommentModel = mongoose.model<Comment>('Comment', CommentSchema);
 
-export default UserModel;
+export default CommentModel;
