@@ -19,7 +19,7 @@ import { Button } from "@/atoms/Button";
 import { Text } from "@/atoms/Text";
 import styles from "./styles.module.scss";
 
-export const RegisterBanner = async () => {
+export const RegisterBanner = () => {
   const { width } = useWindowSize();
   const { data: session, status } = useSession();
   console.log("usuario: ", session, status);
