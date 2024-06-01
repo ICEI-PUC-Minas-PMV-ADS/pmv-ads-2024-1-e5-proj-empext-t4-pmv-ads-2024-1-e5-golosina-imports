@@ -19,6 +19,16 @@
     border-radius: 0.6rem;
   }
 
+  &__error {
+    font-size: 1.6rem;
+    color: $wenge;
+
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: $light-blue;
+    text-underline-offset: 1rem;
+  }
+
   &__label {
     color: $rose-taupe;
     font-size: 1.8rem;
@@ -39,6 +49,14 @@
     &::placeholder {
       color: $dark-gray;
     }
+  }
+
+  &__editButton {
+    font-size: 1rem;
+    color: $wenge;
+    font-weight: 600;
+    border-radius: 0.6rem;
+    border: solid 1px $rose-taupe;
   }
 
   &__buttons {

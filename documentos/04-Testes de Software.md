@@ -71,3 +71,22 @@ Para a terceira etapa, que teve foco na integração entre o Contentful e o Fron
 ### FAQ - Sem integração com o Contentful
 ![faq](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/08565b54-6cfe-4c9a-aac1-512922ac8391)
 
+## Evidências de Testes de Software (Etapa 4)
+Para a quarta etapa, que teve foco na integração entre o Backend e o Frontend, optamos por realizar a avaliação (local) do desempenho, de acessibilidade, de práticas recomendadas, do SEO e de App Web Progressivos com a extensão Lighthouse nas páginas que refletem essa integração.
+
+### Página de Cadastro - Integração entre Backend e Frontend
+![1](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/b39faecc-45d0-440b-a3b5-e0593ecbc286)
+
+![2](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/f29c4a78-39fd-4110-9240-2a9d2a649c07)
+
+![cadastro](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/b111804a-8621-437e-bbc4-e2d782241d98)
+
+### Página de Login - Integração entre Backend e Frontend
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/3fdf2402-bbe5-49a0-b303-eda2707d6924
+
+![login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/2870b1a1-bf66-42fa-90e7-38419a6e7bdd)
+
+### Página de Contato - Integração entre Backend e Frontend
+
+### Página de Perfil - Integração entre Backend e Frontend

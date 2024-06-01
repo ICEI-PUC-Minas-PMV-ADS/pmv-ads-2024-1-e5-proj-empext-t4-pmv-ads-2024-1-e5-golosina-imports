@@ -1,6 +1,6 @@
 "use client";
 
-import { At, Password } from "@phosphor-icons/react/dist/ssr";
+import { At, Eye, EyeSlash, Password } from "@phosphor-icons/react/dist/ssr";
 import { useWindowSize } from "react-use";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
@@ -25,9 +25,9 @@ export const LoginBanner = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      email: '',
-      password: ''
-    }
+      email: "",
+      password: "",
+    },
   });
 
   const onSubmit = async (formData: LoginUserPayload) => {
@@ -39,10 +39,16 @@ export const LoginBanner = () => {
        * because next-auth is basically broken.
        * https://github.com/nextauthjs/next-auth/issues/9900
        */
-      await authenticate(formData)
+      await authenticate(formData);
     } catch (e) {
-      setAuthError("Email ou senha incorretos. Tente novamente.")
+      setAuthError("Email ou senha incorretos. Tente novamente.");
     }
+  };
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
   };
 
   return (
@@ -72,7 +78,9 @@ export const LoginBanner = () => {
             {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
           />
         </fieldset>
-        {errors.email && <span className={styles.loginBanner__error}>Email inválido</span>}
+        {errors.email && (
+          <span className={styles.loginBanner__error}>Email inválido</span>
+        )}
 
         <label htmlFor="password" className={styles.loginBanner__label}>
           Senha
@@ -80,21 +88,33 @@ export const LoginBanner = () => {
         <fieldset className={styles.loginBanner__fieldset}>
           <Password size={32} color="#9D5C63" />
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             id="password"
             className={styles.loginBanner__input}
             {...register("password", { required: true, minLength: 6 })}
           />
+          <button type="button" onClick={togglePasswordVisibility}>
+            {showPassword ? (
+              <EyeSlash size={32} color="#9D5C63" />
+            ) : (
+              <Eye size={32} color="#9D5C63" />
+            )}
+          </button>
         </fieldset>
         {errors.password && (
-          <span className={styles.loginBanner__error}>A senha deve ter no mínimo 6 caracteres</span>
+          <span className={styles.loginBanner__error}>
+            A senha deve ter no mínimo 6 caracteres
+          </span>
         )}
-        {
-          authError && <p className={styles.loginBanner__error}>{authError}</p>
-        }
+        {authError && <p className={styles.loginBanner__error}>{authError}</p>}
 
         <div className={styles.loginBanner__buttons}>
-          <Button label="Entrar" level="primary" isButton={true} onClick={handleSubmit(onSubmit)} />
+          <Button
+            label="Entrar"
+            level="primary"
+            isButton={true}
+            onClick={handleSubmit(onSubmit)}
+          />
           <Button label="Esqueci a senha" level="quaternary" isButton={false} />
         </div>
         <Text
