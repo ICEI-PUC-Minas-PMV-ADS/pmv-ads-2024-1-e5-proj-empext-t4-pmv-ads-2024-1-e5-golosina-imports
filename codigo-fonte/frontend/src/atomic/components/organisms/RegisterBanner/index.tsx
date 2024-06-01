@@ -50,7 +50,7 @@ export const RegisterBanner = () => {
             {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
           />
         </fieldset>
-        {errors.email && <span>Email inválido</span>}
+        {errors.email && <span className={styles.registerBanner__error}>Email inválido</span>}
         <label htmlFor="email" className={styles.registerBanner__label}>
           Email
         </label>
@@ -64,7 +64,7 @@ export const RegisterBanner = () => {
             {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
           />
         </fieldset>
-        {errors.email && <span>Email inválido</span>}
+        {errors.email && <span className={styles.registerBanner__error}>Email inválido</span>}
 
         <label htmlFor="password" className={styles.registerBanner__label}>
           Senha
@@ -79,7 +79,7 @@ export const RegisterBanner = () => {
           />
         </fieldset>
         {errors.password && (
-          <span>A senha deve ter no mínimo 6 caracteres</span>
+          <span className={styles.registerBanner__error}>A senha deve ter no mínimo 6 caracteres</span>
         )}
         <div className={styles.registerBanner__buttons}>
           <Button label="Concluir cadastro" level="primary" />

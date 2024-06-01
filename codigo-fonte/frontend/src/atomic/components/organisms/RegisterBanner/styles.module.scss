@@ -26,6 +26,16 @@
       border: 0.1rem solid $dark-gray;
       border-radius: 0.6rem;
     }
+
+    &__error {
+      font-size: 1.6rem;
+      color: $wenge;
+  
+      text-decoration: underline;
+      text-decoration-style: wavy;
+      text-decoration-color: $light-blue;
+      text-underline-offset: 1rem;
+    }
   
     &__label {
       color: $rose-taupe;

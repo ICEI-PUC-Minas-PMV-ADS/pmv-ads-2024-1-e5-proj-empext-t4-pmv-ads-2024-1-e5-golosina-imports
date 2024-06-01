@@ -2,17 +2,13 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 25rem;
   border: solid 0.1rem $wenge;
   border-radius: 0.6rem;
   padding: 2rem;
 
-  @include screen-size("tablet") {
-    width: 50rem;
-}
-
   &__closeIcon {
     align-self: flex-end;
+    cursor: pointer;
   }
 
   &__content {
