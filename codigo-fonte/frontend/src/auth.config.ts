@@ -13,8 +13,9 @@ export const authConfig = {
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
       console.log("auth user:", auth?.user);
-      
+
       const isProtectedRoute = nextUrl.pathname.startsWith('/perfil');
+
       if (isProtectedRoute) {
         if (isLoggedIn) return true;
         return false; // Redirect unauthenticated users to login page
@@ -26,7 +27,7 @@ export const authConfig = {
      */
     jwt: async ({ token, user }) => {
       if (user) {
-       console.log("jwt user", user);
+        console.log("jwt user", user);
         token.email = user.email;
         token.name = user.name;
         token.sub = user.id

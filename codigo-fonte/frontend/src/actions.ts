@@ -8,7 +8,7 @@ export async function authenticate(
 ) {
   try {
     const { email, password } = payload;
-    const res = await signIn('credentials', { email, password });
+    const res = await signIn('credentials', { email, password, redirectTo: '/produtos' });
     return res
   } catch (error) {
     throw error;
