@@ -5,18 +5,32 @@ import styles from "./styles.module.scss";
 
 interface ModalProps {
   content: string;
-  onClick: () => void;
+  buttonLabel: string;
+  secondButtonLabel?: string;
+  hasTwoButtons?: boolean;
+  onClose: () => void;
+  onButtonClick: () => void;
 }
 
-export const Modal = ({ content, onClick }: ModalProps) => {
+export const Modal = ({
+  content,
+  buttonLabel,
+  secondButtonLabel,
+  hasTwoButtons = false,
+  onClose,
+  onButtonClick,
+}: ModalProps) => {
   return (
     <div className={styles.modal}>
-      <X size={32} onClick={onClick} className={styles.modal__closeIcon} />
+      <X size={32} onClick={onClose} className={styles.modal__closeIcon} />
       <div className={styles.modal__content}>
         <Text align="center" children={content} color="dark-gray" />
       </div>
       <div className={styles.modal__buttons}>
-        <Button level="secondary" label="Fechar" onClick={onClick} />
+        {hasTwoButtons && (
+          <Button level="primary" label={secondButtonLabel} onClick={onClose} />
+        )}
+        <Button level="secondary" label={buttonLabel} onClick={onButtonClick} />
       </div>
     </div>
   );

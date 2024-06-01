@@ -1,19 +1,26 @@
 "use client";
-
-import { At, Password, Pencil } from "@phosphor-icons/react/dist/ssr";
+import {
+  At,
+  Eye,
+  EyeSlash,
+  Password,
+  Pencil,
+} from "@phosphor-icons/react/dist/ssr";
+import { useState } from "react";
 import { useWindowSize } from "react-use";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
+import { RegisterUserPayload } from "@/api/backend/types";
+import { registerUser } from "@/api/backend/controllers/user";
+import { authenticate } from "@/actions";
+import { useRouter } from "next/navigation";
 import { Button } from "@/atoms/Button";
 import { Text } from "@/atoms/Text";
 import styles from "./styles.module.scss";
-import { RegisterUserPayload } from "@/api/backend/types";
-import { useState } from "react";
-import { registerUser } from "@/api/backend/controllers/user";
-import { authenticate } from "@/actions";
 
 export const RegisterBanner = () => {
   const { width } = useWindowSize();
+  const router = useRouter();
 
   const picture = width < 1200 ? "/images/banner.png" : "/images/banner-g.png";
   const sizeX = width < 1200 ? 267.15 : 490.59;
@@ -24,12 +31,17 @@ export const RegisterBanner = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      name: '',
-      email: '',
-      password: ''
-    }
+      name: "",
+      email: "",
+      password: "",
+    },
   });
   const [registerError, setRegisterError] = useState<false | string>(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
+  };
 
   const onSubmit = async (formData: RegisterUserPayload) => {
     try {
@@ -40,9 +52,12 @@ export const RegisterBanner = () => {
        * because next-auth is basically broken.
        * https://github.com/nextauthjs/next-auth/issues/9900
        */
-      await authenticate(formData)
+      await authenticate(formData);
+      router.push("/");
     } catch (e) {
-      setRegisterError("Houve um erro no cadastro. Verifique os dados enviados.")
+      setRegisterError(
+        "Houve um erro no cadastro. Verifique os dados enviados."
+      );
     }
   };
   return (
@@ -73,7 +88,9 @@ export const RegisterBanner = () => {
             {...register("name", { required: true })}
           />
         </fieldset>
-        {errors.email && <span className={styles.registerBanner__error}>Email inválido</span>}
+        {errors.email && (
+          <span className={styles.registerBanner__error}>Email inválido</span>
+        )}
         <label htmlFor="email" className={styles.registerBanner__label}>
           Email
         </label>
@@ -87,7 +104,9 @@ export const RegisterBanner = () => {
             {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
           />
         </fieldset>
-        {errors.email && <span className={styles.registerBanner__error}>Email inválido</span>}
+        {errors.email && (
+          <span className={styles.registerBanner__error}>Email inválido</span>
+        )}
 
         <label htmlFor="password" className={styles.registerBanner__label}>
           Senha
@@ -95,17 +114,31 @@ export const RegisterBanner = () => {
         <fieldset className={styles.registerBanner__fieldset}>
           <Password size={32} color="#9D5C63" />
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             id="password"
             className={styles.registerBanner__input}
             {...register("password", { required: true, minLength: 6 })}
           />
+          <button type="button" onClick={togglePasswordVisibility}>
+            {showPassword ? (
+              <EyeSlash size={32} color="#9D5C63" />
+            ) : (
+              <Eye size={32} color="#9D5C63" />
+            )}
+          </button>
         </fieldset>
         {errors.password && (
-          <span className={styles.registerBanner__error}>A senha deve ter no mínimo 6 caracteres</span>
+          <span className={styles.registerBanner__error}>
+            A senha deve ter no mínimo 6 caracteres
+          </span>
         )}
         <div className={styles.registerBanner__buttons}>
-          <Button label="Concluir cadastro" level="primary" isButton={false} onClick={handleSubmit(onSubmit)} />
+          <Button
+            label="Concluir cadastro"
+            level="primary"
+            isButton={false}
+            onClick={handleSubmit(onSubmit)}
+          />
           <Button
             label="Já tenho conta"
             level="quaternary"

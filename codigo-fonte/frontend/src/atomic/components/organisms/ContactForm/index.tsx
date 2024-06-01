@@ -170,7 +170,9 @@ export const ContactForm = ({ formData }: ContactFormProps) => {
       {isModalOpen && (
         <Modal
           content="Formulário submetido com sucesso"
-          onClick={closeModal}
+          buttonLabel="Fechar"
+          onButtonClick={closeModal}
+          onClose={closeModal}
         />
       )}
     </div>
