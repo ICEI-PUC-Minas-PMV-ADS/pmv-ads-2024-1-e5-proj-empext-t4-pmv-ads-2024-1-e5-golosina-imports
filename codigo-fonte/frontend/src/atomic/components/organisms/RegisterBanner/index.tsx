@@ -7,6 +7,10 @@ import Image from "next/image";
 import { Button } from "@/atoms/Button";
 import { Text } from "@/atoms/Text";
 import styles from "./styles.module.scss";
+import { RegisterUserPayload } from "@/api/backend/types";
+import { useState } from "react";
+import { registerUser } from "@/api/backend/controllers/user";
+import { authenticate } from "@/actions";
 
 export const RegisterBanner = () => {
   const { width } = useWindowSize();
@@ -18,9 +22,28 @@ export const RegisterBanner = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
-  const onSubmit = (data: any) => {
-    console.log(data);
+  } = useForm({
+    defaultValues: {
+      name: '',
+      email: '',
+      password: ''
+    }
+  });
+  const [registerError, setRegisterError] = useState<false | string>(false);
+
+  const onSubmit = async (formData: RegisterUserPayload) => {
+    try {
+      await registerUser(formData);
+      /**
+       * If the previously call to `registerUser` is not successful, the flow is passed to the
+       * catch block, therefore we only call the authenticate action if the response is 200,
+       * because next-auth is basically broken.
+       * https://github.com/nextauthjs/next-auth/issues/9900
+       */
+      await authenticate(formData)
+    } catch (e) {
+      setRegisterError("Houve um erro no cadastro. Verifique os dados enviados.")
+    }
   };
   return (
     <section className={styles.registerBanner}>
@@ -30,7 +53,7 @@ export const RegisterBanner = () => {
       >
         <Text
           align="left"
-          children="Crie uma conta para acessar todos os nossos artigos"
+          children="Crie uma conta para ter uma experiência ainda mais personalizada"
           color="wenge"
           weight="500"
           lineHeight="3rem"
@@ -47,7 +70,7 @@ export const RegisterBanner = () => {
             id="name"
             placeholder="Daisy Jones"
             className={styles.registerBanner__input}
-            {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+            {...register("name", { required: true })}
           />
         </fieldset>
         {errors.email && <span className={styles.registerBanner__error}>Email inválido</span>}
@@ -82,7 +105,7 @@ export const RegisterBanner = () => {
           <span className={styles.registerBanner__error}>A senha deve ter no mínimo 6 caracteres</span>
         )}
         <div className={styles.registerBanner__buttons}>
-          <Button label="Concluir cadastro" level="primary" />
+          <Button label="Concluir cadastro" level="primary" isButton={false} onClick={handleSubmit(onSubmit)} />
           <Button
             label="Já tenho conta"
             level="quaternary"
