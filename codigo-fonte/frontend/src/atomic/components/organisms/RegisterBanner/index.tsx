@@ -11,9 +11,12 @@ import { RegisterUserPayload } from "@/api/backend/types";
 import { useState } from "react";
 import { registerUser } from "@/api/backend/controllers/user";
 import { authenticate } from "@/actions";
+import { useSession } from "next-auth/react";
 
-export const RegisterBanner = () => {
+export const RegisterBanner = async () => {
   const { width } = useWindowSize();
+  const { data: session, status } = useSession();
+  console.log("usuario: ", session, status);
 
   const picture = width < 1200 ? "/images/banner.png" : "/images/banner-g.png";
   const sizeX = width < 1200 ? 267.15 : 490.59;
