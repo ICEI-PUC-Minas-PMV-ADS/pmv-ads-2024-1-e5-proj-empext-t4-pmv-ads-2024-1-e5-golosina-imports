@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "@/styles/main.scss";
 import { auth } from "@/auth";
+import { SessionProvider } from 'next-auth/react';
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -19,9 +20,9 @@ export const metadata: Metadata = {
   title: "Golosinas Imports",
   description:
     "Golosinas Imports é uma plataforma exclusiva dedicada à importação e distribuição de uma vasta gama de deliciosos alfajores argentinos para o mercado brasileiro. Nossa paixão está em trazer para os amantes de doces brasileiros a autenticidade e a qualidade incomparável dos alfajores argentinos",
-    icons: {
-      icon: 'images/favicon-32x32.png'
-    }
+  icons: {
+    icon: 'images/favicon-32x32.png'
+  }
 };
 
 export const viewport: Viewport = {
@@ -39,9 +40,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={[poppins.className, styles.layout].join(" ")}>
-        <Header user={user} />
-        {children}
-        <Footer />
+        <SessionProvider session={session}>
+          <Header user={user} />
+          {children}
+          <Footer />
+        </SessionProvider>
       </body>
     </html>
   );

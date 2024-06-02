@@ -1,5 +1,4 @@
 import type { NextAuthConfig } from 'next-auth';
-import { redirect } from 'next/navigation';
 const { AUTH_SECRET } = process.env;
 
 export const authConfig = {
@@ -38,7 +37,8 @@ export const authConfig = {
      * Sets the session object from the information set in the token. `useSession()` 
      * client-side hook will get its info through this function.
      */
-    session: ({ session, token, user }) => {
+    session: ({ session, token }) => {
+      // console.log("teste seila");
       if (token) {
         session.user.email = token.email!;
         session.user.id = token.sub!;
