@@ -14,15 +14,17 @@ import { RegisterUserPayload } from "@/api/backend/types";
 import { registerUser } from "@/api/backend/controllers/user";
 import { authenticate } from "@/actions";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { Button } from "@/atoms/Button";
 import { Text } from "@/atoms/Text";
 import styles from "./styles.module.scss";
 
 export const RegisterBanner = () => {
   const { width } = useWindowSize();
-  const { data: session, status } = useSession();
-  console.log("usuario: ", session, status);
+  const { status } = useSession();
+  if (status == "authenticated") {
+    redirect("/produtos")
+  }
   const router = useRouter();
 
   const picture = width < 1200 ? "/images/banner.png" : "/images/banner-g.png";
@@ -135,6 +137,9 @@ export const RegisterBanner = () => {
             A senha deve ter no mínimo 6 caracteres
           </span>
         )}
+
+        {registerError && <p className={styles.loginBanner__error}>{registerError}</p>}
+
         <div className={styles.registerBanner__buttons}>
           <Button
             label="Concluir cadastro"

@@ -106,6 +106,7 @@ export const LoginBanner = () => {
             A senha deve ter no mínimo 6 caracteres
           </span>
         )}
+        
         {authError && <p className={styles.loginBanner__error}>{authError}</p>}
 
         <div className={styles.loginBanner__buttons}>

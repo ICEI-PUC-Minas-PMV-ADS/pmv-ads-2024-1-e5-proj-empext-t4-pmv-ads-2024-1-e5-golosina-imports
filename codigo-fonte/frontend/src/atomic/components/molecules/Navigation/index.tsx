@@ -108,6 +108,7 @@ export const Navigation = () => {
                 label="Sair"
                 isButton={true}
                 onClick={async () => {
+                  // TODO: fix redirect error
                   await logout();
                 }}
               />
