@@ -37,14 +37,14 @@ export const authConfig = {
      * Sets the session object from the information set in the token. `useSession()` 
      * client-side hook will get its info through this function.
      */
-    session: ({ session, token }) => {
-      // console.log("teste seila");
+    session: async ({ session, token }) => {
       if (token) {
         session.user.email = token.email!;
         session.user.id = token.sub!;
         session.user.name = token.name;
+      } else {
       }
-      return session
+      return Promise.resolve(session)
     }
   },
   providers: [],

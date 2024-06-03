@@ -15,13 +15,13 @@ export default async function Products({
   const products = await getAllEntries("product");
 
   const query = searchParams?.query || "";
-  
+
   const filteredProducts = products.filter((product: ProductCardProps) => {
     const productNameMatches = product.productName.toLowerCase().includes(query.toLowerCase());
     const priceMatches = parseFloat(query) && parseFloat(product.price) <= parseFloat(query);
     return productNameMatches || priceMatches;
   });
-  
+
 
   const firstTwoProducts = filteredProducts.slice(0, 2);
   const moreProducts = filteredProducts.slice(2);
@@ -42,17 +42,17 @@ export default async function Products({
           ))}
         </div>
       </section>
-        <div className={styles.products__moreCards}>
-          {moreProducts.map((product: ProductCardProps) => (
-            <ProductCard
-              productName={product.productName}
-              price={product.price}
-              slug={product.slug}
-              image={product.image ? product.image.url : ""}
-              key={product.productName}
-            />
-          ))}
-        </div>
+      <div className={styles.products__moreCards}>
+        {moreProducts.map((product: ProductCardProps) => (
+          <ProductCard
+            productName={product.productName}
+            price={product.price}
+            slug={product.slug}
+            image={product.image ? product.image.url : ""}
+            key={product.productName}
+          />
+        ))}
+      </div>
       <Testimonials />
     </main>
   );

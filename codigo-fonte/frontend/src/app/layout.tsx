@@ -5,9 +5,9 @@ import styles from "./layout.module.scss";
 
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "@/styles/main.scss";
 import { auth } from "@/auth";
 import { SessionProvider } from 'next-auth/react';
+import "@/styles/main.scss";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -35,13 +35,16 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const session = await auth();
-  const user = session?.user;
 
   return (
     <html lang="en">
       <body className={[poppins.className, styles.layout].join(" ")}>
-        <SessionProvider session={session}>
-          <Header user={user} />
+        <SessionProvider
+          session={session}
+          refetchOnWindowFocus={false}
+          refetchWhenOffline={false}
+        >
+          <Header />
           {children}
           <Footer />
         </SessionProvider>

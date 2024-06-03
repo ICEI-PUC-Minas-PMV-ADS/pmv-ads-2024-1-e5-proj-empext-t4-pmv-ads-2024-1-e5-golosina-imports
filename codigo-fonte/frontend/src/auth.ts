@@ -1,9 +1,9 @@
 import NextAuth, { User } from 'next-auth';
-import { authConfig } from './auth.config';
 import Credentials from 'next-auth/providers/credentials';
 import { LoginUserPayload, loginUser } from './api/backend/controllers/user';
+import { authConfig } from './auth.config';
 
-export const { auth, signIn, signOut } = NextAuth({
+export const { auth, signIn, signOut, handlers: { GET, POST } } = NextAuth({
     ...authConfig,
     providers: [
         Credentials({
@@ -13,7 +13,7 @@ export const { auth, signIn, signOut } = NextAuth({
             },
             authorize: async (credentials) => {
                 try {
-                    let { user }  = await loginUser(credentials as LoginUserPayload)
+                    let { user } = await loginUser(credentials as LoginUserPayload)
                     return user as User // SAFETY: both types have the same fields
                 } catch (err) {
                     // Another error not related to the request happened

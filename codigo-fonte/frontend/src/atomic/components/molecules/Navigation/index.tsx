@@ -9,17 +9,17 @@ import { Button } from "@/atoms/Button";
 import { Logo } from "@/atoms/Logo";
 import styles from "./styles.module.scss";
 import navigation from "@/data/navigation.json";
-import { User } from "next-auth";
 import { Cookie } from "@phosphor-icons/react/dist/ssr";
 import { signOut } from "@/auth";
 import { logout } from "@/actions";
 import { Text } from "@/atoms/Text";
-interface NavigationProps {
-  user: User | undefined;
-}
+import { useSession } from "next-auth/react";
 
-export const Navigation = ({ user }: NavigationProps) => {
+export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { data: session, status } = useSession();
+  const user = session?.user;
 
   const { width } = useWindowSize();
 
@@ -73,22 +73,22 @@ export const Navigation = ({ user }: NavigationProps) => {
       {(isOpen || !isMobile) && (
         <nav className={styles.navigation__nav}>
           {user && (
-        <div className={styles.navigation__presentation}>
-          <Text
-            align="center"
-            children="Olá,&nbsp; "
-            color="wenge"
-            weight="600"
-          />
-          <Text
-            align="center"
-            children={`${user.name}`}
-            color="rose-taupe"
-            weight="600"
-          />
-          <Cookie size={32} color="#584B53" />
-        </div>
-      )}
+            <div className={styles.navigation__presentation}>
+              <Text
+                align="center"
+                children="Olá,&nbsp; "
+                color="wenge"
+                weight="600"
+              />
+              <Text
+                align="center"
+                children={`${user.name}`}
+                color="rose-taupe"
+                weight="600"
+              />
+              <Cookie size={32} color="#584B53" />
+            </div>
+          )}
           <ul className={styles.navigation__list}>
             {navigation.map((item, index) => (
               <ListItem
