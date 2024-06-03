@@ -22,11 +22,12 @@ import styles from "./styles.module.scss";
 export const RegisterBanner = () => {
   const { width } = useWindowSize();
   const { status } = useSession();
+  const router = useRouter();
+  
   if (status == "authenticated") {
     redirect("/produtos")
   }
-  const router = useRouter();
-
+  
   const picture = width < 1200 ? "/images/banner.png" : "/images/banner-g.png";
   const sizeX = width < 1200 ? 267.15 : 490.59;
   const sizeY = width < 1200 ? 257.9 : 401.65;
