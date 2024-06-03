@@ -15,3 +15,50 @@
     }
   }
 }
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 113rem;
+  font-size: 1.8rem;
+  line-height: 4.4rem;
+  letter-spacing: 0.05rem;
+  color: $dark-gray;
+
+  @include screen-size("desktop") {
+    font-size: 2rem;
+  }
+
+  &__label {
+    font-weight: 600;
+  }
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    border: solid 0.1rem $rose-taupe;
+    padding: 2rem;
+    gap: 2rem;
+    border-radius: 0.6rem;
+  }
+
+  &__textarea {
+    font-family: "Poppins";
+    resize: none;
+    width: 100%;
+    min-height: 10rem;
+    outline: none;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include screen-size("tablet") {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

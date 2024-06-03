@@ -4,14 +4,19 @@ import { ArticleExpanded } from "@/organisms/ArticleExpanded";
 import { getEntry } from "@/api/contentful";
 import { User } from "next-auth";
 import styles from "./styles.module.scss";
+import { useSession } from "next-auth/react";
+import { auth } from "@/auth";
 
 interface ArticleProps {
-  user: User | undefined;
   params: { slug: string };
 }
 
-export default async function Article({ params, user }: ArticleProps) {
+export default async function Article({ params }: ArticleProps) {
   const article = await getEntry("blogPost", params.slug);
+  const session = await auth();
+
+  const user = session?.user;
+
   console.log(article.sys.id);
   return (
     <main className={styles.article}>
@@ -36,11 +41,18 @@ export default async function Article({ params, user }: ArticleProps) {
           comment="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           user={user}
         />
-        <NewComment
-          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          placeholder=""
-          user={user}
-        />
+        {
+          user ?
+            <NewComment
+              user={user}
+            />
+            :
+            <div className={styles.comment}>
+              <span className={styles.comment__label}>
+                Faça login para postar um novo comentário
+              </span>
+            </div>
+        }
       </section>
     </main>
   );
