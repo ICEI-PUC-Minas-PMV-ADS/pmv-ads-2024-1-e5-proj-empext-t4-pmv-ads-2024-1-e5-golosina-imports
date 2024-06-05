@@ -6,6 +6,7 @@ import { User } from "next-auth";
 import styles from "./styles.module.scss";
 import { useSession } from "next-auth/react";
 import { auth } from "@/auth";
+import { Text } from "@/atoms/Text";
 
 interface ArticleProps {
   params: { slug: string };
@@ -35,24 +36,25 @@ export default async function Article({ params }: ArticleProps) {
           name="Daisy Jones"
           comment="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           user={user}
+          userId={""}
         />
         <Comment
           name="Camila Dunne"
           comment="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           user={user}
+          userId={""}
         />
-        {
-          user ?
-            <NewComment
-              user={user}
-            />
-            :
-            <div className={styles.comment}>
-              <span className={styles.comment__label}>
-                Faça login para postar um novo comentário
-              </span>
-            </div>
-        }
+        {user ? (
+          <NewComment user={user} />
+        ) : (
+          <Text
+            align="left"
+            children="Faça login para postar um novo comentário"
+            weight="400"
+            lineHeight="3.8rem"
+            letterSpacing="0.015rem"
+          />
+        )}
       </section>
     </main>
   );
