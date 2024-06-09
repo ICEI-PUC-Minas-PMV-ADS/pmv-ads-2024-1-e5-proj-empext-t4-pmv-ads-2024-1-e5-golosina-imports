@@ -15,8 +15,9 @@ export default async function Article({ params }: ArticleProps) {
   const article = await getEntry("blogPost", params.slug);
   const session = await auth();
   const user = session?.user;
+  const postId = article.sys.id;
 
-    const comments = await getPostComments(article.sys.id);
+  const comments = await getPostComments(postId);
 
   return (
     <main className={styles.article}>
@@ -50,7 +51,7 @@ export default async function Article({ params }: ArticleProps) {
             />)
         }
         {user ? (
-          <NewComment user={user} />
+          <NewComment user={user} postId={postId} />
         ) : (
           <Text
             align="left"

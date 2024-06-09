@@ -1,7 +1,7 @@
 'use server';
 import { signIn, signOut } from '@/auth';
-import { LoginUserPayload } from './api/backend/types';
-
+import { CreateCommentRequest, LoginUserPayload } from './api/backend/types';
+import { createComment as createCommentApi } from './api/backend/controllers/comment';
 // Action to authenticate the user. Needs to be an action because server stuff 
 export async function authenticate(
   payload: LoginUserPayload,
@@ -23,3 +23,12 @@ export async function logout() {
     throw error
   }
 }
+
+export async function createComment(payload: CreateCommentRequest, postId: string, token: string) {
+  try {
+    await createCommentApi(payload, postId, token);
+  } catch (e) {
+    // TODO: better error handling.
+    throw e
+  }
+};
