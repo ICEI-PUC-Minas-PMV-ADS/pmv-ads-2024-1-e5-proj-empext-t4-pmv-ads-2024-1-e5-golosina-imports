@@ -4,9 +4,7 @@ import { Button } from "@/atoms/Button";
 import { Chat } from "@phosphor-icons/react/dist/ssr";
 import styles from "./styles.module.scss";
 import { useRef, useState } from "react";
-import { createComment as createCommentApi } from "@/api/backend/controllers/comment";
 import { useSession } from "next-auth/react";
-import { getToken } from "next-auth/jwt"
 import { createComment } from "@/actions";
 
 interface NewCommentProps {
@@ -17,7 +15,6 @@ interface NewCommentProps {
 export const NewComment = ({ user, postId }: NewCommentProps) => {
   const { data: session } = useSession();
   const [commentText, setCommentText] = useState<string>("");
-  console.log(session);
 
   const commentInput = useRef<{ value: string } | undefined>({ value: "" });
   return (

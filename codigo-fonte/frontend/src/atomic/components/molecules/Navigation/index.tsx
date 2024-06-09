@@ -10,7 +10,6 @@ import { Logo } from "@/atoms/Logo";
 import styles from "./styles.module.scss";
 import navigation from "@/data/navigation.json";
 import { Cookie } from "@phosphor-icons/react/dist/ssr";
-import { signOut } from "@/auth";
 import { logout } from "@/actions";
 import { Text } from "@/atoms/Text";
 import { useSession } from "next-auth/react";
@@ -18,7 +17,7 @@ import { useSession } from "next-auth/react";
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const user = session?.user;
 
   const { width } = useWindowSize();
