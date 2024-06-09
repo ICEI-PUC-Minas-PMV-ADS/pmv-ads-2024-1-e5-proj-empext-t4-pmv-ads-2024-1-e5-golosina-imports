@@ -8,10 +8,11 @@ import { User } from "next-auth";
 interface CommentProps {
   name: string;
   comment: string;
+  userId: string;
   user: User | undefined;
 }
 
-export const Comment = ({ name, comment, user }: CommentProps) => {
+export const Comment = ({ name, comment, userId, user }: CommentProps) => {
   const images = userImages.userImages;
   const randomImage = images[Math.floor(Math.random() * images.length)];
 
@@ -29,24 +30,26 @@ export const Comment = ({ name, comment, user }: CommentProps) => {
           <Text align="center" children={name} color="dark-gray" weight="600" />
         </div>
 
-        <div className={styles.comment__controls}>
-          <button>
-            <PencilSimple
-              size={32}
-              color="#9D5C63"
-              aria-label="Editar comentário"
-              className={styles.comment__icon}
-            />
-          </button>
-          <button>
-            <TrashSimple
-              size={32}
-              color="#9D5C63"
-              aria-label="Excluir comentário"
-              className={styles.comment__icon}
-            />
-          </button>
-        </div>
+        {user && user.id === userId && (
+          <div className={styles.comment__controls}>
+            <button>
+              <PencilSimple
+                size={32}
+                color="#9D5C63"
+                aria-label="Editar comentário"
+                className={styles.comment__icon}
+              />
+            </button>
+            <button>
+              <TrashSimple
+                size={32}
+                color="#9D5C63"
+                aria-label="Excluir comentário"
+                className={styles.comment__icon}
+              />
+            </button>
+          </div>
+        )}
       </div>
       <p className={styles.comment__text} tabIndex={0}>
         {comment}

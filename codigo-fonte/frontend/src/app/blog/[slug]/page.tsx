@@ -5,6 +5,7 @@ import { getEntry } from "@/api/contentful";
 import styles from "./styles.module.scss";
 import { auth } from "@/auth";
 import { getPostComments } from "@/api/backend/controllers/comment";
+import { Text } from "@/atoms/Text";
 
 interface ArticleProps {
   params: { slug: string };
@@ -33,26 +34,26 @@ export default async function Article({ params }: ArticleProps) {
 
       <section className={styles.article__comments}>
         {
-          comments.map((comment) => {            
+          comments.map((comment) => {
             return (<Comment
               name={comment.author}
               comment={comment.content}
               user={user}
+              userId=""
             />)
           })
         }
-        {
-          user ?
-            <NewComment
-              user={user}
-            />
-            :
-            <div className={styles.comment}>
-              <span className={styles.comment__label}>
-                Faça login para postar um novo comentário
-              </span>
-            </div>
-        }
+        {user ? (
+          <NewComment user={user} />
+        ) : (
+          <Text
+            align="left"
+            children="Faça login para postar um novo comentário"
+            weight="400"
+            lineHeight="3.8rem"
+            letterSpacing="0.015rem"
+          />
+        )}
       </section>
     </main>
   );

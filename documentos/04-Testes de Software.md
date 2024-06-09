@@ -86,7 +86,3 @@ Para a quarta etapa, que teve foco na integração entre o Backend e o Frontend,
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/3fdf2402-bbe5-49a0-b303-eda2707d6924
 
 ![login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports/assets/81396458/2870b1a1-bf66-42fa-90e7-38419a6e7bdd)
-
-### Página de Contato - Integração entre Backend e Frontend
-
-### Página de Perfil - Integração entre Backend e Frontend
