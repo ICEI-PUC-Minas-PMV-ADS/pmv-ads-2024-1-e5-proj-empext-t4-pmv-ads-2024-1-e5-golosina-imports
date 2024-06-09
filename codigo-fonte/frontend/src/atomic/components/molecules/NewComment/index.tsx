@@ -4,12 +4,18 @@ import { Button } from "@/atoms/Button";
 import { Chat } from "@phosphor-icons/react/dist/ssr";
 import styles from "./styles.module.scss";
 import { useRef } from "react";
+import { createComment as createCommentApi } from "@/api/backend/controllers/comment";
+import { useSession } from "next-auth/react";
+import { getToken } from "next-auth/jwt"
 
 interface NewCommentProps {
   user: User | undefined;
 }
 
 export const NewComment = ({ user }: NewCommentProps) => {
+  const { data: session } = useSession();
+  console.log(session);
+
   const commentInput = useRef<{ value: string } | undefined>({ value: "" });
   return (
     <div className={styles.comment}>

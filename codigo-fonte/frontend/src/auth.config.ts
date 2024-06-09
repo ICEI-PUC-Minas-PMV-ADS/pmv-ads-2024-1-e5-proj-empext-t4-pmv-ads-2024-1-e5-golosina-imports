@@ -29,7 +29,8 @@ export const authConfig = {
         console.log("jwt user", user);
         token.email = user.email;
         token.name = user.name;
-        token.sub = user.id
+        token.sub = user.id;
+        token.raw = user.token;
       }
       return token
     },
@@ -42,6 +43,9 @@ export const authConfig = {
         session.user.email = token.email!;
         session.user.id = token.sub!;
         session.user.name = token.name;
+        
+        // this is a workaround because next auth.
+        session.user.token = token.raw as string;
       } else {
       }
       return Promise.resolve(session)

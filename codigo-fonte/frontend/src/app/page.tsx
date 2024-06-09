@@ -7,7 +7,6 @@ import { Testimonials } from "@/organisms/Testimonials";
 import { HeadingSearch } from "@/organisms/HeadingSearch";
 import { getAllEntries } from "@/api/contentful";
 import styles from "./homepage.module.scss";
-import { SessionProvider, useSession } from "next-auth/react";
 
 export default async function Home({
   searchParams,

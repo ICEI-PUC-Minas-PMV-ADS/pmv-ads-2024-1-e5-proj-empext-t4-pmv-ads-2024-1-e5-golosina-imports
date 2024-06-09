@@ -1,9 +1,10 @@
-import { instance } from "../config"
+import { formatHeader, instance } from "../config"
 import { CreateCommentRequest, GetPostCommentsResponse, LoginUserPayload } from "../types"
 
 export async function createComment(payload: CreateCommentRequest, postId: string, token: string) {
     try {
-        const { data: comment } = await instance.post<Comment>(`/comments/${postId}`, payload)
+        const headers = formatHeader(token);
+        const { data: comment } = await instance.post<Comment>(`/comments/${postId}`, payload, headers);
         return comment
     } catch (error) {
         throw error

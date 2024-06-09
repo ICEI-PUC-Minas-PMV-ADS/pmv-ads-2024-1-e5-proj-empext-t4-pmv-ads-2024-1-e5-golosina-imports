@@ -13,8 +13,9 @@ export const { auth, signIn, signOut, handlers: { GET, POST } } = NextAuth({
             },
             authorize: async (credentials) => {
                 try {
-                    let { user } = await loginUser(credentials as LoginUserPayload)
-                    return user as User // SAFETY: both types have the same fields
+                    let { user, token }: { user: User, token: string } = await loginUser(credentials as LoginUserPayload)
+                    user.token = token;
+                    return user
                 } catch (err) {
                     // Another error not related to the request happened
                     throw err

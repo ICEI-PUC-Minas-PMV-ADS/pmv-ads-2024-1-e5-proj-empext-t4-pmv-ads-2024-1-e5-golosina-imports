@@ -14,12 +14,10 @@ interface ArticleProps {
 export default async function Article({ params }: ArticleProps) {
   const article = await getEntry("blogPost", params.slug);
   const session = await auth();
-
-  const comments = await getPostComments(article.sys.id);
-
   const user = session?.user;
 
-  console.log(article.sys.id);
+    const comments = await getPostComments(article.sys.id);
+
   return (
     <main className={styles.article}>
       <ArticleExpanded
@@ -37,12 +35,12 @@ export default async function Article({ params }: ArticleProps) {
           comments.length > 0 ?
             comments.map((comment) => {
               return (<Comment
+                key={comment.id}
                 name={comment.author}
                 comment={comment.content}
                 user={user}
               />)
             })
-
             : (<Text
               align="center"
               children="Ainda não há comentários. Seja o primeiro a comentar!"
