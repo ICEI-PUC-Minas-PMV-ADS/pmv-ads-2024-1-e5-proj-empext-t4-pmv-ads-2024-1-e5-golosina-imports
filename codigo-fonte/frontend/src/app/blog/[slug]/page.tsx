@@ -39,7 +39,6 @@ export default async function Article({ params }: ArticleProps) {
               name={comment.author}
               comment={comment.content}
               user={user}
-              userId=""
             />)
           })
         }
