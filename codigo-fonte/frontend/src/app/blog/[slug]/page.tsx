@@ -34,13 +34,22 @@ export default async function Article({ params }: ArticleProps) {
 
       <section className={styles.article__comments}>
         {
-          comments.map((comment) => {
-            return (<Comment
-              name={comment.author}
-              comment={comment.content}
-              user={user}
+          comments.length > 0 ?
+            comments.map((comment) => {
+              return (<Comment
+                name={comment.author}
+                comment={comment.content}
+                user={user}
+              />)
+            })
+
+            : (<Text
+              align="center"
+              children="Ainda não há comentários. Seja o primeiro a comentar!"
+              weight="400"
+              lineHeight="3.8rem"
+              letterSpacing="0.015rem"
             />)
-          })
         }
         {user ? (
           <NewComment user={user} />
