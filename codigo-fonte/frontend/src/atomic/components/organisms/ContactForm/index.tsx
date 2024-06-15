@@ -55,7 +55,6 @@ export const ContactForm = ({ formData }: ContactFormProps) => {
         subject: data.subject,
       };
       await handleSubmitSpree(submissionData);
-      console.log(data);
       setIsModalOpen(true);
       reset();
     } catch (error) {

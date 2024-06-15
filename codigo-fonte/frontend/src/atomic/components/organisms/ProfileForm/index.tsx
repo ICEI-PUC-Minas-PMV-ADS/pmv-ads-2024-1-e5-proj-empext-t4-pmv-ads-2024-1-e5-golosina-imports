@@ -49,7 +49,6 @@ export const ProfileForm = () => {
   };
 
   const onSubmit = (data: any) => {
-    console.log(data);
   };
 
   return (
