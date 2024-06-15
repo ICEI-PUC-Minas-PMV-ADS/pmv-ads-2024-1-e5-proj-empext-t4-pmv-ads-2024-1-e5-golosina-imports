@@ -13,27 +13,13 @@ export const Testimonials = () => {
         color="white"
       />
       <div className={styles.testimonials__cards}>
-        <Testimonial
-          name="aaaa"
-          location="Brasil"
-          rate={5}
-          feedback="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
-          image="/images/bg-alfajor.png"
-        />
-        <Testimonial
-          name="aaaa"
-          location="Brasil"
-          rate={5}
-          feedback="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
-          image="/images/bg-alfajor.png"
-        />
-        <Testimonial
-          name="aaaa"
-          location="Brasil"
-          rate={5}
-          feedback="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
-          image="/images/bg-alfajor.png"
-        />
+        {/* <Testimonial
+          name={""}
+          location={""}
+          rate={0}
+          feedback={""}
+          image={""}
+        /> */}
       </div>
     </section>
   );
