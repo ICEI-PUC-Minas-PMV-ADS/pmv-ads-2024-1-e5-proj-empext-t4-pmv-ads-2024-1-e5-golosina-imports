@@ -11,6 +11,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import styles from "./styles.module.scss";
 import { Modal } from "../../molecules/Modal";
+import { createFeedback } from "@/api/backend/controllers/feedback";
 
 export enum SubjectEnum {
   feedback = "feedback",
@@ -41,8 +42,6 @@ export const ContactForm = ({ formData }: ContactFormProps) => {
     resolver: yupResolver(contactFormSchema) as any,
   });
 
-  console.log(process.env.NEXT_PUBLIC_FORMSPREE_CODE) 
-
   const formspreeCode = process.env.NEXT_PUBLIC_FORMSPREE_CODE || "";
   const [state, handleSubmitSpree] = useFormSpree(formspreeCode);
 
@@ -50,13 +49,20 @@ export const ContactForm = ({ formData }: ContactFormProps) => {
 
   const onSubmit: SubmitHandler<FormProps> = async (data) => {
     try {
-      const submissionData = {
-        name: data.name,
-        email: data.email,
-        message: data.message,
-        subject: data.subject,
-      };
-      await handleSubmitSpree(submissionData);
+      if (data.subject == SubjectEnum.feedback) {
+        let res = await createFeedback({ personName: data.name, content: data.message })
+        console.log(res)
+      } else {
+        const submissionData = {
+          name: data.name,
+          email: data.email,
+          message: data.message,
+          subject: data.subject,
+        };
+
+        await handleSubmitSpree(submissionData);
+      }
+
       setIsModalOpen(true);
       reset();
     } catch (error) {
