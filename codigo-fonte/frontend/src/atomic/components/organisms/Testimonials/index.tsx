@@ -13,13 +13,11 @@ export const Testimonials = () => {
         color="white"
       />
       <div className={styles.testimonials__cards}>
-        {/* <Testimonial
-          name={""}
-          location={""}
-          rate={0}
-          feedback={""}
-          image={""}
-        /> */}
+        <Testimonial
+          name={"Teste nome"}
+          location={"teste 1234"}
+          feedback={"teste 123"}
+        />
       </div>
     </section>
   );

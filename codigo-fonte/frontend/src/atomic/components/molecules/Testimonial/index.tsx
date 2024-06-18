@@ -1,28 +1,28 @@
 import Image from "next/image";
 import { Text } from "@/atoms/Text";
 import styles from "./styles.module.scss";
+import userImages from "@/data/userImages.json";
 
 interface TestimonialProps {
   name: string;
   location: string;
-  rate: number;
   feedback: string;
-  image: string;
 }
 
 export const Testimonial = ({
   name,
   location,
-  rate,
   feedback,
-  image,
 }: TestimonialProps) => {
+  const images = userImages.userImages;
+  const randomImage = images[Math.floor(Math.random() * images.length)];
+
   return (
     <article className={styles.testimonial}>
       <div className={styles.testimonial__container}>
         <div className={styles.testimonial__content}>
           <Image
-            src={image}
+            src={randomImage}
             alt={name}
             width={50}
             height={50}
@@ -46,7 +46,6 @@ export const Testimonial = ({
             />
           </div>
         </div>
-        <p className={styles.testimonial__rate}>{rate}</p>
       </div>
       <Text
         align="left"

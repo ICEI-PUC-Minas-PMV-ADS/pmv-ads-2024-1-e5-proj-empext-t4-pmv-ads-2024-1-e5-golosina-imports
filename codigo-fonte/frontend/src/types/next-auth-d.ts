@@ -20,6 +20,7 @@ declare module "next-auth" {
         email?: string | null
         image?: string | null
         token?: string | null
+        admin?: boolean
     }
 
     interface JWT {

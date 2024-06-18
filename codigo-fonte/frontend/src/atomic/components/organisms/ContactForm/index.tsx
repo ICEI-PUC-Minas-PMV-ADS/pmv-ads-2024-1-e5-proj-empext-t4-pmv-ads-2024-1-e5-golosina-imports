@@ -41,6 +41,8 @@ export const ContactForm = ({ formData }: ContactFormProps) => {
     resolver: yupResolver(contactFormSchema) as any,
   });
 
+  console.log(process.env.NEXT_PUBLIC_FORMSPREE_CODE) 
+
   const formspreeCode = process.env.NEXT_PUBLIC_FORMSPREE_CODE || "";
   const [state, handleSubmitSpree] = useFormSpree(formspreeCode);
 
