@@ -14,6 +14,18 @@ export interface Comment {
   deleteTime?: Date;
 }
 
+export interface Feedback {
+    id: string;
+    personName: string;
+    content: string;
+    createTime: Date;
+}
+
+export interface CreateFeedbackRequest {
+    personName: string;
+    content: string;
+}
+
 export interface ApiResponse<T> {
   status: number
   data: T

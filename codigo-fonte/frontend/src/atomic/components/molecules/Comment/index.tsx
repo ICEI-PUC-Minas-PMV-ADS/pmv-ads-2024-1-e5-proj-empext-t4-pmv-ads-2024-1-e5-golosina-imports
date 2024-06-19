@@ -30,14 +30,18 @@ export const Comment = ({ name, comment, user }: CommentProps) => {
         </div>
 
         <div className={styles.comment__controls}>
-          <button>
-            <TrashSimple
-              size={32}
-              color="#9D5C63"
-              aria-label="Excluir comentário"
-              className={styles.comment__icon}
-            />
-          </button>
+          {
+            user?.admin ?
+              <button>
+                <TrashSimple
+                  size={32}
+                  color="#9D5C63"
+                  aria-label="Excluir comentário"
+                  className={styles.comment__icon}
+                />
+              </button>
+              : null
+          }
         </div>
       </div>
       <p className={styles.comment__text} tabIndex={0}>
