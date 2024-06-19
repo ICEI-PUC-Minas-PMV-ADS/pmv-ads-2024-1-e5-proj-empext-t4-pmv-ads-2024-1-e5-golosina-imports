@@ -10,12 +10,16 @@ export async function createFeedback(payload: CreateFeedbackRequest) {
     }
 }
 
-export async function getPostComments(postId: string) {
+interface GetFeedbacksResponse {
+    feedbacks: Array<Feedback>
+}
+
+export async function getFeedbacks() {
     try {
         const {
-            data: { comments },
-        } = await instance.get<GetPostCommentsResponse>(`/comments/${postId}`)
-        return comments
+            data: { feedbacks },
+        } = await instance.get<GetFeedbacksResponse>(`/feedbacks/`)
+        return feedbacks
     } catch (error) {
         throw error
     }
