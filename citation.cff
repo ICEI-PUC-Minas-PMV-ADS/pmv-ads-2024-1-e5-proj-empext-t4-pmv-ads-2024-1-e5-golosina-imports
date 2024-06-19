@@ -1,0 +1,18 @@
+message: Please cite this software using these metadata.
+title: Golosinas Imports
+authors:
+  - family-names: Cesário de Oliveira
+    given-names:  Kelly
+  - family-names: Polyana Nunes
+    given-names: Jaynne
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Carlos Oliveira Caetano
+    given-names: João
+keywords:
+  - Venda
+  - Culinária
+  - Blog
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t4-pmv-ads-2024-1-e5-golosinas-imports
+version: 1.0.0
+date-released: 2024-06-19
