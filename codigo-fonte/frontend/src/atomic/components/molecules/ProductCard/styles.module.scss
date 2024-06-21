@@ -10,6 +10,8 @@
   border-radius: 0.6rem;
   box-shadow: inset 0 0.4rem 0.4rem 21.9rem rgba(33, 36, 39, 0.44);
 
+  background-position: center;
+
   &__title {
     color: $white;
     font-weight: 200;
@@ -19,6 +21,8 @@
     justify-content: center;
     height: -webkit-fill-available;
     padding: 10rem 0 0 0;
+    text-align: center;
+    line-height: 3.5rem;
 
     @include screen-size("tablet") {
       padding: 6rem 0 0 0;

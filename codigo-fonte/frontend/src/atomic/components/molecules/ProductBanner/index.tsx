@@ -62,7 +62,7 @@ export const ProductBanner = ({
       </div>
       <div className={styles.product__information}>
         <Text
-          align="center"
+          align="left"
           children={characteristics[currentInfoIndex]?.information}
           color="dark-gray"
         />

@@ -27,10 +27,9 @@ export const ProductCard = ({
       <div className={styles.card__cta}>
         <Text align="left" children={`R$ ${price}`} color="white" />
         <Button
-          onClick={() => handleWhatsappClick(productName)}
           href={`/produtos/${slug}`}
           isButton={false}
-          label="Comprar"
+          label="Abrir golosina"
           level="tertiary"
           size="small"
         />

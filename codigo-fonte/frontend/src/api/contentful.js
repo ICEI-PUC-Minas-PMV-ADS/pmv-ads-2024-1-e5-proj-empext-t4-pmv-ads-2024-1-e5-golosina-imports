@@ -115,7 +115,7 @@ function extractEntries(fetchResponse, contentType) {
 
 export async function getAllEntries(
   contentType,
-  limit = 3,
+  limit = 100,
   isDraftMode = false
 ) {
   try {
