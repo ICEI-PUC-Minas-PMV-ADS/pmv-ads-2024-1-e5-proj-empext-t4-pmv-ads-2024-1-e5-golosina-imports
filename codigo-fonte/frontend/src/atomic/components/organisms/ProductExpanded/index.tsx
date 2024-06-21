@@ -31,7 +31,6 @@ export const ProductExpanded = ({
         thirdItem={`R$ ${price}`}
         slug={slug}
       />
-
       <div className={styles.productExpanded__banner}>
         <ProductBanner
           productName={`Conheça mais sobre o ${productName}`}

@@ -68,8 +68,8 @@ export const ProductBanner = ({
         />
       </div>
       <div className={styles.product__controls}>
-        <ArrowLeft size={32} onClick={handlePrevInfo} color="#9D5C63" />
-        <ArrowRight size={32} onClick={handleNextInfo} color="#9D5C63" />
+        <ArrowLeft size={32} onClick={handlePrevInfo} color="#9D5C63" className={styles.product__arrows}/>
+        <ArrowRight size={32} onClick={handleNextInfo} color="#9D5C63" className={styles.product__arrows}/>
       </div>
     </article>
   );
