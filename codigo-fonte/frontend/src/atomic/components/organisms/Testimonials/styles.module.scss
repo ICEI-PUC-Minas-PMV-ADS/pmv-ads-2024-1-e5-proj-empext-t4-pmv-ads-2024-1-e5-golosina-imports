@@ -11,10 +11,6 @@
     gap: 4rem;
 
     @include screen-size("desktop") {
-      display: grid;
-      grid-template-columns: repeat(3, auto);
-      justify-content: center;
-      gap: 6rem;
       max-width: 144rem;
       margin: 0 auto;
     }

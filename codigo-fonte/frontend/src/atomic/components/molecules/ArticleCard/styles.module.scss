@@ -22,12 +22,15 @@
   &__image {
     border-radius: 0.6rem;
     object-fit: cover;
-    width: 33.5rem;
+    width: -webkit-fill-available;
     height: 14.6rem;
     margin-bottom: 4rem;
+
+    @include screen-size("mobile") {
+      min-width: 33.5rem;
+    }
     
     @include screen-size("desktop") {
-      width: 68rem;
       height: 26.3rem;
     }
   }

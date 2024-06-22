@@ -3,7 +3,7 @@ import { Text } from "@/atoms/Text";
 import styles from "./styles.module.scss";
 import userImages from "@/data/userImages.json";
 
-interface TestimonialProps {
+export interface TestimonialProps {
   name: string;
   location: string;
   feedback: string;
@@ -13,6 +13,7 @@ export const Testimonial = ({
   name,
   location,
   feedback,
+
 }: TestimonialProps) => {
   const images = userImages.userImages;
   const randomImage = images[Math.floor(Math.random() * images.length)];

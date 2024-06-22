@@ -7,8 +7,14 @@
   background-color: $white;
   overflow-wrap: break-word;
 
+  @include screen-size("mobile") {
+    max-width: 33.5rem;
+    height: 52rem;
+  }
+
   @include screen-size("desktop") {
     max-width: 44rem;
+    height: 40rem;
   }
 
   &__container {

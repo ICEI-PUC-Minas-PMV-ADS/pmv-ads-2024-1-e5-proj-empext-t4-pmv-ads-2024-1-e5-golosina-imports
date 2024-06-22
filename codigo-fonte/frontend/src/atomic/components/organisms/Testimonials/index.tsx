@@ -1,14 +1,28 @@
+"use client";
+
+import React from "react";
+import { useEffect } from "react";
+import { getFeedbacks } from "@/api/backend/controllers/feedback";
+import { Feedback } from "@/api/backend/types";
+import moment from "moment";
+import "moment/locale/pt-br";
 import { Heading } from "@/atoms/Heading";
 import { Text } from "@/atoms/Text";
+import { Carousel } from "@/molecules/Carousel";
 import { Testimonial } from "@/molecules/Testimonial";
 import styles from "./styles.module.scss";
-import { getFeedbacks } from "@/api/backend/controllers/feedback";
-import moment from "moment";
-import 'moment/locale/pt-br';
 
+export const Testimonials = () => {
+  const [feedbacks, setFeedbacks] = React.useState<Feedback[]>([]);
 
-export const Testimonials = async () => {
-  const feedbacks = await getFeedbacks();
+  useEffect(() => {
+    const fetchFeedbacks = async () => {
+      const fetchedFeedbacks = await getFeedbacks();
+      setFeedbacks(fetchedFeedbacks);
+    };
+
+    fetchFeedbacks();
+  }, []);
 
   return (
     <section className={styles.testimonials}>
@@ -20,17 +34,20 @@ export const Testimonials = async () => {
       />
 
       <div className={styles.testimonials__cards}>
-        {
-          feedbacks ? feedbacks.map((feedback) => {
-            const date = moment(feedback.createTime).locale('pt-br').format('LLL');
-            return (<Testimonial
-              key={feedback.id}
-              name={feedback.personName}
-              location={date.toString()}
-              feedback={feedback.content}
-            />)
-          }) : null
-        }
+        {feedbacks.length > 0 ? (
+          <Carousel
+            items={feedbacks.map((feedback, index) => (
+              <Testimonial
+                key={index}
+                name={feedback.personName}
+                location={moment(feedback.createTime)
+                  .locale("pt-br")
+                  .format("LLL")}
+                feedback={feedback.content}
+              />
+            ))}
+          />
+        ) : null}
       </div>
     </section>
   );

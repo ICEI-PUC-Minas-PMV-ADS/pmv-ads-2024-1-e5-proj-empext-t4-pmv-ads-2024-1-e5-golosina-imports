@@ -1,0 +1,23 @@
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &__button {
+    background-color: transparent;
+    border: none;
+    color: $white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  &__content {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+}
