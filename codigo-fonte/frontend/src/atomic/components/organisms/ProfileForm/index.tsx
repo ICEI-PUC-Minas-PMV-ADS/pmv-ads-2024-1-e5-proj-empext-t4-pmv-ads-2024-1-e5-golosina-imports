@@ -87,6 +87,7 @@ export const ProfileForm = () => {
           id="email"
           placeholder="daisy.jones@mail.com"
           className={styles.profile__input}
+          disabled={true}
           {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
         />
       </fieldset>
