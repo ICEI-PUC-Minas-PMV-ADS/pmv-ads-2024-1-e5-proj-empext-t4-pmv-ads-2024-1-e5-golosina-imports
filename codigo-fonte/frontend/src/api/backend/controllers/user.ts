@@ -6,10 +6,24 @@ export interface AuthUserResponse {
     token: string
 }
 
+export interface UpdateUserPayload {
+    name?: string;
+    password?: string;
+}
+
 export async function loginUser(payload: LoginUserPayload) {
     try {
         const { data: user } = await instance.post<AuthUserResponse>('/login', payload)
         return user
+    } catch (error) {
+        throw error
+    }
+}
+
+export async function updateUser(payload: UpdateUserPayload) {
+    try {
+        await instance.patch<{}>('/user', payload)
+        return {}
     } catch (error) {
         throw error
     }

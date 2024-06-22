@@ -12,19 +12,29 @@ import { Button } from "@/atoms/Button";
 import { Modal } from "@/molecules/Modal";
 import styles from "./styles.module.scss";
 import { useSession } from "next-auth/react";
+import { updateUser, UpdateUserPayload } from "@/api/backend/controllers/user";
 
 export const ProfileForm = () => {
+  const { data: session } = useSession();
+  const user = session?.user;
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      name: user?.name!,
+      password: ""
+    }
+  });
 
   const [editingFields, setEditingFields] = useState({ name: false, password: false });
   const [showPassword, setShowPassword] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { data: session } = useSession();
-  const user = session?.user;
+
+  const [name, setName] = useState(user?.name!);
+  const [password, setPassword] = useState<string | undefined>();
 
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
@@ -43,11 +53,16 @@ export const ProfileForm = () => {
     setIsModalOpen(false);
   };
 
-  const onSubmit = (data: any) => {
+  const submitUpdate = async (formData: UpdateUserPayload) => {
+    try {
+      await updateUser(formData);
+    } catch (e) {
+      console.log(e)
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={styles.profile}>
+    <form className={styles.profile}>
       <label htmlFor="name" className={styles.profile__label}>
         Nome
       </label>
@@ -59,9 +74,12 @@ export const ProfileForm = () => {
           disabled={!editingFields.name}
           placeholder={user?.name!}
           className={styles.profile__input}
-          {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+          {...register("name", { required: true, pattern: /^\S+@\S+$/i })}
         />
-        <button type="button" onClick={() => setEditingFields({ name: !editingFields.name, password: editingFields.password })}>
+        <button type="button" onClick={() =>
+          setEditingFields({
+            name: !editingFields.name, password: editingFields.password
+          })}>
           <PencilSimple size={32} color="#9D5C63" cursor="pointer" />
         </button>
 
@@ -89,7 +107,7 @@ export const ProfileForm = () => {
           type={showPassword ? "text" : "password"}
           id="password"
           className={styles.profile__input}
-          {...register("password", { required: true, minLength: 6 })}
+          {...register("password", { minLength: 6 })}
         />
         <button type="button" onClick={togglePasswordVisibility} >
           {showPassword ? (
@@ -113,7 +131,14 @@ export const ProfileForm = () => {
         )
       }
       <div className={styles.profile__buttons}>
-        <Button label="Alterar dados" level="secondary" />
+        <Button
+          label="Alterar dados"
+          level="secondary"
+          onClick={(e) => {
+            e.preventDefault();
+            submitUpdate({ name, password })
+          }}
+        />
         <Button
           label="Excluir conta"
           level="tertiary"
