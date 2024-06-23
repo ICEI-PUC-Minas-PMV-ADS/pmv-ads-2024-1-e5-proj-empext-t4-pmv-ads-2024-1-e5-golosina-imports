@@ -12,7 +12,8 @@ import { Button } from "@/atoms/Button";
 import { Modal } from "@/molecules/Modal";
 import styles from "./styles.module.scss";
 import { useSession } from "next-auth/react";
-import { updateUser, UpdateUserPayload } from "@/api/backend/controllers/user";
+import { deleteUser, updateUser, UpdateUserPayload } from "@/api/backend/controllers/user";
+import { logout } from "@/actions";
 
 export const ProfileForm = () => {
   const { data: session } = useSession();
@@ -38,17 +39,16 @@ export const ProfileForm = () => {
     setShowPassword((prev) => !prev);
   };
 
-  const handleDeleteAccount = () => {
-    setIsModalOpen(true);
-  };
-
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
 
-  const handleConfirmDelete = () => {
+  const handleConfirmDelete = async (e?: any) => {
+    e.preventDefault();
+    await deleteUser(userId, user?.token!);
     console.log("Conta excluída com sucesso!");
     setIsModalOpen(false);
+    await logout();
   };
 
   const submitUpdate = async (formData: UpdateUserPayload) => {
@@ -142,7 +142,10 @@ export const ProfileForm = () => {
         <Button
           label="Excluir conta"
           level="tertiary"
-          onClick={handleDeleteAccount}
+          onClick={(e) => {
+            e.preventDefault();
+            setIsModalOpen(true);
+          }}
         />
       </div>
       {

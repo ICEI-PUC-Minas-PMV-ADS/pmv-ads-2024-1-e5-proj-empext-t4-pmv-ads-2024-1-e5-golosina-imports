@@ -30,7 +30,10 @@ export const Modal = ({
         {hasTwoButtons && (
           <Button level="primary" label={secondButtonLabel} onClick={onClose} />
         )}
-        <Button level="secondary" label={buttonLabel} onClick={onButtonClick} />
+        <Button level="secondary"
+          label={buttonLabel}
+          onClick={onButtonClick}
+        />
       </div>
     </div>
   );

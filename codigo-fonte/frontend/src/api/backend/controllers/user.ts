@@ -31,6 +31,16 @@ export async function updateUser(payload: UpdateUserPayload, token: string) {
     }
 }
 
+export async function deleteUser(userId: string, token: string) {
+    try {
+        const headers = formatHeader(token);
+        await instance.delete<{}>(`/user/${userId}`, headers)
+        return {}
+    } catch (error) {
+        throw error
+    }
+}
+
 export async function registerUser(payload: RegisterUserPayload) {
     try {
         const {
