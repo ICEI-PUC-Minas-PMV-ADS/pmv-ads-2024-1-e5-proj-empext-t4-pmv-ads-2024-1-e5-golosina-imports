@@ -5,10 +5,10 @@ import cors from 'cors';
 
 import { loginUser } from './controllers/auth';
 import { MONGODB_URI } from './config/envs';
-import { createUser } from './controllers/user';
+import { createUser, deleteUser, updateUser } from './controllers/user';
 import { authMiddleware } from './middlewares/auth';
 import { errorMiddleware } from './middlewares/error';
-import { createComment } from './controllers/comment';
+import { createComment, createFeedback, deleteComment, deleteFeedback, getFeedbacks, getPostComments } from './controllers/comments';
 
 const app = express();
 
@@ -26,8 +26,17 @@ mongoose.connect(MONGODB_URI!)
 app.use(express.json());
 app.post('/user', createUser);
 app.post('/login', loginUser);
+app.get('/comments/:postId', getPostComments);
+app.post('/feedbacks', createFeedback);
+app.get('/feedbacks', getFeedbacks);
+
+// Protected routes
 app.use(authMiddleware);
 app.post('/comments/:postId', createComment);
+app.delete('/comments', deleteComment);
+app.delete('/feedbacks', deleteFeedback);
+app.delete('/user/:userId', deleteUser);
+app.patch('/user', updateUser);
 app.use(errorMiddleware);
 
 

@@ -1,4 +1,4 @@
-import jwt, { SignOptions, JwtPayload } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import { ACCESS_TOKEN_PRIVATE_KEY, ACCESS_TOKEN_PUBLIC_KEY } from './config/envs';
 
 export interface TokenPayload {

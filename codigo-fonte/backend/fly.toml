@@ -1,8 +1,10 @@
+# fly.toml app configuration file generated for golosinas on 2024-04-21T15:52:02-03:00
+#
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "golosinas-api"
-primary_region = "gru"
+app = 'golosinas'
+primary_region = 'gru'
 
 [build]
 
@@ -12,4 +14,9 @@ primary_region = "gru"
   auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 0
-  processes = ["app"]
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1

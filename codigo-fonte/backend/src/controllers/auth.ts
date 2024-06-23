@@ -22,6 +22,7 @@ const loginUser = async (request: Request, response: Response<AuthUserResponse>,
         if (!user || userPassword !== password) {
             throw new AppError(ErrorReason.LOGIN_FAILED, ErrorStatusCodes.BAD_REQUEST)
         }
+
         const token = signJWT({ userId: user.id });
         return response.status(201).json({
             user: {
