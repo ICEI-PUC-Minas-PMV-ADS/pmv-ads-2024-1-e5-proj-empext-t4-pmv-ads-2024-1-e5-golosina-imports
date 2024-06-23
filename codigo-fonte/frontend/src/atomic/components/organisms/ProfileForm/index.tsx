@@ -54,8 +54,8 @@ export const ProfileForm = () => {
   const submitUpdate = async (formData: UpdateUserPayload) => {
     try {
       const updatedUser = await updateUser(formData, user?.token!);
-      console.log("user:", updatedUser);
-      console.log(formData);
+      session!.user!.name = updatedUser.name;
+      // TODO: update session
     } catch (e) {
       console.log(e)
     }

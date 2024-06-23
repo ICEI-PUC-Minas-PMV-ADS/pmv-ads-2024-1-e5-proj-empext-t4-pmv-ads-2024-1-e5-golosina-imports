@@ -24,8 +24,8 @@ export async function loginUser(payload: LoginUserPayload) {
 export async function updateUser(payload: UpdateUserPayload, token: string) {
     try {
         const headers = formatHeader(token);
-        await instance.patch<{}>('/user', payload, headers)
-        return {}
+        const { data: user } = await instance.patch<User>('/user', payload, headers)
+        return user
     } catch (error) {
         throw error
     }
