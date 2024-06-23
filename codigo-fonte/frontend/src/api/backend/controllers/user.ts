@@ -1,4 +1,4 @@
-import { instance } from "../config"
+import { formatHeader, instance } from "../config"
 import { CreateUserResponse, LoginUserPayload, RegisterUserPayload, User } from "../types"
 
 export interface AuthUserResponse {
@@ -9,6 +9,7 @@ export interface AuthUserResponse {
 export interface UpdateUserPayload {
     name?: string;
     password?: string;
+    userId: string;
 }
 
 export async function loginUser(payload: LoginUserPayload) {
@@ -20,9 +21,10 @@ export async function loginUser(payload: LoginUserPayload) {
     }
 }
 
-export async function updateUser(payload: UpdateUserPayload) {
+export async function updateUser(payload: UpdateUserPayload, token: string) {
     try {
-        await instance.patch<{}>('/user', payload)
+        const headers = formatHeader(token);
+        await instance.patch<{}>('/user', payload, headers)
         return {}
     } catch (error) {
         throw error

@@ -12,7 +12,7 @@ interface RequestOptions {
 }
 
 const formatHeader = (token?: string): RequestOptions => {
-  let auth = token ? `Bearer ${token}` : undefined
+  let auth = token ? `Bearer ${token}` : undefined;
   return { headers: { Authorization: auth } }
 }
 

@@ -17,10 +17,8 @@ import { updateUser, UpdateUserPayload } from "@/api/backend/controllers/user";
 export const ProfileForm = () => {
   const { data: session } = useSession();
   const user = session?.user;
-
+  const userId = user?.id!;
   const {
-    register,
-    handleSubmit,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -55,7 +53,9 @@ export const ProfileForm = () => {
 
   const submitUpdate = async (formData: UpdateUserPayload) => {
     try {
-      await updateUser(formData);
+      const updatedUser = await updateUser(formData, user?.token!);
+      console.log("user:", updatedUser);
+      console.log(formData);
     } catch (e) {
       console.log(e)
     }
@@ -74,7 +74,7 @@ export const ProfileForm = () => {
           disabled={!editingFields.name}
           placeholder={user?.name!}
           className={styles.profile__input}
-          {...register("name", { required: true, pattern: /^\S+@\S+$/i })}
+          onChange={(e) => setName(e.target.value)}
         />
         <button type="button" onClick={() =>
           setEditingFields({
@@ -107,7 +107,7 @@ export const ProfileForm = () => {
           type={showPassword ? "text" : "password"}
           id="password"
           className={styles.profile__input}
-          {...register("password", { minLength: 6 })}
+          onChange={(e) => setPassword(e.target.value)}
         />
         <button type="button" onClick={togglePasswordVisibility} >
           {showPassword ? (
@@ -136,7 +136,7 @@ export const ProfileForm = () => {
           level="secondary"
           onClick={(e) => {
             e.preventDefault();
-            submitUpdate({ name, password })
+            submitUpdate({ name, password, userId })
           }}
         />
         <Button
